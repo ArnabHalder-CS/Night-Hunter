@@ -1,0 +1,654 @@
+keyword_phrase,category,severity,source_name,source_url,licence,date_collected,indicator_type,confidence
+one time password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+one-time password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+verification code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+security code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+share your otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+send otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+enter otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+provide otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+forward otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+read otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+otp expired,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+resend otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+otp requested,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+otp verification,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+sms otp,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cvv,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cvv2,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cvc,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+security number,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+3-digit code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+3 digit code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+atm pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+enter pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+secret pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+mpin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+tpin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+upi pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+debit pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+complete your debit pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+enter your pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dc pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+confrim your dc pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+confrim,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+confirm your dc pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+confirm pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+verify your pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pin,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+regain access,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+access your account,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+restore after authentication,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+authentication information,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+seed phrase,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+recovery phrase,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+private key,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+secret phrase,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+wallet key,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+secret code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+master password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+passcode,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+backup code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+2fa code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+mfa code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+authenticator code,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+share your password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+enter your password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+confirm your password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+update your password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+reset password link,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+re-enter password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+type your password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+login credentials,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+internet banking credentials,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+netbanking password,Credential or OTP harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+share your bank,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank account number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank account details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+savings account,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+current account,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+share your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+send your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+provide your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+submit your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+enter your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fill your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+update your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+verify your details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+upi id,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+upi-id,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+vpa,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bhim upi,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+google pay number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+phonepe number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+paytm number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+atm details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+atm card,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+debit card number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+credit card number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+expiry date,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+valid thru,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cardholder name,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+name on card,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+debit card,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+aadhaar,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+aadhar,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+uidai,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pan card,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pan number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pan details,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+link pan,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+passport number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+driving licence,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+driver license,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+voter id,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ssn,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+social security,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+social security number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+tax id,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+tin number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+national id,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ifsc code,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ifsc,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+branch code,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+routing number,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+swift code,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+sort code,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+iban,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bic,Banking & Personal Data Harvesting,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+urgent,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+immediately,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+act now,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+right now,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+right away,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+within 24,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+within 48,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+within 12 hours,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+within 2 hours,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+last warning,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+final warning,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+expires today,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+limited time,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+do not ignore,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+final notice,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+last chance,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+time is running out,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+before it expires,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+action required,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+mandatory action,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+respond immediately,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+asap,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hurry,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+don't delay,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+as soon as possible,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+without delay,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+must be done today,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+your time is limited,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+deadline,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+expiring soon,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+immediate action,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fail to respond,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+otherwise your,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+legal proceedings,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+arrest warrant,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+police complaint,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+at earliest convenience,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+actions here,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+wygasa,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+wygasa za,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+expires tonight,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+expiring tonight,"Urgency, Coercion & Pressure Tactics",medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account suspended,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account has been suspended,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account has been locked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account locked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account blocked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account restricted,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account deactivated,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account closed,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account on hold,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card is locked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card has been locked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card locked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card blocked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+services stopped,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+sim blocked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+sim deactivated,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+electricity disconnected,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+power cut today,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+verify your account,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+confirm your account,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unusual activity,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+suspicious activity,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unauthorized access,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unrecognized login,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+identity verification,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+verify your identity,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+your account will be,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account has been,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account is at risk,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+security alert,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+security warning,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fraud alert,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+someone tried to,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+compromised,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hacked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unauthorized transaction,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+device registered,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+suspicious sign-in,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unusual sign-in,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+block ho jayega,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account band ho jayega,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+aaj block,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+citi alert,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+wells fargo,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+profile locked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+locked your debit,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+temporarily blocked,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card has been disabled,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+card disabled,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+on hold,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank alert,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unusual attempt,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+account access has been limited,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+limited your access,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+access has been limited,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+limited access,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+temporarily frozen,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+frozen your account,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+due to unusual activity,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fraudulent activity,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+mobile number has changed,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+if this was not you,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+expired identity information,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+terminated the use of,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+citi_service,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+protect sms code,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unlock your account,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+rinnovo,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+procedere al rinnovo,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+compte bancaire,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cuenta bancaria,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+konto gesperrt,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+verification requise,Account Suspension & Security Threat,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+you have won,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+you have been selected,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+you are selected,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+congratulations,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+congrats,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+winner,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+lucky winner,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+lucky customer,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+lucky draw,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+lottery,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kbc lottery,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kaun banega crorepati,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+claim prize,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+claim your,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+claim reward,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+prize money,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+reward money,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bonus amount,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+gift card,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+gift voucher,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+free gift,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+you are going to get,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+you will receive,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+you will get,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+going to receive,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+eligible for,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+entitled to,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+annual customer,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+valuable customer,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+valued customer,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+special customer,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+loyal customer,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+most valuable,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+selected for a reward,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+won a prize,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+scratch card,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cash prize,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+jackpot,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unclaimed funds,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+inheritance,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+beneficiary of,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+consignment box,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fund transfer,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bonus code,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+online casino,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+deposit to claim,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+freebie,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+casino bonus,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+free bets,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+deposit now,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+gamble responsibly,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+immediate cash in/out,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cash in/out,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+register to get,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+best online casino,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+max bonus,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+match up to,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+slots,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+coupon code,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+live casino,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cash-boost,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cash boost,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+einzahlungen,"Prize, Lottery, Bonus & Reward Lures",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+payment failed,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+refund,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+refund approval,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+tax refund,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unpaid invoice,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unusual charge,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+processing fee,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+advance fee,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pay now,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank transfer,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+wallet address,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pay immediately,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+payment pending,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+outstanding balance,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+overdue payment,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+billing issue,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cashback,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cash back,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+reward points,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+redeem points,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+transaction failed,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+payment declined,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+auto-debit,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+chargeback,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+customs clearance fee,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+handling charges,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+courier fee,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+delivery charges,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+awaiting your payment,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+still owe,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pay fee for delivery,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pay the cost to complete,"Payment, Refund & Billing Lures",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kyc update,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kyc verification,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+update kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+complete kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kyc expired,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kyc pending,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+verify kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kyc mandatory,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kyc required,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pan verification,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+aadhaar verification,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+link aadhaar,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+re-kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ekyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+e-kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ckyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+sim kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+wallet kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+paytm kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+document verification,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+electricity power supply,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+power supply will be disconnected,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+electricity will be disconnected,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bill was not updated,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+electricity officer,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+electricity bill unpaid,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+chalan pending,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+traffic chalan,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+echallan,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+e-challan,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+court summons,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bijli connection,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bijli kat di,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pan link,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+turant kyc,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+sim block,"KYC, Identity & Utility Disconnection Scams",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+guaranteed return,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+guaranteed profit,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+double your money,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+triple your money,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+double your bitcoin,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+trading pool,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+deposit minimum,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+airdrop,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+connect wallet,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+crypto giveaway,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+investment opportunity,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+trading signal,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+forex signal,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+binary option,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+mining pool,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+high return,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+passive income,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+financial freedom,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+earn from home,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+daily profit,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+monthly return,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+no risk,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+100% safe investment,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+elon musk giveaway,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bitcoin bonus,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ethereum giveaway,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+usdt deposit,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+recharge task,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+order grabbing,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+youtube like subscribe job,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+telegram task,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+prepaid task,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+vip investment,"Crypto, Ponzi & Fake Investment Fraud",critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+to get your loan,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+get your loan,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+loan of up to,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pozyczke,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+instant loan,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+personal loan approved,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pre-approved loan,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+loan disbursement,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+low interest loan,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+collateral free loan,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+quick loan approval,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+loan amount sanctioned,Loan & Financial Fraud,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+job offer,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+job opportunity,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hiring now,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+earn money,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+earn daily,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+earn weekly,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+part time job,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+part-time job,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+work from home,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+online job,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+data entry job,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+typing job,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+registration fee,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+joining fee,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+salary per month,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+per day salary,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+no experience required,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+no qualification,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+daily payout,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+earn 2000-5000,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hotel review job,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+google map rating job,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+like videos and earn,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hr recruiter,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+interview cleared,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+appointment letter,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+offer letter attached,"Job, Part-Time & Task Scam Offers",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+parcel,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+package,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+delivery failed,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+customs fee,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+shipping fee,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+delivery attempt,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+courier,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+track your order,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+reschedule delivery,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+shipment on hold,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+customs clearance,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+undelivered package,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+incorrect address,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+update address,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fedex delivery,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dhl express,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+india post,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+usps package,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ups shipment,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+royal mail,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hermes delivery,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+redelivery fee,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+usps,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+track from usps,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+shipment address,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+confirm the shipment,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pending delivery,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+tracking code,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+usps delivery,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+complete the actions here,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+important alert regarding your,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+package is waiting,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+delivery process,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+unpaid fees,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+being held due to,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+parcel is being held,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+redelivery charge,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+parcei,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+heid,"Delivery, Customs & Package Phishing",high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+customer support,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank security,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+security team,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fraud prevention department,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+tax department,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+income tax,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+police department,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+microsoft support,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+apple support,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+google support,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+amazon support,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+paypal support,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+netflix billing,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+official representative,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+government agency,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+reserve bank,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+rbi,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+sbi,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hdfc,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+icici,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+axis bank,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+punjab national bank,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+bank of baroda,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+central bank,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+from the desk of,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+official notice,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+legal notice,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ministry of,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+department of,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cyber cell,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+interpol,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cbi,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+enforcement directorate,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+ed notice,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+customs department,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+telecom department,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+trai,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+fbi,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+irs agent,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+federal reserve,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+citbank,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+boa bank,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+westpac,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+commbank,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cba,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+anz,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+services ontario,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cbi and cyber cell,Authority & Corporate Impersonation,high,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click below,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click here,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click the link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click on the link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+tap the link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+open the link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+visit the link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+below link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+link below,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click to verify,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click to confirm,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click to claim,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click to update,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click to unlock,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click to activate,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+scan the qr,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+scan qr code,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+scan this code,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+download the app,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+install the app,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+download anydesk,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+download teamviewer,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+download rustdesk,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+quicksupport,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+screen share,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+install apk,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+download apk,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+click on apk,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+follow here,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+follow this link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+complete the actions,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cliccando sul link,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+cliquez ici,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+haga clic,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hier klicken,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+suivez le lien,Link Click & App Download Coercion,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear customer,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear user,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear valued,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear sir,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear madam,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear sir/madam,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear account holder,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear beneficiary,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear winner,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear member,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear friend,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+respected sir,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+respected customer,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear esteemed,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+hello dear,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+attention please,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+kind attention,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+we are happy to inform,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+happy to inform,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pleased to inform,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+glad to inform,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+this is to inform,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+we wish to inform,Generic Scam Greetings & Suspicious Openers,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+contact us on whatsapp,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+message on telegram,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+call this number,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+contact agent,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+reach us on,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+whatsapp us,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+reply on whatsapp,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+text us on,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+join our channel,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+join group,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dm us,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+send message to,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+contact on,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+call us at,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+call manager,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+whatsapp helpline,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+telegram executive,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+chat with executive,Off-Platform Contact & Redirection,medium,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+i know your password,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+i have recorded you,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+recorded video of you,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+compromised your webcam,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dirty video,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+send to all your contacts,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pay in bitcoin,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+transfer btc,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+i will ruin your reputation,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+adult website,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+watching porn,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+pegasus spyware,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+trojan virus installed,Sextortion & Blackmail Coercion,critical,Night Hunter Open-Source Threat Knowledgebase,https://github.com/halderarnab827/Night-Hunter,MIT License,2026-10-19,phrase_pattern,high
+dear sbi user your yono account is blocked,Banking and account suspension,critical,CERT-In & RBI Advisory,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+update pan immediately to avoid account freeze,KYC and identity verification,high,Income Tax & Indian Banking,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+dear customer electricity will be disconnected tonight,Electricity & utility disconnection,critical,State Electricity Board Alerts,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+call electricity officer at 98,Electricity & utility disconnection,critical,Police Cyber Cell Reports,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+traffic challan unpaid pay now using apk,Government and legal threat,critical,Delhi & Mumbai Police Cyber Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+echallan payment pending download app,Government and legal threat,critical,Indian Traffic Police Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+apk attached install to track parcel,Malicious attachment / APK,critical,India Post & FedEx Phishing Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+anydesk,Remote access tool coercion,high,RBI Advisory on Remote Control Fraud,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+rustdesk,Remote access tool coercion,high,Cyber Crime Helpline 1930,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+teamviewer quicksupport,Remote access tool coercion,high,Banking Trojan / Vishing Advisory,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+kyc verification code,OTP and credential theft,critical,SMISH_DT smishing indicators,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+claim kbc lottery prize 25 lakhs,"Fake prizes, lotteries and rewards",critical,KBC Fraud Awareness,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+whatsapp lottery winner,"Fake prizes, lotteries and rewards",high,Telecom Regulatory Authority Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+pm kisan 6000 installment credited click here,Government scheme & subsidy lure,high,PIB Fact Check,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+ayushman bharat card approval fee,Government scheme & subsidy lure,high,Government of India Health Portal,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+wfh part-time earn 3000 daily like youtube videos,Job offers and work-from-home scams,high,Telegram Task Scam Advisory,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+prepaid task deposit money for 30% profit,Investment and financial fraud,critical,CFI Task Scam Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+crypto cloud mining instant withdrawal,Investment and financial fraud,high,SEC & APWG Guidance,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+your package is held at customs pay clearance,"Delivery, parcel and customs scams",high,Customs Department India Notice,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+address incomplete update via link or parcel returned,"Delivery, parcel and customs scams",high,USPS & India Post Smishing Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+unauthorized netbanking login detected,Banking and account suspension,high,HDFC / ICICI Security Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+credit card limit increased click to activate,"UPI, payment and refund scams",medium,Banking Phishing Notice,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+it refund approved enter bank account to claim,Fake government or tax refunds,critical,Income Tax Department India,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+cbi arrest warrant against your mobile number,Government and legal threat,critical,Digital Arrest Cyber Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+digital arrest video call summons,Government and legal threat,critical,MHA Cyber Crime Portal I4C,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+fedex parcel containing drugs seized in customs,Government and legal threat,critical,MHA Cyber Crime Portal I4C,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+sim will be deactivated in 24 hours call executive,Telecom & SIM swap fraud,critical,DoT & TRAI Advisory,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+5g sim upgrade send sms to 121,Telecom & SIM swap fraud,critical,Airtel / Jio SIM Swap Advisory,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+aapka account band ho jayega,Banking and account suspension,critical,Indian Vernacular Scam Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+turant kyc kare warna sim block,KYC and identity verification,critical,Vernacular Cyber Awareness,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+lottery jeet gaye ho paise transfer karo,"Fake prizes, lotteries and rewards",high,Vernacular Cyber Awareness,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+ghar baithe kamaye daily 2000,Job offers and work-from-home scams,high,Task Scam Campaign,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+bijli connection kat diya jayega,Electricity & utility disconnection,critical,State Electricity Scam Pattern,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high
+challan bharne ke liye link khole,Government and legal threat,high,Traffic Cyber Alert,https://cybercrime.gov.in / https://cisa.gov,Public Domain / Government Cybersecurity Guidance,2026-10-19,verified_social_engineering_pattern,high

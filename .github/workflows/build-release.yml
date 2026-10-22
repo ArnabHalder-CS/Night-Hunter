@@ -1,0 +1,92 @@
+name: Build Night Hunter downloads
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag, for example v1.0.4
+        required: true
+        default: v1.0.4
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - name: Build dashboard files
+        run: |
+          npm ci
+          npm run build
+          New-Item -ItemType Directory -Force frontend | Out-Null
+          Move-Item dist frontend/dist
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build Windows dashboard executable
+        run: |
+          python -m pip install --upgrade pip pyinstaller
+          python -m pip install -r requirement.txt
+          python -m PyInstaller --noconfirm --clean --onefile --noconsole --name NightHunter --add-data "api;api" --add-data "core;core" --add-data "modules;modules" --add-data "utils;utils" --add-data "frontend/dist;frontend/dist" desktop_launcher.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: windows-download
+          path: dist/NightHunter.exe
+
+  linux-and-termux:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Linux, Windows zip, and Termux archives
+        run: |
+          chmod +x build-linux-package.sh build-termux-package.sh
+          ./build-linux-package.sh
+          ./build-termux-package.sh
+          python3 scripts/package_releases.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: terminal-downloads
+          path: |
+            releases/night-hunter-linux.tar.gz
+            releases/night-hunter-termux.zip
+            releases/night-hunter-windows.zip
+
+  release:
+    needs: [windows, linux-and-termux]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-files
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ inputs.tag || github.ref_name }}
+          name: Night Hunter ${{ inputs.tag || github.ref_name }}
+          body: |
+            ## Night Hunter ${{ inputs.tag || github.ref_name }}
+
+            - **Full Linux Graphical Dashboard Parity**: Includes instant `./run.sh` launcher and Kali Application Menu shortcut.
+            - **Flagship Phishing Intelligence**: Homoglyph detection, brand spoofing scores, and email header triage.
+            - **Flagship Cryptography**: Multi-hash generation (12 algorithms), hash identifier, key generator, and cipher tools.
+            - **Local Nmap Recon Engine**: Real Nmap device and open port discovery with evidence export.
+            - **Scanner Hub**: Built-in web audit with Nikto & Nuclei CLI integration.
+          files: |
+            release-files/**/*.tar.gz
+            release-files/**/*.zip
+            release-files/**/*.exe
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

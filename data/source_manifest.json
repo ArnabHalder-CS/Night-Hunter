@@ -1,0 +1,78 @@
+{
+  "last_updated": "2026-10-19T11:21:41.361334",
+  "tool": "NIGHT HUNTER Phishing & Scam Intelligence",
+  "sources": {
+    "uci_sms_spam": {
+      "source": "UCI SMS Spam Collection",
+      "url": "https://archive.ics.uci.edu/static/public/228/sms+spam+collection.zip",
+      "status": "success",
+      "file": "datasets\\message_samples\\uci_sms_collection.json",
+      "license": "CC BY 4.0 (Almeida & Hidalgo)",
+      "count": 5574,
+      "retrieval_date": "2026-10-19T11:21:43.264813"
+    },
+    "ncsu_sms_phishing": {
+      "source": "NCSU SMS Phishing Dataset (WSPR Lab)",
+      "url": "https://raw.githubusercontent.com/wspr-ncsu/sms-phishing/master/phishing_messages.csv",
+      "status": "success",
+      "file": "datasets\\message_samples\\ncsu_phishing_messages.json",
+      "license": "MIT License",
+      "count": 5000,
+      "retrieval_date": "2026-10-19T11:21:45.878248"
+    },
+    "smish_dt_collection": {
+      "source": "SMISH_DT Smishing Dataset Collection (MarazMia et al.)",
+      "url": "https://github.com/MarazMia/SMISH_DT",
+      "status": "success",
+      "file": "datasets\\message_samples\\smish_dt_combined.json",
+      "license": "Open Access Research",
+      "count": 2263,
+      "retrieval_date": "2026-10-19T11:21:46.676713"
+    },
+    "sting9_dataset": {
+      "source": "Sting9 Research Initiative",
+      "url": "https://sting9.org/dataset",
+      "status": "investigated_not_accessible",
+      "reason": "Landing page references github.com/sting9/dataset which currently returns HTTP 404. Direct automated raw download endpoint is unavailable.",
+      "license": "ODC-BY-NC (Stated on website)",
+      "count": 0
+    },
+    "openphish": {
+      "source": "OpenPhish Community Feed",
+      "url": "https://openphish.com/feed.txt",
+      "status": "success",
+      "urls_count": 300,
+      "domains_count": 269,
+      "license": "OpenPhish Community Terms (Free for non-commercial research)",
+      "retrieval_date": "2026-10-19T11:21:47.239994"
+    },
+    "urlhaus": {
+      "source": "abuse.ch URLhaus",
+      "url": "https://urlhaus.abuse.ch/downloads/csv_online/",
+      "status": "success",
+      "urls_count": 27996,
+      "domains_count": 2143,
+      "license": "CC0 1.0 Universal (Public Domain)",
+      "retrieval_date": "2026-10-19T11:21:48.617219"
+    },
+    "tranco_top_list": {
+      "source": "Tranco List",
+      "url": "https://tranco-list.eu/",
+      "status": "referenced",
+      "note": "Used as clean baseline domain popularity index to prevent false positives on top global websites.",
+      "license": "Research and non-commercial attribution"
+    },
+    "authoritative_guidance": {
+      "owasp": "https://owasp.org/www-community/attacks/Phishing",
+      "cisa": "https://www.cisa.gov/secure-our-world/recognize-and-report-phishing",
+      "apwg": "https://apwg.org/",
+      "cert_in": "https://www.cert-in.org.in/",
+      "note": "Authoritative defensive guidance utilized for threat indicators and taxonomy."
+    }
+  },
+  "summary": {
+    "total_keyword_indicators": 645,
+    "total_messages_imported": 12837,
+    "execution_duration_sec": 7.28
+  }
+}
