@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: night-hunter
+    runtime: docker
+    region: singapore
+    plan: free
+    branch: main
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: NIGHT_HUNTER_RUNTIME
+        value: cloud
+    healthCheckPath: /api/health
