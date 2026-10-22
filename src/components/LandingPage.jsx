@@ -22,14 +22,14 @@ import {
 } from "lucide-react";
 import "./LandingPage.css";
 
-const releaseBase = "https://night-hunter-f2w4.onrender.com/#downloads";
+const releaseBase = "https://night-hunter-0br7.onrender.com/#downloads";
 
 const downloads = [
   { icon: Laptop, name: "Windows Portable (.zip)", detail: "Zero warnings · Pre-bundled with start_night_hunter.bat · Extract & run", href: "/downloads/night-hunter-windows.zip", action: "Download .zip (Recommended)" },
   { icon: Laptop, name: "Windows Standalone (.exe)", detail: "Single-click executable · Launches local browser dashboard automatically", href: "/downloads/NightHunter.exe", action: "Download .exe" },
   { icon: Terminal, name: "Linux (Kali / Ubuntu / Debian / Mint)", detail: "Full Web UI Dashboard & CLI · Extract & ./run.sh or bash install.sh", href: "/downloads/night-hunter-linux.tar.gz", action: "Download for Linux (.tar.gz)" },
   { icon: Smartphone, name: "Termux (Android)", detail: "Mobile Nmap & CLI Security Recon · Extract & bash install-termux.sh", href: "/downloads/night-hunter-termux.zip", action: "Download for Termux" },
-  { icon: FileText, name: "Complete Setup Guide", detail: "Step-by-step install, troubleshooting & false-positive guide", href: "https://github.com/halderarnab827/Night-Hunter/blob/main/USER_GUIDE.md", action: "View User Guide" },
+  { icon: FileText, name: "Complete Setup Guide", detail: "Step-by-step install, troubleshooting & false-positive guide", href: "https://github.com/ArnabHalder-CS/Night-Hunter/blob/main/USER_GUIDE.md", action: "View User Guide" },
 ];
 
 export default function LandingPage() {
