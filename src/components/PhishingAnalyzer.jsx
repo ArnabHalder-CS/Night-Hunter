@@ -189,9 +189,9 @@ export default function PhishingAnalyzer() {
           </div>
           <div>
             <p className="eyebrow">FLAGSHIP DEFENSIVE SUITE</p>
-            <h2>Phishing Intelligence & Spoofing Station</h2>
+            <h2>Phishing Threat Intelligence & Spoofing Station</h2>
             <p className="subtitle">
-              Heuristic Risk Engine · Homoglyph Lab · Email Link Triage · Incident Playbooks
+              Heuristic Risk Scoring | Unicode Homoglyph Detection | Link Triage | Response Playbooks
             </p>
           </div>
         </div>

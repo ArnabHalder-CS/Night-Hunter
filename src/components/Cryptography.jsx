@@ -196,9 +196,9 @@ export default function Cryptography() {
           </div>
           <div>
             <p className="eyebrow">FLAGSHIP CRYPTOGRAPHIC SUITE</p>
-            <h2>Crypto Analyst & Integrity Lab</h2>
+            <h2>Cryptographic Analysis & Data Integrity Lab</h2>
             <p className="subtitle">
-              Hash & Format Analysis · Safe Text Transforms · JWT Inspection · CSPRNG Keys · HMAC
+              Multi-Hash Engine | Format Identifier | Text Encoding | JWT Inspection | CSPRNG Keys
             </p>
           </div>
         </div>

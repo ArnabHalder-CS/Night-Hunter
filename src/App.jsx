@@ -58,7 +58,7 @@ import WebSecurity from "./components/WebSecurity";
 
 import PasswordSecurity from "./components/PasswordSecurity";
 
-import NetworkSecurity from "./components/AdvancedNetworkSecurity";
+import NetworkSecurity from "./components/NetworkSecurity";
 
 import NmapWorkspace from "./components/NmapWorkspace";
 
@@ -157,10 +157,8 @@ function App() {
     {
 
       name: "Phishing Analyzer",
-
       label: t.phishing,
-
-      description: "Flagship Intelligence · Spoofing · Link Triage",
+      description: "Heuristic Risk Scoring | Homoglyph Detection | Link Triage",
 
       icon: ShieldAlert,
 
@@ -169,10 +167,8 @@ function App() {
     {
 
       name: "Cryptography",
-
       label: t.crypto,
-
-      description: "Crypto Analyst · Multi-Hash · Encoders · Keys",
+      description: "Multi-Hash Engine | Format Identifier | CSPRNG Keys",
 
       icon: KeyRound,
 
@@ -181,10 +177,8 @@ function App() {
     {
 
       name: "Web Security",
-
       label: t.web,
-
-      description: "Nikto-Style Vulnerability & Misconfiguration Audit",
+      description: "Domain Intelligence | DNS | SSL/TLS | Server Technology",
 
       icon: Globe,
 
@@ -193,10 +187,8 @@ function App() {
     {
 
       name: "Network Security",
-
       label: t.network,
-
-      description: "Nmap-Style Port & Host Reconnaissance",
+      description: "Network Speed | Latency | Signal Strength | Basic Services",
 
       icon: Network,
 
@@ -324,7 +316,7 @@ function App() {
 
     if (activePage === "Network Security") {
 
-      return <NmapWorkspace />;
+      return <NetworkSecurity />;
 
     }
 
