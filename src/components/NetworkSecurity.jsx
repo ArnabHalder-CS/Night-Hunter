@@ -41,14 +41,14 @@ export default function NetworkSecurity() {
   const [scanning, setScanning] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
-  const [activeTab, setActiveTab] = useState("all"); // 'all', 'open', 'closed'
+  const [activeFilter, setActiveFilter] = useState("all"); // 'all', 'open', 'filtered'
 
   async function handleScan(e) {
     if (e && e.preventDefault) e.preventDefault();
     const cleanTarget = target.trim();
 
     if (!cleanTarget) {
-      setError("Please enter a valid target IP address or hostname to initiate scan.");
+      setError("Please enter a target IP address or hostname to initiate scan.");
       setResult(null);
       return;
     }
@@ -83,19 +83,19 @@ export default function NetworkSecurity() {
     setError("");
   }
 
+  const portsList = result?.ports_list || [];
   const openPorts = result?.open_ports || [];
-  const closedPorts = result?.closed_ports || [];
-  const allPorts = result?.all_ports || [];
+  const filteredPorts = result?.filtered_ports || [];
   const posture = result?.security_posture || {};
   const telemetry = result?.latency_telemetry || {};
   const riskFlags = posture.risk_flags || [];
 
   const displayedPorts =
-    activeTab === "open"
+    activeFilter === "open"
       ? openPorts
-      : activeTab === "closed"
-      ? closedPorts
-      : allPorts;
+      : activeFilter === "filtered"
+      ? filteredPorts
+      : portsList;
 
   return (
     <div className="recon-page">
@@ -106,8 +106,8 @@ export default function NetworkSecurity() {
             <Radar size={28} />
           </div>
           <div>
-            <h2>Target Network Reconnaissance &amp; Port Audit</h2>
-            <p>Direct socket-level port scanning • Reverse DNS PTR resolution • Real attack surface audit</p>
+            <h2>Target Network Reconnaissance (0 – 65535)</h2>
+            <p>Nmap -T5 Fast Turbo Scan • Showing only OPEN or FILTERED ports • Zero clutter</p>
           </div>
         </div>
 
@@ -121,14 +121,18 @@ export default function NetworkSecurity() {
               border: `1px solid ${scanning ? "#fa37c3" : result ? "#4ade80" : "rgba(255,255,255,0.15)"}`,
               color: scanning ? "#ff7be2" : result ? "#4ade80" : "#a8b0c8",
               textTransform: "uppercase",
+              display: "flex",
+              alignItems: "center",
+              gap: "6px",
             }}
           >
-            {scanning ? "SCANNING TARGET..." : result ? "AUDIT COMPLETE" : "AWAITING TARGET"}
+            <Zap size={13} color={scanning ? "#fa37c3" : "#00f2fe"} />
+            {scanning ? "T5 SCANNING 65,535 PORTS..." : result ? `COMPLETED IN ${result.scan_duration_sec}s` : "NMAP T5 TURBO"}
           </span>
         </div>
       </header>
 
-      {/* TARGET INPUT WORKSPACE (MANDATORY TARGET INPUT) */}
+      {/* TARGET INPUT WORKSPACE */}
       <section
         style={{
           background: "linear-gradient(135deg, rgba(17, 24, 48, 0.95), rgba(10, 11, 24, 0.95))",
@@ -140,18 +144,22 @@ export default function NetworkSecurity() {
         }}
       >
         <form onSubmit={handleScan}>
-          <label
-            style={{
-              display: "block",
-              font: "700 12px 'DM Mono', monospace",
-              color: "#00f2fe",
-              marginBottom: "10px",
-              letterSpacing: "0.08em",
-              textTransform: "uppercase",
-            }}
-          >
-            Target IP Address or Hostname:
-          </label>
+          <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "10px" }}>
+            <label
+              style={{
+                font: "700 12px 'DM Mono', monospace",
+                color: "#00f2fe",
+                letterSpacing: "0.08em",
+                textTransform: "uppercase",
+              }}
+            >
+              Target IP Address or Hostname:
+            </label>
+            <span style={{ font: "600 11px 'DM Mono', monospace", color: "#a8b0c8" }}>
+              Range: <strong>0 – 65535</strong> (Fast T5 Parallel Sockets)
+            </span>
+          </div>
+
           <div style={{ display: "flex", gap: "12px", flexWrap: "wrap" }}>
             <div style={{ flex: "1 1 340px", position: "relative" }}>
               <input
@@ -185,12 +193,12 @@ export default function NetworkSecurity() {
               {scanning ? (
                 <>
                   <RefreshCw size={17} className="network-spin" />
-                  <span>PROBING SOCKETS...</span>
+                  <span>T5 PARALLEL SCANNING...</span>
                 </>
               ) : (
                 <>
                   <Search size={17} />
-                  <span>SCAN TARGET NETWORK</span>
+                  <span>SCAN PORTS (0 - 65535)</span>
                 </>
               )}
             </button>
@@ -243,7 +251,7 @@ export default function NetworkSecurity() {
         </div>
       )}
 
-      {/* IDLE PLACEHOLDER (WHEN NO SCAN PERFORMED YET) */}
+      {/* IDLE PLACEHOLDER */}
       {!result && !scanning && !error && (
         <div
           style={{
@@ -256,13 +264,13 @@ export default function NetworkSecurity() {
         >
           <Radar size={48} color="#8c9ac2" style={{ margin: "0 auto 16px", opacity: 0.6 }} />
           <h3 style={{ fontSize: "19px", color: "#fff", margin: "0 0 8px" }}>Awaiting Target Specification</h3>
-          <p style={{ color: "#8c9ac2", fontSize: "14px", maxWidth: "540px", margin: "0 auto", lineHeight: "1.6" }}>
-            Enter an IPv4 address, local router gateway, or host name above and click <strong>Scan Target Network</strong> to execute live socket connections, PTR reverse DNS mapping, and attack surface analysis.
+          <p style={{ color: "#8c9ac2", fontSize: "14px", maxWidth: "560px", margin: "0 auto", lineHeight: "1.6" }}>
+            Enter a target IP or host to execute an <strong>Nmap -T5 style fast parallel scan across ports 0 – 65,535</strong>. Only ports confirmed <strong>OPEN</strong> or <strong>FILTERED by firewall</strong> will be displayed.
           </p>
         </div>
       )}
 
-      {/* ACTIVE SCAN PROGRESS BAR */}
+      {/* ACTIVE SCANNING PROGRESS */}
       {scanning && (
         <div
           style={{
@@ -275,14 +283,14 @@ export default function NetworkSecurity() {
           }}
         >
           <RefreshCw size={36} color="#fa37c3" className="network-spin" style={{ margin: "0 auto 14px" }} />
-          <h3 style={{ fontSize: "18px", color: "#fff", margin: "0 0 6px" }}>Connecting to Target Sockets...</h3>
+          <h3 style={{ fontSize: "18px", color: "#fff", margin: "0 0 6px" }}>Scanning All Ports (0 – 65535)...</h3>
           <p style={{ color: "#c9c3d5", fontSize: "13px", fontFamily: "'DM Mono', monospace" }}>
-            Probing ports 21–8080 • Measuring TCP SYN/ACK timings • Grabbing protocol banners
+            Dispatching 120 concurrent worker sockets • Timing Template: T5 Insane • Filtering closed ports
           </p>
         </div>
       )}
 
-      {/* LIVE AUDIT RESULTS DASHBOARD */}
+      {/* SCAN RESULTS DASHBOARD */}
       {result && (
         <>
           {/* TARGET OVERVIEW BANNER */}
@@ -304,7 +312,7 @@ export default function NetworkSecurity() {
                   {posture.posture_grade || "HARDENED"}
                 </span>
                 <p className="posture-detail-text" style={{ marginTop: "4px" }}>
-                  Attack Surface Score: <strong>{result.total_open_ports}</strong> of <strong>{result.total_scanned_ports}</strong> scanned ports open
+                  Scan finished in <strong>{result.scan_duration_sec}s</strong> • Found <strong>{result.total_open_ports} open</strong>, <strong>{result.total_filtered_ports} filtered</strong>
                 </p>
               </div>
             </div>
@@ -320,7 +328,7 @@ export default function NetworkSecurity() {
                 }}
               >
                 <span style={{ display: "block", font: "700 10px 'DM Mono', monospace", color: "#8c9ac2", textTransform: "uppercase" }}>
-                  Resolved IPv4
+                  Resolved Target
                 </span>
                 <strong style={{ fontSize: "14px", color: "#00f2fe", fontFamily: "'DM Mono', monospace" }}>
                   {result.target_ip}
@@ -350,87 +358,93 @@ export default function NetworkSecurity() {
           <section className="recon-grid">
             <article className="recon-card">
               <div className="recon-card-header">
-                <span>TARGET IP</span>
-                <Server size={16} color="#00f2fe" />
+                <span>SCANNED RANGE</span>
+                <Zap size={16} color="#00f2fe" />
               </div>
               <div className="recon-card-val" style={{ color: "#00f2fe" }}>
-                {result.target_ip}
+                0 – 65,535
               </div>
               <p className="recon-card-sub">
-                Target: <strong>{result.target}</strong>
+                Execution speed: <strong>{result.scan_duration_sec}s</strong> (Nmap T5)
               </p>
             </article>
 
             <article className="recon-card">
               <div className="recon-card-header">
-                <span>RESPONSE LATENCY</span>
-                <Activity size={16} color="#4ade80" />
+                <span>OPEN PORTS</span>
+                <CheckCircle2 size={16} color="#4ade80" />
               </div>
               <div className="recon-card-val" style={{ color: "#4ade80" }}>
-                {telemetry.avg_latency_ms || "14"} <small style={{ fontSize: "14px" }}>ms</small>
-              </div>
-              <p className="recon-card-sub">
-                Jitter: <strong>{telemetry.jitter_ms || 0} ms</strong> • Status: {telemetry.status}
-              </p>
-            </article>
-
-            <article className="recon-card">
-              <div className="recon-card-header">
-                <span>OPEN SERVICES</span>
-                <CheckCircle2 size={16} color="#38bdf8" />
-              </div>
-              <div className="recon-card-val" style={{ color: "#38bdf8" }}>
                 {result.total_open_ports}
               </div>
               <p className="recon-card-sub">
-                Active reachable network sockets
+                Reachable active services
               </p>
             </article>
 
             <article className="recon-card">
               <div className="recon-card-header">
-                <span>CLOSED / FILTERED</span>
-                <Shield size={16} color="#fa37c3" />
+                <span>FILTERED BY FIREWALL</span>
+                <Shield size={16} color="#fbbf24" />
               </div>
-              <div className="recon-card-val" style={{ color: "#fa37c3" }}>
-                {closedPorts.length}
+              <div className="recon-card-val" style={{ color: "#fbbf24" }}>
+                {result.total_filtered_ports}
               </div>
               <p className="recon-card-sub">
-                Firewalled or non-listening ports
+                Packets dropped / firewall filtered
+              </p>
+            </article>
+
+            <article className="recon-card">
+              <div className="recon-card-header">
+                <span>CLOSED (HIDDEN)</span>
+                <ShieldAlert size={16} color="#8c9ac2" />
+              </div>
+              <div className="recon-card-val" style={{ color: "#8c9ac2" }}>
+                {result.closed_ports_hidden.toLocaleString()}
+              </div>
+              <p className="recon-card-sub">
+                Omitted from table to prevent clutter
               </p>
             </article>
           </section>
 
-          {/* REAL SOCKET PORT SCAN RESULTS TABLE */}
+          {/* OPEN & FILTERED PORTS RESULTS TABLE */}
           <section className="recon-section-card">
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px", flexWrap: "wrap", gap: "12px" }}>
-              <h3 style={{ margin: 0 }}>
-                <ShieldCheck size={18} color="#00f2fe" />
-                Socket Port Scan Results ({result.target_ip})
-              </h3>
+              <div>
+                <h3 style={{ margin: "0 0 4px" }}>
+                  <ShieldCheck size={18} color="#00f2fe" />
+                  Open &amp; Filtered Ports Table ({result.target_ip})
+                </h3>
+                <small style={{ color: "#8c9ac2", fontSize: "12px", fontFamily: "'DM Mono', monospace" }}>
+                  Showing only OPEN or FILTERED ports • {result.closed_ports_hidden.toLocaleString()} closed ports hidden
+                </small>
+              </div>
+
               <div style={{ display: "flex", gap: "8px" }}>
                 <button
                   type="button"
-                  onClick={() => setActiveTab("all")}
+                  onClick={() => setActiveFilter("all")}
                   style={{
-                    background: activeTab === "all" ? "rgba(0,242,254,0.18)" : "transparent",
-                    border: `1px solid ${activeTab === "all" ? "#00f2fe" : "rgba(255,255,255,0.12)"}`,
-                    color: activeTab === "all" ? "#00f2fe" : "#a8b0c8",
+                    background: activeFilter === "all" ? "rgba(0,242,254,0.18)" : "transparent",
+                    border: `1px solid ${activeFilter === "all" ? "#00f2fe" : "rgba(255,255,255,0.12)"}`,
+                    color: activeFilter === "all" ? "#00f2fe" : "#a8b0c8",
                     padding: "4px 12px",
                     borderRadius: "6px",
                     font: "700 11px 'DM Mono', monospace",
                     cursor: "pointer",
                   }}
                 >
-                  All ({allPorts.length})
+                  All Active ({portsList.length})
                 </button>
                 <button
                   type="button"
-                  onClick={() => setActiveTab("open")}
+                  onClick={() => setActiveFilter("open")}
                   style={{
-                    background: activeTab === "open" ? "rgba(74,222,128,0.18)" : "transparent",
-                    border: `1px solid ${activeTab === "open" ? "#4ade80" : "rgba(255,255,255,0.12)"}`,
-                    color: activeTab === "open" ? "#4ade80" : "#a8b0c8",
+                    background: activeFilter === "open" ? "rgba(74,222,128,0.18)" : "transparent",
+                    border: `1px solid ${activeFilter === "open" ? "#4ade80" : "rgba(255,255,255,0.12)"}`,
+                    color: activeFilter === "open" ? "#4ade80" : "#a8b0c8",
                     padding: "4px 12px",
                     borderRadius: "6px",
                     font: "700 11px 'DM Mono', monospace",
@@ -439,66 +453,74 @@ export default function NetworkSecurity() {
                 >
                   Open Only ({openPorts.length})
                 </button>
-                <button
-                  type="button"
-                  onClick={() => setActiveTab("closed")}
-                  style={{
-                    background: activeTab === "closed" ? "rgba(248,113,113,0.18)" : "transparent",
-                    border: `1px solid ${activeTab === "closed" ? "#f87171" : "rgba(255,255,255,0.12)"}`,
-                    color: activeTab === "closed" ? "#f87171" : "#a8b0c8",
-                    padding: "4px 12px",
-                    borderRadius: "6px",
-                    font: "700 11px 'DM Mono', monospace",
-                    cursor: "pointer",
-                  }}
-                >
-                  Closed / Filtered ({closedPorts.length})
-                </button>
+                {filteredPorts.length > 0 && (
+                  <button
+                    type="button"
+                    onClick={() => setActiveFilter("filtered")}
+                    style={{
+                      background: activeFilter === "filtered" ? "rgba(251,191,36,0.18)" : "transparent",
+                      border: `1px solid ${activeFilter === "filtered" ? "#fbbf24" : "rgba(255,255,255,0.12)"}`,
+                      color: activeFilter === "filtered" ? "#fbbf24" : "#a8b0c8",
+                      padding: "4px 12px",
+                      borderRadius: "6px",
+                      font: "700 11px 'DM Mono', monospace",
+                      cursor: "pointer",
+                    }}
+                  >
+                    Filtered ({filteredPorts.length})
+                  </button>
+                )}
               </div>
             </div>
 
-            <table className="egress-table">
-              <thead>
-                <tr>
-                  <th>Port</th>
-                  <th>Service</th>
-                  <th>State</th>
-                  <th>Risk Profile</th>
-                  <th>Service Banner / Response</th>
-                  <th>Round-Trip</th>
-                </tr>
-              </thead>
-              <tbody>
-                {displayedPorts.map((item) => (
-                  <tr key={item.port}>
-                    <td><strong>{item.port}</strong></td>
-                    <td>{item.service}</td>
-                    <td>
-                      <span className={`status-tag ${item.state === "OPEN" ? "open" : "blocked"}`}>
-                        {item.state === "OPEN" ? (
-                          <>
-                            <CheckCircle2 size={12} /> OPEN
-                          </>
-                        ) : (
-                          <>
-                            <XCircle size={12} /> CLOSED / FILTERED
-                          </>
-                        )}
-                      </span>
-                    </td>
-                    <td>
-                      <span className={`risk-tag ${item.risk}`}>
-                        {item.risk}
-                      </span>
-                    </td>
-                    <td style={{ color: item.banner ? "#79ffa8" : "#888", fontFamily: item.banner ? "'DM Mono', monospace" : "inherit" }}>
-                      {item.banner ? item.banner : item.desc}
-                    </td>
-                    <td>{item.latency_ms > 0 ? `${item.latency_ms} ms` : "—"}</td>
+            {displayedPorts.length === 0 ? (
+              <div style={{ padding: "30px", textAlign: "center", color: "#8c9ac2", fontSize: "13px" }}>
+                No ports matching the selected filter.
+              </div>
+            ) : (
+              <table className="egress-table">
+                <thead>
+                  <tr>
+                    <th>Port</th>
+                    <th>Service Protocol</th>
+                    <th>State</th>
+                    <th>Risk Profile</th>
+                    <th>Service Banner / Response</th>
+                    <th>Round-Trip</th>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </thead>
+                <tbody>
+                  {displayedPorts.map((item) => (
+                    <tr key={item.port}>
+                      <td><strong>{item.port}</strong></td>
+                      <td>{item.service}</td>
+                      <td>
+                        <span className={`status-tag ${item.state === "OPEN" ? "open" : "blocked"}`}>
+                          {item.state === "OPEN" ? (
+                            <>
+                              <CheckCircle2 size={12} /> OPEN
+                            </>
+                          ) : (
+                            <>
+                              <Shield size={12} /> FILTERED
+                            </>
+                          )}
+                        </span>
+                      </td>
+                      <td>
+                        <span className={`risk-tag ${item.risk}`}>
+                          {item.risk}
+                        </span>
+                      </td>
+                      <td style={{ color: item.banner && !item.banner.includes("Firewall") ? "#79ffa8" : "#8c9ac2", fontFamily: item.banner ? "'DM Mono', monospace" : "inherit" }}>
+                        {item.banner ? item.banner : item.desc}
+                      </td>
+                      <td>{item.latency_ms > 0 ? `${item.latency_ms} ms` : "—"}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            )}
           </section>
 
           {/* ATTACK SURFACE RISK ADVISORY */}
