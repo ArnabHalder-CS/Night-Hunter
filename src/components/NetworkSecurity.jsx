@@ -197,7 +197,7 @@ function NetworkSecurity() {
             </p>
 
             <h2>
-              Network Command Center
+              Network Speed & Health Monitor
             </h2>
 
             <p className="subtitle">
@@ -244,7 +244,7 @@ function NetworkSecurity() {
             </span>
 
             <h3>
-              Network Inspection
+              Network Speed & Connectivity Check
             </h3>
 
           </div>
@@ -702,7 +702,20 @@ function NetworkSecurity() {
               </div>
 
 
-              <div className="network-address-list">
+                            {result?.speed_test && (
+                <div style={{ marginTop: '15px', padding: '12px', background: 'rgba(56, 189, 248, 0.08)', borderRadius: '6px', border: '1px solid rgba(56, 189, 248, 0.2)' }}>
+                  <div style={{ fontSize: '11px', color: '#38bdf8', fontWeight: 'bold', textTransform: 'uppercase', marginBottom: '8px' }}>
+                    Speed & Latency Telemetry
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', fontSize: '13px' }}>
+                    <div>Throughput: <b style={{ color: '#4ade80' }}>{result.speed_test.speed_label}</b></div>
+                    <div>Latency (RTT): <b style={{ color: '#facc15' }}>{hostCheck.response_time_ms} ms</b></div>
+                    <div>Jitter / Delta: <b>{hostCheck.jitter_ms} ms</b></div>
+                    <div>Packet Loss: <b style={{ color: hostCheck.reachable ? '#4ade80' : '#f87171' }}>{hostCheck.packet_loss}</b></div>
+                  </div>
+                </div>
+              )}
+<div className="network-address-list">
 
                 {addresses.length > 0 ? (
 
@@ -751,11 +764,11 @@ function NetworkSecurity() {
             <div>
 
               <span>
-                PORT DISCOVERY
+                BASIC SERVICES
               </span>
 
               <h3>
-                Open Services
+                Standard Services (HTTP/DNS)
               </h3>
 
             </div>

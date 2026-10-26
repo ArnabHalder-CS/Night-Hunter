@@ -381,7 +381,7 @@ function WebSecurity() {
           </p>
 
           <h2>
-            Web Security Inspection
+            Domain & Web Intelligence Scanner
           </h2>
 
           <p className="subtitle">
@@ -809,6 +809,18 @@ function WebSecurity() {
 
                 <strong>
                   {recon.server || "—"}
+                </strong>
+
+              </div>
+
+              <div className="overview-item">
+
+                <span>
+                  LATENCY
+                </span>
+
+                <strong style={{ color: "#4ade80" }}>
+                  {recon.latency_ms ? `${recon.latency_ms} ms` : "—"}
                 </strong>
 
               </div>

@@ -19,6 +19,8 @@ if str(PROJECT_ROOT) not in sys.path:
 
 
 from modules.web_security.pentest import run_web_pentest
+from modules.web_security.domain_scanner import analyze_domain
+from modules.network_security.speed_checker import test_network_connection
 from modules.web_security.scanner_hub import run_local_scanner, scanner_status
 from modules.password_security import checker
 from modules.network_security import checker as network_checker
@@ -69,7 +71,7 @@ def api_version():
     return jsonify({
         "success": True,
         "version": "1.6.2",
-        "release_url": "https://night-hunter-f2w4.onrender.com/#downloads"
+        "release_url": "https://night-hunter-0br7.onrender.com/#downloads"
     })
 
 
@@ -114,11 +116,10 @@ def web_security():
         print(f"Target: {target}")
         print()
 
-        report = run_web_pentest(target)
-        finding_count = len(report.get("findings", [])) if isinstance(report, dict) else 0
+        report = analyze_domain(target)
         remember_activity(
             "Web Security", target, "Complete",
-            f"Completed defensive web inspection with {finding_count} finding(s).",
+            f"Completed domain intelligence scan for {report.get('recon', {}).get('hostname', target)}.",
             report,
         )
 
@@ -257,24 +258,12 @@ def network_security():
         print(f"Target: {target}")
         print()
 
-        result = network_checker.run_network_check(
-            target
-        )
-
-        if not result.get("success", False):
-
-            return jsonify({
-                "success": False,
-                "error": result.get(
-                    "error",
-                    "Network check failed."
-                ),
-                "result": result
-            }), 400
-
+        result = test_network_connection(target)
+        strength = result.get("host_check", {}).get("connection_strength", "Completed")
+        speed = result.get("speed_test", {}).get("speed_label", "")
         remember_activity(
             "Network Security", target, "Complete",
-            f"Completed authorized network inspection; {result.get('total_open_ports', 0)} open port(s) found.",
+            f"Network speed and connectivity check for {target}: {strength} ({speed}).",
             result,
         )
 
@@ -460,10 +449,16 @@ def activity_history():
 
 @app.get("/downloads/<path:filename>")
 def download_release(filename):
-    """Direct high-speed download for Night Hunter release packages."""
+    """Direct download for release packages or cloud runtime instructions."""
     if RELEASES_DIR.is_dir() and (RELEASES_DIR / filename).is_file():
         return send_from_directory(RELEASES_DIR, filename, as_attachment=True)
-    return jsonify({"success": False, "error": f"Release file '{filename}' not found."}), 404
+    return jsonify({
+        "success": True,
+        "message": "Night Hunter is operating in Cloud Edition mode.",
+        "package": filename,
+        "cloud_url": "https://night-hunter-0br7.onrender.com",
+        "run_locally": "git clone https://github.com/ArnabHalder-CS/Night-Hunter.git && cd Night-Hunter && pip install -r requirement.txt && python main.py"
+    })
 
 
 @app.get("/")
