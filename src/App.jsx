@@ -78,7 +78,7 @@ import { applyTheme, readTheme } from "./theme";
 
 const translations = {
 
-  en: { dashboard:"Dashboard", web:"Web Security", password:"Password Security", network:"Network Speed & Strength", phishing:"Phishing Analyzer", crypto:"Cryptography", reports:"Reports", settings:"Settings", modules:"SECURITY MODULES", preferences:"Preferences", online:"SYSTEM ONLINE", welcome:"Welcome back", mission:"Your security. Our mission.", monitor:"LIVE THREAT MONITOR", activity:"Recent Activity", securityModules:"Security Modules", launch:"Launch" },
+  en: { dashboard:"Dashboard", web:"Web Security", password:"Password Security", network:"Network Perimeter Recon", phishing:"Phishing Analyzer", crypto:"Cryptography", reports:"Reports", settings:"Settings", modules:"SECURITY MODULES", preferences:"Preferences", online:"SYSTEM ONLINE", welcome:"Welcome back", mission:"Your security. Our mission.", monitor:"LIVE THREAT MONITOR", activity:"Recent Activity", securityModules:"Security Modules", launch:"Launch" },
 
   hi: { dashboard:"डैशबोर्ड", web:"वेब सुरक्षा", password:"पासवर्ड सुरक्षा", network:"नेटवर्क स्पीड एवं क्षमता", phishing:"फ़िशिंग विश्लेषक", crypto:"क्रिप्टोग्राफी", reports:"रिपोर्ट", settings:"सेटिंग्स", modules:"सुरक्षा मॉड्यूल", preferences:"पसंद", online:"सिस्टम ऑनलाइन", welcome:"वापसी पर स्वागत है", mission:"आपकी सुरक्षा। हमारा मिशन।", monitor:"लाइव थ्रेट मॉनिटर", activity:"हाल की गतिविधि", securityModules:"सुरक्षा मॉड्यूल", launch:"खोलें" },
 
@@ -188,7 +188,7 @@ function App() {
 
       name: "Network Security",
       label: t.network,
-      description: "Device Speed Test | Ping & Jitter | Signal Strength | ISP Info",
+      description: "Gateway Recon | Outbound Firewall Audit | Network Posture Score",
 
       icon: Network,
 

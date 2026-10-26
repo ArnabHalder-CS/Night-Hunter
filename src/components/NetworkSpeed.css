@@ -1,47 +1,49 @@
 /* ============================================================
-   NIGHT HUNTER - SPEEDOMETER & CLIENT-SIDE SPEEDTEST
+   NIGHT HUNTER - NETWORK PERIMETER & GATEWAY RECON STYLES
    ============================================================ */
 
-.speedtest-page {
+.recon-page {
   padding: 28px clamp(16px, 3vw, 40px) 60px;
-  max-width: 1100px;
+  max-width: 1200px;
   margin: 0 auto;
   color: #faf8ff;
   font-family: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 /* Header */
-.speedtest-header {
+.recon-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 24px;
-  padding: 22px 28px;
+  padding: 24px 28px;
   border-radius: 16px;
-  background: radial-gradient(circle at 90% 10%, rgba(0, 242, 254, 0.12), transparent 40%),
+  background: radial-gradient(circle at 90% 10%, rgba(154, 85, 255, 0.15), transparent 40%),
               linear-gradient(135deg, rgba(17, 24, 48, 0.95), rgba(10, 11, 24, 0.95));
-  border: 1px solid rgba(0, 242, 254, 0.25);
+  border: 1px solid rgba(154, 85, 255, 0.3);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.speedtest-header-left {
+.recon-header-left {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.speedtest-icon-badge {
+.recon-icon-badge {
   width: 52px;
   height: 52px;
   border-radius: 12px;
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.2), rgba(120, 75, 255, 0.2));
-  border: 1px solid rgba(0, 242, 254, 0.4);
+  background: linear-gradient(135deg, rgba(154, 85, 255, 0.25), rgba(0, 242, 254, 0.15));
+  border: 1px solid rgba(154, 85, 255, 0.4);
   display: grid;
   place-items: center;
-  color: #00f2fe;
+  color: #dd9dff;
 }
 
-.speedtest-header h2 {
+.recon-header h2 {
   font-size: 22px;
   font-weight: 800;
   letter-spacing: -0.02em;
@@ -49,387 +51,262 @@
   color: #fff;
 }
 
-.speedtest-header p {
+.recon-header p {
   margin: 0;
   font-size: 13px;
   color: #a8b0c8;
 }
 
-.speedtest-status-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 14px;
-  border-radius: 999px;
-  font: 700 11px 'DM Mono', monospace;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: rgba(0, 242, 254, 0.1);
-  border: 1px solid rgba(0, 242, 254, 0.3);
-  color: #00f2fe;
-}
-
-.speedtest-status-pill.testing {
-  background: rgba(250, 55, 195, 0.15);
-  border-color: #fa37c3;
-  color: #ff7be2;
-  animation: nhPulseGlow 1.5s infinite alternate;
-}
-
-/* Unit Selector Bar */
-.speedtest-units-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-  background: rgba(14, 18, 36, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
-  padding: 10px 18px;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.units-selector-label {
-  font: 700 11px 'DM Mono', monospace;
-  color: #8c9ac2;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.units-selector-pills {
-  display: flex;
-  gap: 8px;
-}
-
-.unit-pill-btn {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  color: #a8b0c8;
-  padding: 5px 14px;
-  border-radius: 6px;
-  font: 600 12px 'DM Mono', monospace;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.unit-pill-btn:hover {
-  background: rgba(0, 242, 254, 0.1);
-  color: #fff;
-}
-
-.unit-pill-btn.active {
-  background: linear-gradient(105deg, rgba(0, 242, 254, 0.25), rgba(120, 75, 255, 0.25));
-  border-color: #00f2fe;
-  color: #00f2fe;
-  font-weight: 700;
-  box-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
-}
-
-/* Central Stage */
-.speedtest-stage {
-  min-height: 480px;
-  background: radial-gradient(circle at 50% 38%, rgba(0, 242, 254, 0.08) 0%, rgba(9, 11, 22, 0.98) 70%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 20px;
-  padding: 36px 20px 28px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
-}
-
-.speedtest-stage::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, #00f2fe, #fa37c3, transparent);
-}
-
-/* SPEEDOMETER GAUGE STAGE */
-.speedometer-wrapper {
-  position: relative;
-  width: min(100%, 380px);
-  aspect-ratio: 1.15;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 10px 0 20px;
-}
-
-.speedometer-svg {
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.gauge-bg-arc {
-  fill: none;
-  stroke: rgba(255, 255, 255, 0.08);
-  stroke-width: 16;
-  stroke-linecap: round;
-}
-
-.gauge-progress-arc {
-  fill: none;
-  stroke: url(#gaugeGradient);
-  stroke-width: 16;
-  stroke-linecap: round;
-  transition: stroke-dashoffset 0.15s ease-out;
-}
-
-.gauge-tick {
-  stroke: rgba(255, 255, 255, 0.25);
-  stroke-width: 2;
-}
-
-.gauge-tick-label {
-  font: 600 11px 'DM Mono', monospace;
-  fill: #8c9ac2;
-  text-anchor: middle;
-  dominant-baseline: central;
-}
-
-.gauge-needle {
-  transform-origin: 190px 190px;
-  transition: transform 0.18s cubic-bezier(0.2, 0.8, 0.3, 1);
-}
-
-.gauge-center-hub {
-  fill: #0c0f1d;
-  stroke: #00f2fe;
-  stroke-width: 4;
-}
-
-/* Speed Display at Center/Bottom of Gauge */
-.gauge-center-readout {
-  position: absolute;
-  top: 56%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  pointer-events: none;
-}
-
-.gauge-speed-val {
-  font: 800 clamp(44px, 5.5vw, 60px)/1 'DM Mono', monospace;
-  color: #fff;
-  text-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
-  letter-spacing: -0.03em;
-}
-
-.gauge-speed-unit {
-  font: 700 13px 'DM Mono', monospace;
-  color: #00f2fe;
-  margin-top: 4px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-}
-
-.gauge-phase-status {
-  font: 600 11px 'DM Mono', monospace;
-  color: #ff7be2;
-  margin-top: 6px;
-  letter-spacing: 0.05em;
-}
-
-/* GO / START BUTTON */
-.speedtest-action-area {
-  margin-top: 4px;
-  text-align: center;
-}
-
-.speedtest-go-btn {
-  background: linear-gradient(135deg, #00f2fe, #784bff);
+.recon-run-btn {
+  background: linear-gradient(105deg, #fa37c3, #784bff);
   border: none;
-  border-radius: 999px;
+  border-radius: 8px;
   color: #fff;
-  font: 800 18px 'DM Mono', monospace;
-  letter-spacing: 0.08em;
-  padding: 14px 44px;
+  font: 700 13px 'DM Mono', monospace;
+  padding: 12px 24px;
   cursor: pointer;
-  box-shadow: 0 8px 30px rgba(0, 242, 254, 0.4);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 24px rgba(250, 55, 195, 0.35);
   display: inline-flex;
   align-items: center;
   gap: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.speedtest-go-btn:hover:not(:disabled) {
+.recon-run-btn:hover:not(:disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 12px 40px rgba(0, 242, 254, 0.6);
+  box-shadow: 0 12px 30px rgba(250, 55, 195, 0.5);
 }
 
-.speedtest-go-btn:active:not(:disabled) {
-  transform: scale(0.98);
-}
-
-.speedtest-go-btn:disabled {
+.recon-run-btn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-/* Real Client & Server Network Footer */
-.speedtest-network-footer-bar {
-  width: 100%;
-  max-width: 880px;
+/* Posture Score Banner */
+.recon-posture-banner {
+  background: rgba(16, 20, 38, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 24px 28px;
+  margin-bottom: 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
-  background: rgba(14, 18, 36, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 14px;
-  gap: 20px;
+  gap: 24px;
   flex-wrap: wrap;
-  margin-top: 24px;
 }
 
-.speedtest-entity {
+.posture-score-box {
   display: flex;
   align-items: center;
-  gap: 14px;
+  gap: 20px;
 }
 
-.speedtest-entity-icon {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(0, 242, 254, 0.1);
-  border: 1px solid rgba(0, 242, 254, 0.25);
-  display: grid;
-  place-items: center;
-  color: #00f2fe;
-}
-
-.speedtest-entity-icon.server {
-  background: rgba(154, 85, 255, 0.1);
-  border-color: rgba(154, 85, 255, 0.3);
-  color: #c084fc;
-}
-
-.speedtest-entity-info span {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
+.posture-score-number {
+  font: 800 48px/1 'DM Mono', monospace;
   color: #fff;
-  line-height: 1.3;
 }
 
-.speedtest-entity-info small {
-  display: block;
-  font: 500 11px 'DM Mono', monospace;
-  color: #8fa0c0;
-  margin-top: 3px;
-}
-
-.speedtest-wifi-badge {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding: 5px 12px;
+.posture-grade-badge {
+  display: inline-block;
+  font: 700 12px 'DM Mono', monospace;
+  padding: 4px 12px;
   border-radius: 6px;
-  background: rgba(74, 222, 128, 0.1);
-  border: 1px solid rgba(74, 222, 128, 0.25);
-  color: #4ade80;
-  font: 600 11px 'DM Mono', monospace;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: 6px;
 }
 
-/* RESULTS DASHBOARD */
-.speedtest-results-container {
-  margin-top: 24px;
-  animation: fadeInResults 0.35s ease-out;
+.posture-detail-text {
+  font-size: 13px;
+  color: #8c9ac2;
+  margin: 0;
 }
 
-.speedtest-metrics-grid {
+/* Four-Column Metrics Grid */
+.recon-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 16px;
-  margin-bottom: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  margin-bottom: 24px;
 }
 
-.speedtest-metric-card {
-  background: rgba(16, 22, 44, 0.7);
+.recon-card {
+  background: rgba(16, 22, 44, 0.75);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 14px;
-  padding: 20px 18px;
-  position: relative;
-  overflow: hidden;
+  padding: 22px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   transition: transform 0.2s ease, border-color 0.2s ease;
 }
 
-.speedtest-metric-card:hover {
+.recon-card:hover {
   transform: translateY(-2px);
-  border-color: rgba(0, 242, 254, 0.35);
+  border-color: rgba(154, 85, 255, 0.4);
 }
 
-.speedtest-metric-card.primary {
-  background: linear-gradient(135deg, rgba(0, 242, 254, 0.12), rgba(120, 75, 255, 0.08));
-  border-color: rgba(0, 242, 254, 0.35);
-  box-shadow: 0 8px 24px rgba(0, 242, 254, 0.1);
-}
-
-.metric-label-row {
+.recon-card-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 8px;
+  margin-bottom: 14px;
   font: 700 11px 'DM Mono', monospace;
   color: #8c9ac2;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
-.metric-big-value {
-  font: 800 32px/1 'DM Mono', monospace;
+.recon-card-val {
+  font: 800 24px/1.2 'DM Mono', monospace;
   color: #fff;
   margin-bottom: 6px;
+  word-break: break-all;
 }
 
-.metric-big-value.cyan {
-  color: #00f2fe;
-}
-
-.metric-big-value.green {
-  color: #4ade80;
-}
-
-.metric-big-value.purple {
-  color: #c084fc;
-}
-
-.metric-subdetail {
+.recon-card-sub {
   font-size: 12px;
   color: #8a96b5;
   margin: 0;
 }
 
-@keyframes nhPulseGlow {
-  from { box-shadow: 0 0 25px rgba(250, 55, 195, 0.3); }
-  to { box-shadow: 0 0 50px rgba(250, 55, 195, 0.7); }
+/* Egress Firewall Table Section */
+.recon-section-card {
+  background: rgba(16, 22, 44, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 26px;
+  margin-bottom: 24px;
 }
 
-@keyframes fadeInResults {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
+.recon-section-card h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.egress-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.egress-table th, .egress-table td {
+  padding: 12px 14px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.egress-table th {
+  font: 700 11px 'DM Mono', monospace;
+  color: #8c9ac2;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.status-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font: 700 11px 'DM Mono', monospace;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+.status-tag.open {
+  background: rgba(74, 222, 128, 0.12);
+  border: 1px solid rgba(74, 222, 128, 0.3);
+  color: #4ade80;
+}
+
+.status-tag.blocked {
+  background: rgba(248, 113, 113, 0.12);
+  border: 1px solid rgba(248, 113, 113, 0.3);
+  color: #f87171;
+}
+
+.risk-tag {
+  font: 700 10px 'DM Mono', monospace;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.risk-tag.Critical {
+  background: rgba(239, 68, 68, 0.2);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.risk-tag.High {
+  background: rgba(249, 115, 22, 0.2);
+  color: #fdba74;
+}
+
+.risk-tag.Medium {
+  background: rgba(234, 179, 8, 0.2);
+  color: #fde047;
+}
+
+.risk-tag.Low {
+  background: rgba(59, 130, 246, 0.2);
+  color: #93c5fd;
+}
+
+/* Security Findings List */
+.findings-list {
+  display: grid;
+  gap: 12px;
+}
+
+.finding-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.finding-card.WARNING {
+  border-left: 3px solid #f97316;
+}
+
+.finding-card.GOOD {
+  border-left: 3px solid #4ade80;
+}
+
+.finding-card.INFO {
+  border-left: 3px solid #38bdf8;
+}
+
+.finding-card strong {
+  display: block;
+  font-size: 13.5px;
+  color: #fff;
+  margin-bottom: 3px;
+}
+
+.finding-card p {
+  font-size: 12.5px;
+  color: #8c9ac2;
+  margin: 0;
+  line-height: 1.5;
 }
 
 @media (max-width: 768px) {
-  .speedtest-header {
+  .recon-header {
     flex-direction: column;
     align-items: flex-start;
-    gap: 14px;
   }
-  .speedtest-network-footer-bar {
+  .recon-posture-banner {
     flex-direction: column;
     align-items: flex-start;
-    gap: 16px;
   }
 }
