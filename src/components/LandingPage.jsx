@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import {
+  AlertTriangle,
   ArrowUpRight,
   Check,
+  ChevronDown,
   Cpu,
   Download,
   FileText,
@@ -9,310 +11,240 @@ import {
   KeyRound,
   Laptop,
   Network,
+  RefreshCw,
   ShieldCheck,
   Smartphone,
+  Sparkles,
   Terminal,
   Play,
+  X,
   Zap,
-  Globe,
-  FileCode,
-  Lock,
-  Layers,
-  ArrowRight
 } from "lucide-react";
 import "./LandingPage.css";
 import PrivacyPolicy from "./PrivacyPolicy";
 import TermsAndConditions from "./TermsAndConditions";
 
+const releaseBase = "https://night-hunter-0br7.onrender.com/#downloads";
+
 const downloads = [
-  { 
-    icon: Globe, 
-    name: "Web Cloud Dashboard", 
-    detail: "Direct browser access. No installation or dependencies required.", 
-    href: "/app", 
-    action: "Launch Web App" 
-  },
-  { 
-    icon: Laptop, 
-    name: "Python Local Execution (Windows, Linux, macOS)", 
-    detail: "Run from clean Python 3.10+ source with standard packages. Zero false positives.", 
-    href: "#how-it-works", 
-    action: "View Commands" 
-  },
-  { 
-    icon: Terminal, 
-    name: "Linux Terminal Engine (Kali, Ubuntu, Debian)", 
-    detail: "Headless CLI and local web server. Clone from GitHub and run directly.", 
-    href: "#how-it-works", 
-    action: "View Linux Setup" 
-  },
-  { 
-    icon: Smartphone, 
-    name: "Android Mobile Recon (Termux)", 
-    detail: "Run portable network and domain intelligence directly inside Termux.", 
-    href: "#how-it-works", 
-    action: "View Termux Commands" 
-  },
-  { 
-    icon: FileCode, 
-    name: "GitHub Repository", 
-    detail: "Public, auditable source code with issue tracking and releases.", 
-    href: "https://github.com/ArnabHalder-CS/Night-Hunter", 
-    action: "View on GitHub" 
-  },
+  { icon: Globe, name: "Cloud Web Dashboard (Active)", detail: "Instant access in your browser • Zero installation • All core tools ready", href: "/app", action: "Launch Web App" },
+  { icon: Laptop, name: "Windows / Mac (Python Edition)", detail: "Run locally from clean source with 1 command • Zero false-positives", href: "#how-it-works", action: "View Quick Start" },
+  { icon: Terminal, name: "Linux (Kali / Ubuntu / Debian)", detail: "Full Web UI Dashboard & CLI • Clone from GitHub & run instantly", href: "#how-it-works", action: "View Linux Commands" },
+  { icon: Smartphone, name: "Termux (Android)", detail: "Mobile network intelligence & security recon on Android", href: "#how-it-works", action: "View Termux Setup" },
+  { icon: FileText, name: "Verified Source Code (GitHub)", detail: "Publicly auditable, clean repository on GitHub", href: "https://github.com/ArnabHalder-CS/Night-Hunter", action: "View Repository" },
 ];
 
 export default function LandingPage() {
-  const [modalView, setModalView] = useState(null); // "privacy" | "terms" | "domain" | null
-
+  const [legalModal, setLegalModal] = useState(null);
   useEffect(() => {
-    document.title = "Night Hunter - Defensive Security Platform";
+    document.title = "Night Hunter - Defensive Security Platform | Nighthunter";
   }, []);
 
   return (
     <div className="landing-root">
-      {/* HEADER NAVIGATION */}
       <header className="landing-nav">
         <a className="landing-brand" href="#top" aria-label="Night Hunter home">
           <img src="/night-hunter-logo.jpeg" alt="Night Hunter Logo" />
           <span>NIGHT <b>HUNTER</b></span>
         </a>
         <nav>
-          <a href="/app" style={{ color: "#38bdf8", fontWeight: 600 }}>Web App</a>
-          <a href="#features">Modules</a>
-          <a href="#downloads">Deployment</a>
-          <a href="#how-it-works">Setup</a>
-          <button 
-            type="button" 
-            onClick={() => setModalView("domain")} 
-            style={{ background: "transparent", border: "none", color: "#94a3b8", cursor: "pointer", font: "inherit", padding: 0 }}
-          >
-            Custom Domain
-          </button>
+          <a href="/app" style={{ color: "#fa37c3", fontWeight: 700 }}>Live App</a>
+          <a href="#features">Platform</a>
+          <a href="#downloads">Downloads</a>
+          <a href="#how-it-works">How to Use</a>
         </nav>
-        <a className="nav-app-link" href="/app">
-          Launch App <ArrowUpRight size={14} />
-        </a>
+        <a className="nav-app-link" href="/app">Launch Live App <ArrowUpRight size={15} /></a>
       </header>
 
-      {/* MODAL VIEW OVERLAYS */}
-      {modalView === "privacy" && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(9, 10, 15, 0.95)", zIndex: 100, overflowY: "auto", padding: "20px" }}>
-          <PrivacyPolicy onBack={() => setModalView(null)} />
+            {legalModal === "privacy" && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(9, 8, 16, 0.95)", backdropFilter: "blur(8px)", zIndex: 1000, overflowY: "auto", padding: "20px" }}>
+          <PrivacyPolicy onBack={() => setLegalModal(null)} />
         </div>
       )}
-
-      {modalView === "terms" && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(9, 10, 15, 0.95)", zIndex: 100, overflowY: "auto", padding: "20px" }}>
-          <TermsAndConditions onBack={() => setModalView(null)} />
+      {legalModal === "terms" && (
+        <div style={{ position: "fixed", inset: 0, background: "rgba(9, 8, 16, 0.95)", backdropFilter: "blur(8px)", zIndex: 1000, overflowY: "auto", padding: "20px" }}>
+          <TermsAndConditions onBack={() => setLegalModal(null)} />
         </div>
       )}
-
-      {modalView === "domain" && (
-        <div style={{ position: "fixed", inset: 0, background: "rgba(9, 10, 15, 0.95)", zIndex: 100, overflowY: "auto", padding: "40px 20px" }}>
-          <div style={{ maxWidth: "700px", margin: "0 auto", background: "#12151e", border: "1px solid #232838", borderRadius: "6px", padding: "32px" }}>
-            <h2 style={{ fontSize: "22px", color: "#ffffff", marginTop: 0 }}>Custom Domain Configuration</h2>
-            <p style={{ color: "#94a3b8", fontSize: "14px", lineHeight: "1.6" }}>
-              Night Hunter can be attached to any custom domain (e.g. <code>nighthunter.yourdomain.com</code>) via Render Cloud:
-            </p>
-            <ol style={{ color: "#cbd5e1", fontSize: "14px", lineHeight: "1.8", paddingLeft: "20px" }}>
-              <li>Open your <strong>Render Dashboard</strong> and navigate to your <strong>night-hunter</strong> Web Service.</li>
-              <li>Go to <strong>Settings</strong> &gt; <strong>Custom Domains</strong> &gt; click <strong>Add Custom Domain</strong>.</li>
-              <li>Enter your domain (e.g. <code>security.yourdomain.com</code>).</li>
-              <li>In your DNS provider (Cloudflare, Namecheap, Route53, GoDaddy), add a <strong>CNAME</strong> record:
-                <pre style={{ background: "#1e293b", padding: "10px", borderRadius: "4px", color: "#38bdf8", overflowX: "auto" }}>
-CNAME   security   night-hunter-0br7.onrender.com
-                </pre>
-              </li>
-              <li>Render will automatically verify DNS propagation and issue a free Let's Encrypt SSL/TLS certificate.</li>
-            </ol>
-            <button 
-              type="button" 
-              onClick={() => setModalView(null)}
-              style={{ marginTop: "20px", background: "#0284c7", border: "none", color: "#fff", padding: "8px 18px", borderRadius: "4px", cursor: "pointer", fontWeight: "600" }}
-            >
-              Close Window
-            </button>
-          </div>
-        </div>
-      )}
-
       <main id="top">
-        {/* HERO SECTION */}
         <section className="premium-hero">
+          <div className="hero-orbit orbit-one" />
+          <div className="hero-orbit orbit-two" />
+          <div className="hero-grid-lines" />
           <div className="hero-copy">
-            <p className="landing-eyebrow">Defensive Security Workbench | Release 1.7</p>
-            <h1>Defensive Security &amp; Systems Intelligence</h1>
-            <p className="hero-description">
-              An open-source security engineering platform providing domain intelligence, network speed and connectivity diagnostics, heuristic phishing triage, and cryptographic utilities.
-            </p>
+            <p className="landing-eyebrow"><span /> DEFENSIVE SECURITY PLATFORM · V1.7.0</p>
+            <h1>See the threat.<br /><em>Own the response.</em></h1>
+            <p className="hero-description">A focused security workspace for authorized analysis, target device reconnaissance, and defensive auditing across your devices.</p>
             <div className="hero-actions">
-              <a className="hero-primary" href="/app">
-                Launch Live App <Play size={14} />
-              </a>
-              <a className="hero-secondary" href="https://github.com/ArnabHalder-CS/Night-Hunter" target="_blank" rel="noopener noreferrer">
-                View Source Code <ArrowUpRight size={14} />
-              </a>
+              <a className="hero-primary" href="/app">Launch Live Cloud App <Play size={17} /></a>
+              <a className="hero-secondary" href="#downloads">Download Offline Tool <Download size={17} /></a>
             </div>
             <div className="hero-proof">
-              <span><Check size={14} /> Cross-platform: Linux, Windows, macOS</span>
-              <span><Check size={14} /> Authorized diagnostics only</span>
-              <span><Check size={14} /> 100% auditable open source</span>
+              <span><Check size={14} /> Windows, Linux &amp; Android</span>
+              <span><Check size={14} /> Built for authorized testing</span>
+              <span><Check size={14} /> Nmap-style targeted recon</span>
             </div>
           </div>
-          <div className="hero-mark">
+          <div className="hero-mark" aria-hidden="true">
+            <div className="mark-scan" />
             <img src="/night-hunter-logo.jpeg" alt="Night Hunter Logo" />
-            <div className="mark-caption">
-              NIGHT HUNTER PLATFORM
-              <div style={{ color: "#38bdf8", fontSize: "10px", marginTop: "4px" }}>DEFENSIVE SYSTEMS WORKBENCH</div>
-            </div>
+            <div className="mark-caption">NIGHT HUNTER <span>01 / DEFENSIVE OPS</span></div>
           </div>
+          <p className="hero-scroll">SCROLL TO EXPLORE <ChevronDown size={15} /></p>
         </section>
 
-        {/* CORE MODULES */}
         <section className="statement-section" id="features">
+          <p className="landing-eyebrow"><span /> THE NIGHT HUNTER PLATFORM</p>
           <div className="statement-heading">
-            <p className="landing-eyebrow">Security Capabilities</p>
-            <h2>Integrated Security Modules</h2>
-            <p>Direct diagnostics and defensive utilities without third-party tracking or bloated dependencies.</p>
+            <h2>One command center.<br />A clearer security picture.</h2>
+            <p>Designed for people who need a refined place to inspect systems, understand findings, and act with confidence.</p>
           </div>
           <div className="feature-columns">
-            <article>
-              <Globe2 size={24} />
-              <h3>Domain &amp; Tech Intelligence</h3>
-              <p>DNS resolution, HTTP latency benchmarks, SSL/TLS certificate validation, server banner identification, and defensive security header audits.</p>
-            </article>
-            <article>
-              <Network size={24} />
-              <h3>Network Speed &amp; Connectivity</h3>
-              <p>Host status verification, latency measurement (RTT), jitter estimation, throughput speed checks, and basic service reachability.</p>
-            </article>
-            <article>
-              <ShieldCheck size={24} />
-              <h3>Phishing Threat Intelligence</h3>
-              <p>Heuristic URL evaluation, Unicode Homoglyph identification, email/SMS link triage, and actionable incident response playbooks.</p>
-            </article>
-            <article>
-              <KeyRound size={24} />
-              <h3>Cryptographic Utilities</h3>
-              <p>Simultaneous generation of standard hash digests (SHA-256, SHA-512, BLAKE2b), text encoders, JWT token inspection, and CSPRNG key generation.</p>
-            </article>
+            <article><Globe2 /><h3>Scanner Hub &amp; Web Audit</h3><p>Built-in web audit with local orchestration for Nikto, Nuclei, and OpenVAS/GVM.</p></article>
+            <article><ShieldCheck /><h3>Phishing Intelligence Lab</h3><p>Heuristic risk engine, Unicode Homoglyph &amp; Punycode lab, and email/SMS link triage.</p></article>
+            <article><KeyRound /><h3>Crypto Analyst Suite</h3><p>10+ simultaneous hash digests, unknown hash format identifier, CSPRNG keys &amp; HMAC.</p></article>
+            <article><Network /><h3>Nmap Network Recon</h3><p>Scan target devices on your LAN for OS models, device names, and TCP/UDP ports.</p></article>
           </div>
         </section>
 
-        {/* PLATFORM SPECIFICATIONS */}
+        {/* WHY NIGHT HUNTER - VALUE SHOWCASE */}
         <section className="why-hunter-section">
           <div className="why-hunter-header">
-            <p className="landing-eyebrow">Engineering Specifications</p>
-            <h2>Built for Technical Accuracy</h2>
+            <p className="landing-eyebrow"><span /> WHY ETHICAL HACKERS &amp; SYSADMINS CHOOSE NIGHT HUNTER</p>
+            <h2>Stop Juggling Broken Tools.<br /><em>Defend Your Perimeter Smarter.</em></h2>
             <p className="why-hunter-subtitle">
-              Engineered to perform direct network and protocol queries cleanly across local and cloud environments.
+              Most security tools do one thing in isolation or output fake toy data. Night Hunter gives you genuine low-level reconnaissance, passive threat analysis, and zero-setup deployment.
             </p>
           </div>
 
           <div className="why-hunter-grid">
-            <article className="why-card">
-              <span className="why-badge">REAL PROTOCOL CHECKS</span>
-              <h3>Authentic System Diagnostics</h3>
+            <article className="why-card highlight-card">
+              <div className="why-icon-wrap" style={{ color: "#fa37c3", background: "rgba(250, 55, 195, 0.12)" }}>
+                <Cpu size={24} />
+              </div>
+              <span className="why-badge">REAL HARDWARE SCANNING</span>
+              <h3>100% Real Engines — Zero Fake Mock Data</h3>
               <p>
-                Executes native Python socket connections, HTTP/S requests, and standard cryptographic algorithms. All metrics represent measured network responses.
+                Unlike toy tools that display simulated progress bars, Night Hunter executes real socket operations and native <strong>Nmap 7.99</strong> commands under the hood. It accurately fingerprints exact OS versions, discovers active UDP services (<code>-sU</code>), and tests live TLS 1.3 handshakes.
               </p>
             </article>
 
             <article className="why-card">
-              <span className="why-badge">UNIFIED INTERFACE</span>
-              <h3>Centralized Defensive Console</h3>
+              <div className="why-icon-wrap" style={{ color: "#79ffa8", background: "rgba(121, 255, 168, 0.12)" }}>
+                <Zap size={24} />
+              </div>
+              <span className="why-badge">UNIFIED DEFENSE</span>
+              <h3>Single Pane of Glass Defense</h3>
               <p>
-                Consolidates domain reconnaissance, network diagnostics, phishing link inspection, and hash verification into a single technical dashboard.
+                Quit opening 5 separate terminal windows for Nmap, CyberChef, browser devtools, and Python scripts. Audit web application headers, scan local LAN subnets, inspect phishing threats, and compute hashes from one unified cyberpunk dashboard.
               </p>
             </article>
 
             <article className="why-card">
-              <span className="why-badge">PASSIVE TRIAGE</span>
-              <h3>Passive Phishing Analysis</h3>
+              <div className="why-icon-wrap" style={{ color: "#ffd480", background: "rgba(255, 212, 128, 0.12)" }}>
+                <ShieldCheck size={24} />
+              </div>
+              <span className="why-badge">SAFE BY DESIGN</span>
+              <h3>Zero-Risk Passive Phishing Inspection</h3>
               <p>
-                Inspects suspicious links and messages using lexical analysis, domain structure, and brand patterns without executing remote code or alerting attackers.
+                Investigate reported phishing links without executing malware or alerting the attacker. Night Hunter's heuristic parser flags IDN homoglyphs, deceptive redirects, and brand spoofing 100% passively without downloading remote payloads.
               </p>
             </article>
 
             <article className="why-card">
-              <span className="why-badge">CROSS-PLATFORM</span>
-              <h3>Broad Operating System Support</h3>
+              <div className="why-icon-wrap" style={{ color: "#38bdf8", background: "rgba(56, 189, 248, 0.12)" }}>
+                <Laptop size={24} />
+              </div>
+              <span className="why-badge">ZERO SETUP</span>
+              <h3>True Tri-Platform Portability</h3>
               <p>
-                Runs identically on Windows, Linux, and Android (Termux). The standard codebase uses cross-platform Python libraries without operating system locking.
+                No Python virtualenv hell or dependency conflicts. Run the portable <strong>NightHunter.exe</strong> directly on Windows with one click, run headless on Kali Linux with one terminal command, or audit on the go using Android Termux.
+              </p>
+            </article>
+
+            <article className="why-card">
+              <div className="why-icon-wrap" style={{ color: "#c084fc", background: "rgba(192, 132, 252, 0.12)" }}>
+                <FileText size={24} />
+              </div>
+              <span className="why-badge">AUDIT READY</span>
+              <h3>Instant Client-Ready Reports (HTML · JSON · TXT)</h3>
+              <p>
+                Turn technical findings into polished, visual HTML executive reports with charts, or export clean JSON for automated SIEM and CI/CD pipelines. Never write audit documentation by hand again.
               </p>
             </article>
           </div>
         </section>
 
-        {/* RUN AND DEPLOYMENT OPTIONS */}
         <section className="downloads-section" id="downloads">
           <div className="downloads-title">
-            <p className="landing-eyebrow">Deployment &amp; Execution</p>
-            <h2>Choose Your Execution Method</h2>
+            <p className="landing-eyebrow"><span /> LATEST STABLE RELEASE (V1.7.0)</p>
+            <h2>Choose your<br /><em>environment.</em></h2>
           </div>
           <div className="download-list">
             {downloads.map(({ icon: Icon, name, detail, href, action }) => (
               <a className="download-row" href={href} key={name}>
-                <span className="download-icon"><Icon size={20} /></span>
-                <span>
-                  <strong>{name}</strong>
-                  <small>{detail}</small>
-                </span>
-                <span className="download-action">{action} <ArrowRight size={14} /></span>
+                <span className="download-icon"><Icon size={23} /></span>
+                <span><strong>{name}</strong><small>{detail}</small></span>
+                <span className="download-action">{action} <ArrowUpRight size={18} /></span>
               </a>
             ))}
           </div>
         </section>
 
-        {/* HOW TO RUN INSTRUCTIONS */}
+
+
         <section className="install-section" id="how-it-works">
-          <h2>Execution Instructions</h2>
+          <div>
+            <p className="landing-eyebrow"><span /> COMPLETE USER GUIDELINE</p>
+            <h2>Installation &amp;<br />Troubleshooting</h2>
+            <div style={{ marginTop: '20px', padding: '16px', borderRadius: '6px', background: 'rgba(154, 85, 255, 0.1)', border: '1px solid rgba(154, 85, 255, 0.3)', color: '#d5c6e6', fontSize: '13px', lineHeight: '1.6' }}>
+              <strong style={{ color: '#fff', display: 'flex', alignItems: 'center', gap: '6px', marginBottom: '6px' }}>
+                <ShieldCheck size={16} color="#4ade80" /> 100% Safe &amp; Open Source
+              </strong>
+              Night Hunter runs entirely locally on your machine with no hidden telemetry or external tracking. All source code is publicly auditable on GitHub.
+            </div>
+          </div>
           <ol>
             <li>
-              <b>CLOUD ACCESS (BROWSER READY)</b>
+              <b>CLOUD ACCESS (ZERO INSTALL)</b>
               <span>
                 <strong>Instant Online Deployment</strong>
-                <small>Night Hunter is hosted as a cloud web service on Render. Click <a href="/app" style={{ color: "#38bdf8", fontWeight: "600" }}>Launch Web App</a> to begin running diagnostics immediately from any modern browser.</small>
+                <small>• <b>Direct Browser Access:</b> You are already on the live web dashboard! Click <a href="/app" style={{ color: "#fa37c3", fontWeight: "bold" }}>Launch Web App</a> to start scanning immediately.</small>
+                <small>• Fully responsive across desktop, tablets, and smartphones.</small>
+                <small style={{ color: "#4ade80", marginTop: "6px", display: "block" }}>✓ No Python setup, no dependencies, no antivirus alerts required.</small>
               </span>
             </li>
             <li>
-              <b>PYTHON LOCAL EXECUTION (WINDOWS, LINUX, MACOS)</b>
+              <b>WINDOWS / MAC / LINUX (PYTHON LOCAL)</b>
               <span>
-                <strong>Run Locally from Clean Source</strong>
-                <small>1. Clone repository: <code>git clone https://github.com/ArnabHalder-CS/Night-Hunter.git</code></small>
-                <small>2. Navigate into folder: <code>cd Night-Hunter</code></small>
-                <small>3. Install dependencies: <code>pip install -r requirement.txt</code></small>
-                <small>4. Start server: <code>python main.py</code></small>
-                <small>Opens your web dashboard at: <code>http://127.0.0.1:5000</code></small>
+                <strong>Run from Clean Source (Recommended for Local Audits)</strong>
+                <small>• <b>Step 1:</b> Clone the repository: <code>git clone https://github.com/ArnabHalder-CS/Night-Hunter.git</code></small>
+                <small>• <b>Step 2:</b> Enter directory: <code>cd Night-Hunter</code></small>
+                <small>• <b>Step 3:</b> Install dependencies: <code>pip install -r requirement.txt</code></small>
+                <small>• <b>Step 4:</b> Start the application: <code>python main.py</code></small>
+                <small style={{ color: "#7ff0ca", marginTop: "6px", display: "block" }}>✓ Automatically boots the engine and opens the graphical Dashboard at <code>http://127.0.0.1:5000</code>.</small>
               </span>
             </li>
             <li>
-              <b>ANDROID RECON (TERMUX)</b>
+              <b>ANDROID (TERMUX)</b>
               <span>
-                <strong>Run via Terminal on Android</strong>
-                <small>1. Install requirements in Termux: <code>pkg update && pkg install git python</code></small>
-                <small>2. Clone repository: <code>git clone https://github.com/ArnabHalder-CS/Night-Hunter.git</code></small>
-                <small>3. Launch: <code>cd Night-Hunter && python main.py</code></small>
+                <strong>Mobile Security Recon via Termux</strong>
+                <small>1. In Termux, install Git & Python: <code>pkg update && pkg install git python</code></small>
+                <small>2. Clone the repository: <code>git clone https://github.com/ArnabHalder-CS/Night-Hunter.git</code></small>
+                <small>3. Launch Night Hunter: <code>cd Night-Hunter && python main.py</code></small>
               </span>
             </li>
           </ol>
         </section>
       </main>
 
-      {/* FOOTER */}
       <footer className="landing-footer">
-        <div>
-          <span>Night Hunter Defensive Security Platform</span>
-          <p style={{ margin: "4px 0 0 0", color: "#64748b", fontSize: "12px" }}>
-            Open-source defensive tooling for authorized security diagnostics.
-          </p>
-        </div>
-        <div className="footer-links">
-          <button type="button" onClick={() => setModalView("privacy")}>Privacy Policy</button>
-          <button type="button" onClick={() => setModalView("terms")}>Terms and Conditions</button>
-          <button type="button" onClick={() => setModalView("domain")}>Custom Domain</button>
-          <a href="https://github.com/ArnabHalder-CS/Night-Hunter" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div className="landing-brand"><img src="/night-hunter-logo.jpeg" alt="Night Hunter Logo" /><span>NIGHT <b>HUNTER</b></span></div>
+        <p>Defensive tooling for authorized security testing.</p>
+        <div style={{ display: "flex", gap: "20px", alignItems: "center" }}>
+          <button type="button" onClick={() => setLegalModal("privacy")} style={{ background: "transparent", border: "none", color: "#aaa0b4", cursor: "pointer", font: "500 12px 'DM Mono', monospace" }}>Privacy Policy</button>
+          <button type="button" onClick={() => setLegalModal("terms")} style={{ background: "transparent", border: "none", color: "#aaa0b4", cursor: "pointer", font: "500 12px 'DM Mono', monospace" }}>Terms</button>
+          <a href="#downloads">Deploy v1.7.0 <Download size={15} /></a>
         </div>
       </footer>
     </div>
