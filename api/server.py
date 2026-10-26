@@ -231,45 +231,30 @@ def network_security():
 
     try:
 
-        data = request.get_json(silent=True)
-
-        if not data:
-
-            return jsonify({
-                "success": False,
-                "error": "Request body is missing."
-            }), 400
-
-        target = str(
-            data.get("target", "")
-        ).strip()
-
-        if not target:
-
-            return jsonify({
-                "success": False,
-                "error": "Target host or IP is required."
-            }), 400
+        data = request.get_json(silent=True) or {}
+        target = str(data.get("target", "")).strip()
+        mode = str(data.get("mode", "multi")).strip()
 
         print()
         print("=" * 60)
-        print("NIGHT HUNTER API - NETWORK SECURITY")
+        print("NIGHT HUNTER API - NETWORK SPEED & STRENGTH")
         print("=" * 60)
-        print(f"Target: {target}")
+        print(f"Target: {target or 'Device Direct Connection'} (Mode: {mode})")
         print()
 
-        result = test_network_connection(target)
+        result = test_network_connection(target, mode)
         strength = result.get("host_check", {}).get("connection_strength", "Completed")
         speed = result.get("speed_test", {}).get("speed_label", "")
+        log_target = target or result.get("client", {}).get("ip", "Device Network")
         remember_activity(
-            "Network Security", target, "Complete",
-            f"Network speed and connectivity check for {target}: {strength} ({speed}).",
+            "Network Speed & Strength", log_target, "Complete",
+            f"Network speed and connectivity check for {log_target}: {strength} ({speed}).",
             result,
         )
 
         return jsonify({
             "success": True,
-            "target": target,
+            "target": target or "Direct Device Connection",
             "result": result
         })
 

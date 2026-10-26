@@ -78,11 +78,11 @@ import { applyTheme, readTheme } from "./theme";
 
 const translations = {
 
-  en: { dashboard:"Dashboard", web:"Web Security", password:"Password Security", network:"Network Security", phishing:"Phishing Analyzer", crypto:"Cryptography", reports:"Reports", settings:"Settings", modules:"SECURITY MODULES", preferences:"Preferences", online:"SYSTEM ONLINE", welcome:"Welcome back", mission:"Your security. Our mission.", monitor:"LIVE THREAT MONITOR", activity:"Recent Activity", securityModules:"Security Modules", launch:"Launch" },
+  en: { dashboard:"Dashboard", web:"Web Security", password:"Password Security", network:"Network Speed & Strength", phishing:"Phishing Analyzer", crypto:"Cryptography", reports:"Reports", settings:"Settings", modules:"SECURITY MODULES", preferences:"Preferences", online:"SYSTEM ONLINE", welcome:"Welcome back", mission:"Your security. Our mission.", monitor:"LIVE THREAT MONITOR", activity:"Recent Activity", securityModules:"Security Modules", launch:"Launch" },
 
-  hi: { dashboard:"डैशबोर्ड", web:"वेब सुरक्षा", password:"पासवर्ड सुरक्षा", network:"नेटवर्क सुरक्षा", phishing:"फ़िशिंग विश्लेषक", crypto:"क्रिप्टोग्राफी", reports:"रिपोर्ट", settings:"सेटिंग्स", modules:"सुरक्षा मॉड्यूल", preferences:"पसंद", online:"सिस्टम ऑनलाइन", welcome:"वापसी पर स्वागत है", mission:"आपकी सुरक्षा। हमारा मिशन।", monitor:"लाइव थ्रेट मॉनिटर", activity:"हाल की गतिविधि", securityModules:"सुरक्षा मॉड्यूल", launch:"खोलें" },
+  hi: { dashboard:"डैशबोर्ड", web:"वेब सुरक्षा", password:"पासवर्ड सुरक्षा", network:"नेटवर्क स्पीड एवं क्षमता", phishing:"फ़िशिंग विश्लेषक", crypto:"क्रिप्टोग्राफी", reports:"रिपोर्ट", settings:"सेटिंग्स", modules:"सुरक्षा मॉड्यूल", preferences:"पसंद", online:"सिस्टम ऑनलाइन", welcome:"वापसी पर स्वागत है", mission:"आपकी सुरक्षा। हमारा मिशन।", monitor:"लाइव थ्रेट मॉनिटर", activity:"हाल की गतिविधि", securityModules:"सुरक्षा मॉड्यूल", launch:"खोलें" },
 
-  bn: { dashboard:"ড্যাশবোর্ড", web:"ওয়েব সিকিউরিটি", password:"পাসওয়ার্ড সিকিউরিটি", network:"নেটওয়ার্ক সিকিউরিটি", phishing:"ফিশিং বিশ্লেষক", crypto:"ক্রিপ্টোগ্রাফি", reports:"রিপোর্ট", settings:"সেটিংস", modules:"সিকিউরিটি মডিউল", preferences:"পছন্দ", online:"সিস্টেম অনলাইন", welcome:"ফিরে আসার জন্য স্বাগতম", mission:"আপনার নিরাপত্তা। আমাদের লক্ষ্য।", monitor:"লাইভ থ্রেট মনিটর", activity:"সাম্প্রতিক কার্যকলাপ", securityModules:"সিকিউরিটি মডিউল", launch:"চালু করুন" },
+  bn: { dashboard:"ড্যাশবোর্ড", web:"ওয়েব সিকিউরিটি", password:"পাসওয়ার্ড সিকিউরিটি", network:"নেটওয়ার্ক স্পিড ও স্ট্রেংথ", phishing:"ফিশিং বিশ্লেষক", crypto:"ক্রিপ্টোগ্রাফি", reports:"রিপোর্ট", settings:"সেটিংস", modules:"সিকিউরিটি মডিউল", preferences:"পছন্দ", online:"সিস্টেম অনলাইন", welcome:"ফিরে আসার জন্য স্বাগতম", mission:"আপনার নিরাপত্তা। আমাদের লক্ষ্য।", monitor:"লাইভ থ্রেট মনিটর", activity:"সাম্প্রতিক কার্যকলাপ", securityModules:"সিকিউরিটি মডিউল", launch:"চালু করুন" },
 
   es: { dashboard:"Panel", web:"Seguridad web", password:"Seguridad de contraseña", network:"Seguridad de red", phishing:"Analizador de phishing", crypto:"Criptografía", reports:"Historial", settings:"Ajustes", modules:"MÓDULOS DE SEGURIDAD", preferences:"Preferencias", online:"SISTEMA EN LÍNEA", welcome:"Bienvenido de nuevo", mission:"Tu seguridad. Nuestra misión.", monitor:"MONITOR DE AMENAZAS", activity:"Actividad reciente", securityModules:"Módulos de seguridad", launch:"Abrir" },
 
@@ -188,7 +188,7 @@ function App() {
 
       name: "Network Security",
       label: t.network,
-      description: "Network Speed | Latency | Signal Strength | Basic Services",
+      description: "Device Speed Test | Ping & Jitter | Signal Strength | ISP Info",
 
       icon: Network,
 
