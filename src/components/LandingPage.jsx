@@ -29,11 +29,12 @@ import PrivacyPolicy from "./PrivacyPolicy";
 import TermsAndConditions from "./TermsAndConditions";
 
 const downloads = [
-  { icon: Globe, name: "Cloud Web Dashboard (Active)", detail: "Instant access in your browser • Zero installation • All core tools ready", href: "/app", action: "Launch Web App" },
-  { icon: Laptop, name: "Windows / Mac (Python Edition)", detail: "Run locally from clean source with 1 command • Zero false-positives", href: "#how-it-works", action: "View Quick Start" },
-  { icon: Terminal, name: "Linux (Kali / Ubuntu / Debian)", detail: "Full Web UI Dashboard & CLI • Clone from GitHub & run instantly", href: "#how-it-works", action: "View Linux Commands" },
-  { icon: Smartphone, name: "Termux (Android)", detail: "Mobile network intelligence & security recon on Android", href: "#how-it-works", action: "View Termux Setup" },
-  { icon: FileText, name: "Verified Source Code (GitHub)", detail: "Publicly auditable, clean repository on GitHub", href: "https://github.com/ArnabHalder-CS/Night-Hunter", action: "View Repository" },
+  { icon: Globe, name: "Cloud Web Dashboard (Active)", detail: "Instant access in your browser • Zero installation • All core tools ready", href: "/app", action: "Launch Web App", isDl: false },
+  { icon: Laptop, name: "Windows (.zip)", detail: "night-hunter-windows.zip • Unzip and run python main.py • No wizard needed", href: "/downloads/night-hunter-windows.zip", action: "Download for Windows", isDl: true },
+  { icon: Download, name: "Windows Standalone (.exe)", detail: "NightHunter.exe • Single-file executable • No Python required", href: "/downloads/NightHunter.exe", action: "Download .exe", isDl: true },
+  { icon: Terminal, name: "Linux (.tar.gz)", detail: "night-hunter-linux.tar.gz • Kali / Ubuntu / Debian / Arch • Full Web UI", href: "/downloads/night-hunter-linux.tar.gz", action: "Download for Linux", isDl: true },
+  { icon: Smartphone, name: "Termux / Android (.zip)", detail: "night-hunter-termux.zip • Mobile recon on Android via Termux", href: "/downloads/night-hunter-termux.zip", action: "Download for Termux", isDl: true },
+  { icon: FileText, name: "Source Code (GitHub)", detail: "Publicly auditable, clean repository • git clone & go", href: "https://github.com/ArnabHalder-CS/Night-Hunter", action: "View Repository", isDl: false },
 ];
 
 const blogArticles = [
@@ -407,11 +408,21 @@ export default function LandingPage() {
             <h2>Choose your<br /><em>environment.</em></h2>
           </div>
           <div className="download-list">
-            {downloads.map(({ icon: Icon, name, detail, href, action }) => (
-              <a className="download-row" href={href} key={name}>
+            {downloads.map(({ icon: Icon, name, detail, href, action, isDl }) => (
+              <a
+                className="download-row"
+                href={href}
+                key={name}
+                download={isDl || undefined}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
+              >
                 <span className="download-icon"><Icon size={23} /></span>
                 <span><strong>{name}</strong><small>{detail}</small></span>
-                <span className="download-action">{action} <ArrowUpRight size={18} /></span>
+                <span className="download-action">
+                  {isDl ? <Download size={16} /> : <ArrowUpRight size={18} />}
+                  {action}
+                </span>
               </a>
             ))}
           </div>
