@@ -204,9 +204,9 @@ export default function LandingPage() {
           <div className="hero-orbit orbit-two" />
           <div className="hero-grid-lines" />
           <div className="hero-copy">
-            <p className="landing-eyebrow"><span /> OFFENSIVE &amp; DEFENSIVE SECURITY SUITE • V1.7.0</p>
-            <h1>Tactical Recon.<br /><em>Zero False Alarms.</em></h1>
-            <p className="hero-description">High-concurrency TCP port scanning across all 65,535 ports (Nmap T5 speed), passive phishing &amp; IDN homoglyph intelligence with MITRE ATT&amp;CK mappings, and cryptographic analysis. Engineered for ethical hackers and defensive auditors.</p>
+            <p className="landing-eyebrow"><span /> DEFENSIVE SECURITY PLATFORM • V1.7.0</p>
+            <h1>See the threat.<br /><em>Own the response.</em></h1>
+            <p className="hero-description">A focused security workspace for authorized analysis, target device reconnaissance, and defensive auditing across your devices.</p>
             <div className="hero-actions">
               <a className="hero-primary" href="/app">Launch Live Cloud App <Play size={17} /></a>
               <a className="hero-secondary" href="#downloads">Download Offline Tool <Download size={17} /></a>
