@@ -2,6 +2,7 @@ from pathlib import Path
 import json
 import sys
 import re
+import socket as _sock_probe
 
 from flask import Flask, Response, jsonify, request, send_from_directory, stream_with_context
 from flask_cors import CORS
@@ -33,6 +34,23 @@ from modules.reports.history import get_activity_history, record_activity
 
 app = Flask(__name__)
 CORS(app)
+
+
+def _can_do_outbound_tcp() -> bool:
+    """Quick probe: can this server open a real outbound TCP socket?
+    Render free-tier blocks outbound raw sockets so the port scanner
+    returns 0 results.  Detecting this early gives the user an honest
+    message instead of a misleading empty table.
+    """
+    try:
+        s = _sock_probe.socket(_sock_probe.AF_INET, _sock_probe.SOCK_STREAM)
+        s.settimeout(0.8)
+        s.connect(("1.1.1.1", 80))
+        s.close()
+        return True
+    except Exception:
+        return False
+
 
 
 def remember_activity(module, target, status, summary, output=None):
@@ -246,6 +264,20 @@ def network_security():
         print("=" * 60)
         print(f"Target: {target}")
         print()
+
+        # Detect cloud / sandbox environments where outbound raw TCP
+        # is blocked (Render free tier, GitHub Actions, etc.).
+        if not _can_do_outbound_tcp():
+            print("[!] Outbound TCP blocked - cloud environment detected")
+            return jsonify({
+                "success": False,
+                "cloud_limitation": True,
+                "error": (
+                    "Port scanning requires direct network access. "
+                    "This cloud server cannot open raw TCP sockets to external hosts. "
+                    "Run Night Hunter locally for full port scan functionality."
+                )
+            }), 503
 
         result = test_network_connection(target)
         if not result.get("success"):

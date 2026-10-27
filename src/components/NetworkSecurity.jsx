@@ -41,6 +41,7 @@ export default function NetworkSecurity() {
   const [scanning, setScanning] = useState(false);
   const [result, setResult] = useState(null);
   const [error, setError] = useState("");
+  const [cloudLimit, setCloudLimit] = useState(false);
   const [activeFilter, setActiveFilter] = useState("all"); // 'all', 'open', 'filtered'
 
   async function handleScan(e) {
@@ -56,6 +57,7 @@ export default function NetworkSecurity() {
     setScanning(true);
     setError("");
     setResult(null);
+    setCloudLimit(false);
 
     try {
       const response = await fetch("/api/network-security", {
@@ -65,6 +67,12 @@ export default function NetworkSecurity() {
       });
 
       const data = await response.json();
+
+      if (data.cloud_limitation) {
+        setCloudLimit(true);
+        return;
+      }
+
       if (!response.ok || !data.success) {
         throw new Error(data.error || "Network reconnaissance scan failed.");
       }
@@ -81,6 +89,7 @@ export default function NetworkSecurity() {
   function setQuickTarget(val) {
     setTarget(val);
     setError("");
+    setCloudLimit(false);
   }
 
   const portsList = result?.ports_list || [];
@@ -251,8 +260,85 @@ export default function NetworkSecurity() {
         </div>
       )}
 
+      {/* CLOUD LIMITATION INFO CARD */}
+      {cloudLimit && !scanning && (
+        <div
+          style={{
+            marginBottom: "24px",
+            padding: "28px 28px",
+            borderRadius: "14px",
+            background: "linear-gradient(135deg, rgba(154,85,255,0.10), rgba(0,242,254,0.07))",
+            border: "1px solid rgba(0,242,254,0.28)",
+            color: "#c9c3d5",
+            fontSize: "13px",
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "14px" }}>
+            <Terminal size={22} color="#00f2fe" />
+            <span style={{ font: "700 14px 'DM Mono', monospace", color: "#00f2fe", textTransform: "uppercase", letterSpacing: "0.06em" }}>
+              Local Execution Required
+            </span>
+          </div>
+          <p style={{ margin: "0 0 12px", lineHeight: "1.7", color: "#d0cce6" }}>
+            Port scanning probes raw TCP sockets directly on the network. This cloud server
+            (Render free tier) cannot open outbound raw TCP connections, which is the
+            correct security restriction for a shared cloud host.
+          </p>
+          <p style={{ margin: "0 0 18px", lineHeight: "1.7", color: "#d0cce6" }}>
+            The Night Hunter port scanner works perfectly when you run it on your own
+            machine. Install it locally:
+          </p>
+          <div
+            style={{
+              background: "rgba(6,8,18,0.85)",
+              border: "1px solid rgba(0,242,254,0.22)",
+              borderRadius: "8px",
+              padding: "14px 18px",
+              fontFamily: "'DM Mono', monospace",
+              fontSize: "12px",
+              color: "#79ffa8",
+              lineHeight: "1.8",
+              marginBottom: "20px",
+            }}
+          >
+            <div style={{ color: "#8c9ac2", marginBottom: "4px" }}># Windows / Linux / macOS / Termux</div>
+            <div>git clone https://github.com/ArnabHalder-CS/Night-Hunter.git</div>
+            <div>cd Night-Hunter</div>
+            <div>pip install -r requirement.txt</div>
+            <div>python main.py</div>
+            <div style={{ marginTop: "8px", color: "#8c9ac2" }}># Then open http://127.0.0.1:5000 in your browser</div>
+          </div>
+          <div style={{ display: "flex", gap: "16px", flexWrap: "wrap" }}>
+            {[
+              { label: "Windows", icon: "Win" },
+              { label: "Linux", icon: "Lnx" },
+              { label: "macOS", icon: "Mac" },
+              { label: "Termux (Android)", icon: "Tmx" },
+            ].map((p) => (
+              <span
+                key={p.label}
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "6px",
+                  padding: "4px 12px",
+                  borderRadius: "6px",
+                  background: "rgba(0,242,254,0.08)",
+                  border: "1px solid rgba(0,242,254,0.2)",
+                  font: "600 11px 'DM Mono', monospace",
+                  color: "#00f2fe",
+                }}
+              >
+                <Laptop size={12} />
+                {p.label}
+              </span>
+            ))}
+          </div>
+        </div>
+      )}
+
       {/* IDLE PLACEHOLDER */}
-      {!result && !scanning && !error && (
+      {!result && !scanning && !error && !cloudLimit && (
         <div
           style={{
             textAlign: "center",
