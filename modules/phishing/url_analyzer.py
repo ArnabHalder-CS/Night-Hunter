@@ -249,6 +249,76 @@ BRAND_NAMES = {
 
 }
 
+# ============================================================
+# OFFICIAL BRAND DOMAINS (WHITELIST & COMBO-SQUATTING MATRIX)
+# ============================================================
+
+OFFICIAL_BRAND_DOMAINS = {
+    "google": {"google.com", "google.co.in", "google.co.uk", "google.ca", "google.de", "google.fr", "google.com.au", "gmail.com", "youtube.com", "goo.gl", "gstatic.com"},
+    "microsoft": {"microsoft.com", "live.com", "office.com", "office365.com", "outlook.com", "msn.com", "azure.com", "bing.com", "windows.com", "skype.com"},
+    "apple": {"apple.com", "icloud.com", "apple-support.com", "itunes.com", "me.com"},
+    "amazon": {"amazon.com", "amazon.co.uk", "amazon.de", "amazon.in", "amazon.ca", "amazon.fr", "primevideo.com", "aws.amazon.com"},
+    "paypal": {"paypal.com", "paypal.me"},
+    "netflix": {"netflix.com"},
+    "meta": {"facebook.com", "instagram.com", "whatsapp.com", "meta.com", "fb.com"},
+    "facebook": {"facebook.com", "fb.com"},
+    "instagram": {"instagram.com"},
+    "whatsapp": {"whatsapp.com", "wa.me"},
+    "chase": {"chase.com", "jpmorganchase.com", "jpmorgan.com"},
+    "bankofamerica": {"bankofamerica.com", "bofa.com"},
+    "wellsfargo": {"wellsfargo.com"},
+    "steam": {"steampowered.com", "steamcommunity.com"},
+    "discord": {"discord.com", "discord.gg", "discordapp.com"},
+    "telegram": {"telegram.org", "t.me"},
+    "binance": {"binance.com", "binance.us"},
+    "coinbase": {"coinbase.com"},
+    "github": {"github.com", "github.io", "githubusercontent.com"},
+    "dropbox": {"dropbox.com"},
+    "adobe": {"adobe.com"},
+    "docusign": {"docusign.com", "docusign.net"},
+    "linkedin": {"linkedin.com"},
+    "twitter": {"twitter.com", "x.com", "t.co"},
+    "spotify": {"spotify.com"},
+    "sbi": {"onlinesbi.sbi", "sbi.co.in"},
+    "hdfc": {"hdfcbank.com"},
+    "icici": {"icicibank.com"},
+    "airtel": {"airtel.in", "airtel.com"},
+    "jio": {"jio.com"}
+}
+
+HIGH_RISK_PHISHING_TLDS = {
+    "xyz", "top", "work", "click", "buzz", "club", "cam", "live", "loan", "vip", "icu",
+    "gq", "cf", "ml", "tk", "ga", "rest", "country", "monster", "casa", "surf", "fit", "sbs", "cfd"
+}
+
+LEETSPEAK_MAP = {
+    '0': 'o', '1': 'l', '3': 'e', '4': 'a', '5': 's',
+    '7': 't', '8': 'b', '@': 'a', '$': 's', 'vv': 'w', 'rn': 'm'
+}
+
+def normalize_leetspeak(text):
+    t = str(text or "").lower()
+    for k, v in LEETSPEAK_MAP.items():
+        t = t.replace(k, v)
+    return t
+
+def calculate_levenshtein(s1, s2):
+    if len(s1) < len(s2):
+        return calculate_levenshtein(s2, s1)
+    if len(s2) == 0:
+        return len(s1)
+    previous_row = range(len(s2) + 1)
+    for i, c1 in enumerate(s1):
+        current_row = [i + 1]
+        for j, c2 in enumerate(s2):
+            insertions = previous_row[j + 1] + 1
+            deletions = current_row[j] + 1
+            substitutions = previous_row[j] + (c1 != c2)
+            current_row.append(min(insertions, deletions, substitutions))
+        previous_row = current_row
+    return previous_row[-1]
+
+
 
 # ============================================================
 # SUSPICIOUS FILE EXTENSIONS
@@ -585,6 +655,14 @@ class PhishingAnalyzer:
         self.score = 0
 
         self.start_time = time.time()
+        self.is_verified_official = False
+        self.ethical_hacking_profile = {
+            "mitre_tactics": [],
+            "mitre_techniques": [],
+            "targeted_brand": None,
+            "attack_vector": "None detected",
+            "soc_remediation": []
+        }
 
 
     # ========================================================
@@ -1360,120 +1438,82 @@ class PhishingAnalyzer:
     # ========================================================
 
     def analyze_brands(self):
-
         if not self.hostname:
             return
 
-
         host = self.hostname.lower()
+        parts = host.split(".")
+        reg_domain = ".".join(parts[-2:]) if len(parts) >= 2 else host
+        domain_body = parts[-2] if len(parts) >= 2 else host
 
-        detected = []
+        # 1. Check if the domain is verified official brand domain
+        for brand, officials in OFFICIAL_BRAND_DOMAINS.items():
+            if reg_domain in officials or host in officials:
+                self.is_verified_official = True
+                self.metrics["brand_mentions"] = [brand]
+                self.metrics["brand_status"] = f"VERIFIED OFFICIAL {brand.upper()}"
+                self.add_info(f"Verified official domain for {brand.upper()} ({reg_domain}). Zero spoofing detected.")
+                return
 
+        # 2. Check Combosquatting: brand keyword present in hostname on non-official domain
+        detected_brands = []
+        for brand, officials in OFFICIAL_BRAND_DOMAINS.items():
+            if brand in host and reg_domain not in officials:
+                detected_brands.append(brand)
 
-        for brand in BRAND_NAMES:
-
-            if brand in host:
-
-                detected.append(
-                    brand
-                )
-
-
-        detected = sorted(
-            set(detected)
-        )
-
-
-        self.metrics["brand_mentions"] = (
-            detected
-        )
-
-
-
-
-        # Check if brand appears in path/query even if not in hostname
-        url_lower = self.original_url.lower()
-        path_brands = [b for b in BRAND_NAMES if b in url_lower and b not in (self.domain.lower() if self.domain else "")]
-        if path_brands:
-            sensitive_words = ["login", "signin", "verify", "account", "secure", "update", "suspended", "password", "id", "support"]
-            if any(w in url_lower for w in sensitive_words):
-                self.add_finding(
-                    "Brand Impersonation in Path",
-                    "HIGH",
-                    "Targeted brand impersonation detected in URL path",
-                    f"Brand name ({', '.join(path_brands)}) is paired with credential-harvesting keywords in the URL path.",
-                    evidence=", ".join(path_brands),
-                    recommendation="Do not enter credentials. Check the actual address bar domain.",
-                    score=40,
-                    confidence="HIGH"
-                )
-
-        if not detected:
-            return
-
-
-        self.add_info(
-            "Brand-like names detected: "
-            + ", ".join(detected)
-        )
-
-
-        actual_domain = self.domain.lower()
-
-
-        suspicious_brands = []
-
-
-        for brand in detected:
-
-            if brand not in actual_domain:
-
-                suspicious_brands.append(
-                    brand
-                )
-
-
-        if suspicious_brands:
-
+        if detected_brands:
+            detected_brands = sorted(list(set(detected_brands)))
+            primary_brand = detected_brands[0]
+            self.metrics["brand_mentions"] = detected_brands
+            self.ethical_hacking_profile["targeted_brand"] = primary_brand.upper()
+            self.ethical_hacking_profile["attack_vector"] = f"Combosquatting brand impersonation targeting {primary_brand.upper()}"
             self.add_finding(
-
-                "Brand Impersonation",
-
-                "HIGH",
-
-                "Brand name appears outside the main domain",
-
-                "A recognizable brand name appears in the hostname but does not appear to be the registered domain itself.",
-
-                evidence=", ".join(
-                    suspicious_brands
-                ),
-
-                recommendation="Verify the domain ownership and official website before entering credentials.",
-
-                score=45,
-
+                "Targeted Brand Impersonation (Combosquatting)",
+                "CRITICAL",
+                f"Unauthorized brand domain targeting {primary_brand.upper()}",
+                f"The hostname '{host}' incorporates the high-value brand '{primary_brand}' on an unregistered, non-official domain '{reg_domain}'. This is a high-confidence combosquatting vector frequently utilized in credential harvesting.",
+                evidence=f"Brand: {primary_brand}, Host: {host}, Registered Domain: {reg_domain}",
+                recommendation=f"Do not interact or enter credentials. Legitimate {primary_brand.upper()} services operate strictly under verified domains.",
+                score=65,
                 confidence="HIGH"
-
             )
 
-        url_lower = self.original_url.lower()
-        path_brands = [b for b in BRAND_NAMES if b in url_lower and b not in self.domain.lower()]
-        if path_brands and not suspicious_brands:
-            sensitive_words = ["login", "signin", "verify", "account", "secure", "update", "suspended", "password"]
-            if any(w in url_lower for w in sensitive_words):
+        # 3. Check Leetspeak Substitutions in domain body (e.g. paypa1, micros0ft, arnazon, goog1e)
+        norm_body = normalize_leetspeak(domain_body)
+        for brand, officials in OFFICIAL_BRAND_DOMAINS.items():
+            if brand in norm_body and brand not in domain_body and reg_domain not in officials:
+                self.ethical_hacking_profile["targeted_brand"] = brand.upper()
+                self.ethical_hacking_profile["attack_vector"] = f"Leetspeak character substitution typosquatting targeting {brand.upper()}"
                 self.add_finding(
-                    "Brand Impersonation in Path",
-                    "HIGH",
-                    "Targeted brand impersonation detected in URL path",
-                    f"Brand name ({', '.join(path_brands)}) is paired with credential-harvesting keywords in the URL path.",
-                    evidence=", ".join(path_brands),
-                    recommendation="Do not enter credentials. Check the actual address bar domain.",
-                    score=40,
+                    "Obfuscated Typosquatting (Leetspeak)",
+                    "CRITICAL",
+                    f"Leetspeak visual homoglyph targeting {brand.upper()}",
+                    f"Domain label '{domain_body}' utilizes deceptive leetspeak substitutions (e.g., '1' for 'l', '0' for 'o', or 'rn' for 'm') to masquerade visually as '{brand}'.",
+                    evidence=f"Spoofed label: '{domain_body}', Normalized: '{norm_body}', Target: '{brand}'",
+                    recommendation="Immediately block this domain at the perimeter firewall and email gateway.",
+                    score=70,
                     confidence="HIGH"
                 )
+                break
 
-
+        # 4. Check Fuzzy Typosquatting (Edit distance 1-2)
+        if not detected_brands and not self.ethical_hacking_profile.get("targeted_brand"):
+            for brand, officials in OFFICIAL_BRAND_DOMAINS.items():
+                dist = calculate_levenshtein(domain_body, brand)
+                if 1 <= dist <= 2 and len(brand) >= 4 and abs(len(domain_body) - len(brand)) <= 2 and reg_domain not in officials:
+                    self.ethical_hacking_profile["targeted_brand"] = brand.upper()
+                    self.ethical_hacking_profile["attack_vector"] = f"Fuzzy domain typosquatting targeting {brand.upper()}"
+                    self.add_finding(
+                        "Fuzzy Domain Typosquatting",
+                        "CRITICAL",
+                        f"Domain typosquatting within {dist} character(s) of {brand.upper()}",
+                        f"The domain label '{domain_body}' closely resembles the trademarked entity '{brand}' with an edit distance of {dist}, typical of look-alike spoofing domains.",
+                        evidence=f"Domain: '{domain_body}', Brand: '{brand}', Levenshtein Distance: {dist}",
+                        recommendation="Verify the target against known corporate asset inventories before authorizing traffic.",
+                        score=60,
+                        confidence="HIGH"
+                    )
+                    break
     # ========================================================
     # KEYWORD ANALYSIS
     # ========================================================
@@ -4097,76 +4137,92 @@ class PhishingAnalyzer:
 
     def calculate_risk(self):
         """
-        Convert collected findings into a final risk level.
-
-        The score is mainly produced while the different
-        analysis functions run. This function only converts
-        that score into a readable risk level and calculates
-        some summary metrics.
+        Convert collected findings into a final risk level and synthesize
+        an actionable MITRE ATT&CK & SOC Incident Response profile.
         """
+        if getattr(self, "is_verified_official", False):
+            self.score = 0
+            self.findings = []
+            risk_level = "BENIGN / VERIFIED"
+            self.metrics["risk_level"] = risk_level
+            self.metrics["score"] = 0
+            self.ethical_hacking_profile = {
+                "mitre_tactics": ["Legitimate Traffic (RFC Compliant)"],
+                "mitre_techniques": [],
+                "targeted_brand": None,
+                "attack_vector": "Verified Official Domain",
+                "soc_remediation": ["Traffic is verified benign. No SOC escalation required."]
+            }
+            return
 
-        # Keep score inside a sensible range.
         if self.score < 0:
             self.score = 0
-
         if self.score > 100:
             self.score = 100
 
-        # Count findings by severity.
-        critical_count = 0
-        high_count = 0
-        medium_count = 0
-        low_count = 0
-        info_count = 0
+        critical_count = sum(1 for f in self.findings if str(f.severity).upper() == "CRITICAL")
+        high_count = sum(1 for f in self.findings if str(f.severity).upper() == "HIGH")
+        medium_count = sum(1 for f in self.findings if str(f.severity).upper() == "MEDIUM")
+        low_count = sum(1 for f in self.findings if str(f.severity).upper() == "LOW")
 
-        for finding in self.findings:
-            severity = str(finding.severity).upper()
-
-            if severity == "CRITICAL":
-                critical_count += 1
-            elif severity == "HIGH":
-                high_count += 1
-            elif severity == "MEDIUM":
-                medium_count += 1
-            elif severity == "LOW":
-                low_count += 1
-            elif severity == "INFO":
-                info_count += 1
-
-        # Decide overall risk based on severity findings and cumulative score.
-        if critical_count > 0 or self.score >= 70:
+        if critical_count > 0 or self.score >= 65:
             risk_level = "CRITICAL"
-
         elif high_count > 0 or self.score >= 35:
             risk_level = "HIGH"
-
         elif medium_count >= 2 or self.score >= 20:
             risk_level = "MEDIUM"
-
         elif self.score >= 10 or low_count > 0:
             risk_level = "LOW"
-
         else:
             risk_level = "MINIMAL"
 
-        self.metrics["risk_score"] = self.score
         self.metrics["risk_level"] = risk_level
+        self.metrics["score"] = self.score
 
-        self.metrics["critical_findings"] = critical_count
-        self.metrics["high_findings"] = high_count
-        self.metrics["medium_findings"] = medium_count
-        self.metrics["low_findings"] = low_count
-        self.metrics["info_findings"] = info_count
+        # Synthesize MITRE ATT&CK Matrix
+        mitre_tactics = set()
+        mitre_techniques = []
 
-        self.metrics["total_findings"] = len(self.findings)
-        self.metrics["total_warnings"] = len(self.warnings)
-        self.metrics["total_errors"] = len(self.errors)
+        has_brand = bool(self.ethical_hacking_profile.get("targeted_brand"))
+        has_creds = any("keyword" in str(f.title).lower() or "login" in str(f.evidence).lower() for f in self.findings)
+        has_obfuscation = any("entropy" in str(f.title).lower() or "typosquatting" in str(f.title).lower() or "homoglyph" in str(f.title).lower() for f in self.findings)
+        has_file = any("extension" in str(f.title).lower() or "executable" in str(f.title).lower() for f in self.findings)
 
-        return risk_level
+        if has_brand or has_creds or self.score >= 30:
+            mitre_tactics.add("Initial Access (TA0001)")
+            mitre_techniques.append({"id": "T1566.002", "name": "Phishing: Spearphishing Link"})
 
-    # ============================================================
-    # RESULT BUILDER
-    # ============================================================
+        if has_obfuscation or has_brand:
+            mitre_tactics.add("Defense Evasion (TA0005)")
+            mitre_techniques.append({"id": "T1036.005", "name": "Masquerading: Match Legitimate Name"})
+
+        if has_creds:
+            mitre_tactics.add("Credential Access (TA0006)")
+            mitre_techniques.append({"id": "T1056.003", "name": "Input Capture: Web Credential Harvesting"})
+
+        if has_file:
+            mitre_tactics.add("Execution (TA0002)")
+            mitre_techniques.append({"id": "T1204.002", "name": "User Execution: Malicious File"})
+
+        self.ethical_hacking_profile["mitre_tactics"] = sorted(list(mitre_tactics))
+        self.ethical_hacking_profile["mitre_techniques"] = mitre_techniques
+
+        # Synthesize SOC Incident Response Playbook
+        soc_actions = []
+        host = self.hostname or self.url
+        if self.score >= 50 or critical_count > 0:
+            soc_actions.append(f"DNS Sinkhole: Deploy sinkhole record for '{host}' on boundary recursive resolvers.")
+            soc_actions.append(f"Perimeter Firewall: Add egress drop rule for IP/FQDN '{host}' on ports 80/443.")
+            soc_actions.append("SIEM Query: Search proxy/EDR telemetry for HTTP GET/POST requests matching this URI in the past 14 days.")
+            if has_creds:
+                soc_actions.append("Identity Response: Force MFA credential resets for any user account that accessed this URL.")
+        elif self.score >= 20:
+            soc_actions.append("Passive Monitoring: Add domain to watchlist on perimeter web proxy.")
+            soc_actions.append("User Awareness: Review user reported email headers if link originated from an inbound email.")
+        else:
+            soc_actions.append("Standard Logging: No immediate malicious indicators. Maintain standard event telemetry.")
+
+        self.ethical_hacking_profile["soc_remediation"] = soc_actions
 
     def build_result(self):
         """
@@ -4224,6 +4280,8 @@ class PhishingAnalyzer:
             "timeout": self.timeout,
         }
 
+        result["is_verified_official"] = getattr(self, "is_verified_official", False)
+        result["ethical_hacking_profile"] = getattr(self, "ethical_hacking_profile", {})
         return result
 
     # ============================================================

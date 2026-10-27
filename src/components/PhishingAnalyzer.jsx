@@ -2,6 +2,8 @@ import { useState } from "react";
 import {
   AlertTriangle,
   CheckCircle2,
+  Terminal,
+  Shield,
   CircleGauge,
   Link as LinkIcon,
   RefreshCw,
@@ -297,6 +299,121 @@ export default function PhishingAnalyzer() {
                 <Metric label="TOTAL FINDINGS" value={metrics.total_findings || findings.length || 0} tone="violet" />
                 <Metric label="ENTROPY" value={metrics.url_entropy ? `${metrics.url_entropy.toFixed(2)}` : "Normal"} tone="blue" />
               </div>
+
+              {/* TARGETED BRAND & SPOOFING ASSESSMENT */}
+              {report.is_verified_official ? (
+                <div style={{
+                  padding: "16px 20px",
+                  borderRadius: "12px",
+                  background: "rgba(74, 222, 128, 0.12)",
+                  border: "1px solid rgba(74, 222, 128, 0.35)",
+                  color: "#4ade80",
+                  marginBottom: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "14px"
+                }}>
+                  <CheckCircle2 size={24} color="#4ade80" />
+                  <div>
+                    <strong style={{ fontSize: "14px", display: "block" }}>
+                      VERIFIED OFFICIAL BRAND INFRASTRUCTURE
+                    </strong>
+                    <span style={{ fontSize: "12px", color: "#a7f3d0" }}>
+                      This domain matches confirmed, authentic corporate infrastructure. Zero phishing or lookalike indicators detected.
+                    </span>
+                  </div>
+                </div>
+              ) : report.ethical_hacking_profile?.targeted_brand ? (
+                <div style={{
+                  padding: "16px 20px",
+                  borderRadius: "12px",
+                  background: "rgba(250, 55, 195, 0.15)",
+                  border: "1px solid rgba(250, 55, 195, 0.4)",
+                  color: "#ff7be2",
+                  marginBottom: "20px",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "14px"
+                }}>
+                  <ShieldAlert size={24} color="#fa37c3" />
+                  <div>
+                    <strong style={{ fontSize: "14px", display: "block", textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                      TARGETED ENTITY: {report.ethical_hacking_profile.targeted_brand}
+                    </strong>
+                    <span style={{ fontSize: "12px", color: "#ffd6f4" }}>
+                      {report.ethical_hacking_profile.attack_vector}
+                    </span>
+                  </div>
+                </div>
+              ) : null}
+
+              {/* MITRE ATT&CK MATRIX & SOC REMEDIATION */}
+              {report.ethical_hacking_profile?.mitre_techniques?.length > 0 && (
+                <div style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: "16px",
+                  marginBottom: "22px"
+                }}>
+                  {/* MITRE ATT&CK MATRIX */}
+                  <div style={{
+                    padding: "18px 20px",
+                    borderRadius: "12px",
+                    background: "rgba(10, 14, 32, 0.75)",
+                    border: "1px solid rgba(154, 85, 255, 0.3)",
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
+                      <Terminal size={17} color="#00f2fe" />
+                      <strong style={{ font: "700 12px 'DM Mono', monospace", color: "#00f2fe", textTransform: "uppercase" }}>
+                        MITRE ATT&CK Mappings
+                      </strong>
+                    </div>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: "8px", marginBottom: "12px" }}>
+                      {report.ethical_hacking_profile.mitre_tactics.map((tac) => (
+                        <span key={tac} style={{
+                          padding: "3px 9px",
+                          borderRadius: "4px",
+                          background: "rgba(0, 242, 254, 0.12)",
+                          border: "1px solid rgba(0, 242, 254, 0.25)",
+                          color: "#7df9ff",
+                          fontSize: "11px",
+                          fontFamily: "'DM Mono', monospace",
+                          fontWeight: "600"
+                        }}>
+                          {tac}
+                        </span>
+                      ))}
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: "18px", color: "#d0cce6", fontSize: "12px", lineHeight: "1.7" }}>
+                      {report.ethical_hacking_profile.mitre_techniques.map((tech) => (
+                        <li key={tech.id}>
+                          <strong style={{ color: "#fa37c3", fontFamily: "'DM Mono', monospace" }}>{tech.id}</strong>: {tech.name}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* SOC INCIDENT RESPONSE PLAYBOOK */}
+                  <div style={{
+                    padding: "18px 20px",
+                    borderRadius: "12px",
+                    background: "rgba(10, 14, 32, 0.75)",
+                    border: "1px solid rgba(250, 55, 195, 0.3)",
+                  }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "12px" }}>
+                      <Shield size={17} color="#fa37c3" />
+                      <strong style={{ font: "700 12px 'DM Mono', monospace", color: "#fa37c3", textTransform: "uppercase" }}>
+                        SOC Incident Response Actions
+                      </strong>
+                    </div>
+                    <ul style={{ margin: 0, paddingLeft: "18px", color: "#d0cce6", fontSize: "12px", lineHeight: "1.7" }}>
+                      {report.ethical_hacking_profile.soc_remediation.map((act, i) => (
+                        <li key={i}>{act}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )}
 
               <section className="phishing-results">
                 <div className="phishing-results-heading">
