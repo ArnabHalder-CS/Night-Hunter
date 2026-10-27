@@ -477,12 +477,10 @@ def download_release(filename):
     if RELEASES_DIR.is_dir() and (RELEASES_DIR / filename).is_file():
         return send_from_directory(RELEASES_DIR, filename, as_attachment=True)
     return jsonify({
-        "success": True,
-        "message": "Night Hunter is operating in Cloud Edition mode.",
-        "package": filename,
-        "cloud_url": "https://night-hunter-0br7.onrender.com",
-        "run_locally": "git clone https://github.com/ArnabHalder-CS/Night-Hunter.git && cd Night-Hunter && pip install -r requirement.txt && python main.py"
-    })
+        "success": False,
+        "error": f"Release file '{filename}' is not available on this server.",
+        "github_url": "https://github.com/ArnabHalder-CS/Night-Hunter"
+    }), 404
 
 
 @app.get("/")

@@ -4,6 +4,7 @@ __pycache__/
 *.pyo
 .DS_Store
 *.bat
+!start_night_hunter.bat
 build/
 .build-venv/
 *.spec
@@ -13,7 +14,7 @@ reports/*.html
 reports/*.txt
 !reports/.gitkeep
 frontend/
-releases/
-*.exe
-*.zip
-*.tar.gz
+
+# Releases
+!releases/
+!releases/*
