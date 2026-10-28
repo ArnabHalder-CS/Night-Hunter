@@ -205,17 +205,17 @@ export default function LandingPage() {
           <div className="hero-orbit orbit-two" />
           <div className="hero-grid-lines" />
           <div className="hero-copy">
-            <p className="landing-eyebrow"><span /> DEFENSIVE SECURITY PLATFORM • V1.7.0</p>
-            <h1>See the threat.<br /><em>Own the response.</em></h1>
-            <p className="hero-description">A focused security workspace for authorized analysis, target device reconnaissance, and defensive auditing across your devices.</p>
+            <p className="landing-eyebrow"><span /> NIGHT HUNTER • DEFENSIVE SECURITY PLATFORM • V1.7.0</p>
+            <h1>Attackers move fast.<br /><em>Night Hunter moves faster.</em></h1>
+            <p className="hero-description">Every phishing link, scam message, open port, and weak certificate your target exposes — Night Hunter finds it first. Five professional security engines. One dashboard. Works on Windows, Linux, Android, and the cloud. No setup required.</p>
             <div className="hero-actions">
               <a className="hero-primary" href="/app">Launch Live Cloud App <Play size={17} /></a>
               <a className="hero-secondary" href="#downloads">Download Offline Tool <Download size={17} /></a>
             </div>
             <div className="hero-proof">
-              <span><Check size={14} /> Windows, Linux &amp; Android</span>
-              <span><Check size={14} /> Built for authorized testing</span>
-              <span><Check size={14} /> Low-overhead native reconnaissance</span>
+              <span><Check size={14} /> 14 / 14 automated tests passing</span>
+              <span><Check size={14} /> 100% precision on 120-message benchmark</span>
+              <span><Check size={14} /> 653+ threat signals. Zero fake data.</span>
             </div>
           </div>
           <div className="hero-mark" aria-hidden="true">
@@ -231,31 +231,31 @@ export default function LandingPage() {
         <section className="about-section" id="about">
           <div className="about-inner">
             <div className="about-header">
-              <p className="landing-eyebrow"><span /> ABOUT NIGHT HUNTER</p>
-              <h2>A Platform Built for<br /><em>Real Defensive Work.</em></h2>
+              <p className="landing-eyebrow"><span /> WHY NIGHT HUNTER EXISTS</p>
+              <h2>Most security tools lie to you.<br /><em>Night Hunter does not.</em></h2>
             </div>
 
 
             <div className="about-stats-bar">
               <div className="about-stat">
                 <span className="about-stat-number">653+</span>
-                <span className="about-stat-label">Scam keywords powering the message classifier</span>
+                <span className="about-stat-label">Threat signals in the scam detection engine</span>
               </div>
               <div className="about-stat">
                 <span className="about-stat-number">60+</span>
-                <span className="about-stat-label">Real brand identities the URL engine defends</span>
+                <span className="about-stat-label">Major brands the phishing engine protects against impersonation</span>
               </div>
               <div className="about-stat">
                 <span className="about-stat-number">2,412</span>
-                <span className="about-stat-label">Live phishing URLs cross-referenced on every scan</span>
+                <span className="about-stat-label">Verified live phishing URLs checked against every domain you submit</span>
               </div>
               <div className="about-stat">
                 <span className="about-stat-number">12,837</span>
-                <span className="about-stat-label">Real-world messages used to train and verify the engine</span>
+                <span className="about-stat-label">Real scam and legitimate messages used to verify accuracy</span>
               </div>
               <div className="about-stat">
                 <span className="about-stat-number">14 / 14</span>
-                <span className="about-stat-label">Automated tests passing including advanced benchmark suite</span>
+                <span className="about-stat-label">Automated tests passing — including a full 120-sample benchmark</span>
               </div>
               <div className="about-stat">
                 <span className="about-stat-number">100%</span>
@@ -275,15 +275,15 @@ export default function LandingPage() {
             <div className="about-engines">
               <div className="engine-block">
                 <div className="engine-label">ENGINE 01</div>
-                <h3>Scam Message Classifier</h3>
+                <h3>Scam Message Classifier — Read the threat before you click.</h3>
                 <p>
-                  The message classifier analyzes SMS, WhatsApp, and UPI fraud texts without connecting to any external service. It works by evaluating a weighted keyword corpus of over 650 scam indicators — covering UPI refund fraud, KYC theft, fake electricity disconnection notices, digital arrest impersonation, job offer scams, and courier parcel traps. Each detected signal carries a severity weight. A single low-weight term raises a minimal score. A combination of urgency language, financial trigger words, and an embedded link raises the threat level to HIGH or CRITICAL. The engine also handles Hinglish phrasing common in Indian scam messages and evaluates URL structure embedded in text. It was benchmarked against a 120-message labeled dataset of real-world samples sourced from academic feeds and verified incident vectors, achieving 100% precision and 90% recall with a 0% false positive rate on that set.
+                  Every day, thousands of people click a scam link because the message looked legitimate. Night Hunter's message classifier exists to stop that moment before it happens. It works by evaluating a weighted keyword corpus of over 650 scam indicators — covering UPI refund fraud, KYC theft, fake electricity disconnection notices, digital arrest impersonation, job offer scams, and courier parcel traps. Each detected signal carries a severity weight. A single low-weight term raises a minimal score. A combination of urgency language, financial trigger words, and an embedded link raises the threat level to HIGH or CRITICAL. The engine also handles Hinglish phrasing common in Indian scam messages and evaluates URL structure embedded in text. It was benchmarked against a 120-message labeled dataset of real-world samples sourced from academic feeds and verified incident vectors, achieving 100% precision and 90% recall with a 0% false positive rate on that set.
                 </p>
               </div>
 
               <div className="engine-block">
                 <div className="engine-label">ENGINE 02</div>
-                <h3>URL and Domain Phishing Analyzer</h3>
+                <h3>URL and Domain Phishing Analyzer — Expose the fake link. Silently.</h3>
                 <p>
                   The URL analyzer inspects any link or domain passively — without loading the page, without executing scripts, and without alerting the server. The analysis runs in four layers. First, it checks for IDN homoglyphs: characters from Cyrillic, Greek, or other Unicode blocks that are visually identical to Latin letters but encode differently, a technique used to spoof trusted domains. Second, it computes Damerau-Levenshtein edit distance against a corpus of 60 major brands — banks, payment platforms, e-commerce sites, and government portals — to catch typosquatting and combosquatting variants. Third, it cross-references the domain against 2,412 live phishing URLs sourced from OpenPhish and URLhaus. Fourth, it scores top-level domain risk, subdomain depth, and suspicious keyword patterns in the path. For any flagged domain, the analyzer generates a MITRE ATT&CK profile mapping to technique T1566.002 (Spearphishing Link) and produces JSON output suitable for SIEM ingestion.
                 </p>
@@ -291,32 +291,32 @@ export default function LandingPage() {
 
               <div className="engine-block">
                 <div className="engine-label">ENGINE 03</div>
-                <h3>Web Security and Domain Intelligence</h3>
+                <h3>Web Security and Domain Intelligence — Find what the website is hiding.</h3>
                 <p>
-                  The web security module performs a structured audit of any publicly accessible web application. It checks TLS version and certificate validity, evaluates HTTP security response headers including Content-Security-Policy, Strict-Transport-Security, X-Frame-Options, and X-Content-Type-Options, audits cookie attributes for Secure and HttpOnly flags, inspects DNS records for SPF and DMARC email authentication, and detects common misconfigurations such as exposed directory listings, verbose error responses, and accessible admin interfaces. On the public cloud deployment, scanning of loopback addresses, private IP ranges, and cloud metadata endpoints is blocked to prevent abuse. Active scanner integrations for Nikto, Nuclei, and OpenVAS are available when running locally.
+                  A misconfigured security header. An expired TLS certificate. An admin login page left exposed. These are the gaps attackers exploit first. Night Hunter's web security engine finds them before an attacker does. It checks TLS version and certificate validity, evaluates HTTP security response headers including Content-Security-Policy, Strict-Transport-Security, X-Frame-Options, and X-Content-Type-Options, audits cookie attributes for Secure and HttpOnly flags, inspects DNS records for SPF and DMARC email authentication, and detects common misconfigurations such as exposed directory listings, verbose error responses, and accessible admin interfaces. On the public cloud deployment, scanning of loopback addresses, private IP ranges, and cloud metadata endpoints is blocked to prevent abuse. Active scanner integrations for Nikto, Nuclei, and OpenVAS are available when running locally.
                 </p>
               </div>
 
               <div className="engine-block">
                 <div className="engine-label">ENGINE 04</div>
-                <h3>Network Reconnaissance and Port Scanner</h3>
+                <h3>Network Reconnaissance and Port Scanner — See every open door on the network.</h3>
                 <p>
-                  The network scanner uses asynchronous raw TCP sockets to probe all 65,535 ports on a target host. Open ports trigger service banner grabbing and PTR reverse DNS resolution. When Nmap is installed, the engine hands off to it for OS fingerprinting and detailed service version detection using the T5 timing template for speed. The network perimeter module additionally tests egress firewall configurations, identifies gateway behavior, and computes a defense posture score. All target input is sanitized through a strict validator that blocks option injection strings — arguments like --script=http-vuln or -f are rejected before reaching any system call. The scanner operates in full mode when run locally and returns a clear authorization notice on the public demo.
+                  An unauthorized open port is an invitation. Night Hunter's network scanner checks every one of the 65,535 ports available on a target using real raw TCP sockets — not a web API, not a wrapper, not a simulation. Open ports trigger service banner grabbing and PTR reverse DNS resolution. When Nmap is installed, the engine hands off to it for OS fingerprinting and detailed service version detection using the T5 timing template for speed. The network perimeter module additionally tests egress firewall configurations, identifies gateway behavior, and computes a defense posture score. All target input is sanitized through a strict validator that blocks option injection strings — arguments like --script=http-vuln or -f are rejected before reaching any system call. The scanner operates in full mode when run locally and returns a clear authorization notice on the public demo.
                 </p>
               </div>
 
               <div className="engine-block">
                 <div className="engine-label">ENGINE 05</div>
-                <h3>Cryptography and Password Analysis Suite</h3>
+                <h3>Cryptography and Password Analysis Suite — Know if your data is already broken.</h3>
                 <p>
-                  The cryptography module provides ten simultaneous hash digest computations across MD5, SHA-1, SHA-256, SHA-512, and bcrypt, along with an unknown hash format identifier. It includes a password strength analyzer that calculates Shannon entropy, detects keyboard walk patterns, l33tspeak substitutions, and dictionary proximity, and provides an estimated crack time under brute-force conditions. A cryptographically secure random password generator produces output across configurable character sets. Additional tools cover file integrity verification, JWT header and payload decoding without signature verification, and classical cipher encoding and decoding for Base64, Hex, Caesar, Vigenere, and ROT13.
+                  If your stored password hash is MD5, it is already crackable in seconds. If your JWT is unsigned, anyone can forge your identity. Night Hunter's cryptography suite computes ten simultaneous hash digests across MD5, SHA-1, SHA-256, SHA-512, and bcrypt, along with an unknown hash format identifier. It includes a password strength analyzer that calculates Shannon entropy, detects keyboard walk patterns, l33tspeak substitutions, and dictionary proximity, and provides an estimated crack time under brute-force conditions. A cryptographically secure random password generator produces output across configurable character sets. Additional tools cover file integrity verification, JWT header and payload decoding without signature verification, and classical cipher encoding and decoding for Base64, Hex, Caesar, Vigenere, and ROT13.
                 </p>
               </div>
             </div>
 
             <div className="about-footer-note">
               <p>
-                Night Hunter was built with a security-first engineering approach throughout. All subprocess calls use <code>shell=False</code> to prevent shell injection. History records are written atomically using a thread lock and OS-level file replacement to prevent corruption under concurrent requests. Passwords analyzed through the tool are never stored, echoed in logs, or included in activity history. The codebase spans 31,000 lines of code across 69 Python modules and a React frontend, and passed two independent full-code security audits before release.
+                Night Hunter is not a class project with a nice interface. It is a production-grade defensive tool built with security-first engineering throughout. All subprocess calls use <code>shell=False</code> to prevent shell injection. History records are written atomically using a thread lock and OS-level file replacement to prevent corruption under concurrent requests. Passwords analyzed through the tool are never stored, echoed in logs, or included in activity history. The codebase spans 31,000 lines of code across 69 Python modules and a React frontend, and passed two independent full-code security audits before release.
               </p>
             </div>
           </div>
@@ -326,8 +326,8 @@ export default function LandingPage() {
         <section className="statement-section" id="features">
           <p className="landing-eyebrow"><span /> THE NIGHT HUNTER PLATFORM</p>
           <div className="statement-heading">
-            <h2>One command center.<br />A clearer security picture.</h2>
-            <p>Designed for engineers and analysts who need a refined place to inspect systems, understand findings, and act with confidence.</p>
+            <h2>Five engines.<br /><em>One platform. Zero excuses.</em></h2>
+            <p>From a phishing SMS to a misconfigured production server to a weak cryptographic hash — Night Hunter covers the entire defensive stack without asking you to open five different tools.</p>
           </div>
           <div className="feature-columns">
             <article><Globe2 /><h3>Domain &amp; Tech Intelligence</h3><p>DNS A record discovery, SSL/TLS handshake &amp; expiry, latency checks, and standard security headers.</p></article>
@@ -341,9 +341,9 @@ export default function LandingPage() {
         <section className="why-hunter-section">
           <div className="why-hunter-header">
             <p className="landing-eyebrow"><span /> BUILT FOR PENETRATION TESTERS &amp; SOC DEFENDERS</p>
-            <h2>Real Network Sockets.<br /><em>Zero Mock Data or Toy Scans.</em></h2>
+            <h2>Built different.<br /><em>Because fake tools get people hacked.</em></h2>
             <p className="why-hunter-subtitle">
-              Night Hunter delivers genuine low-level TCP socket auditing across all 65,535 ports, zero-day phishing heuristics with MITRE ATT&amp;CK mapping, and cryptographic analysis without heavy setup or third-party bloat.
+              Most student-built security tools display fake progress bars and return preset results. Night Hunter does the opposite. Every scan performs genuine system-level operations. Every finding is real. Every number in this page is verifiable. That is not a claim — it is an engineering commitment backed by 31,000 lines of audited source code and two independent security reviews.
             </p>
           </div>
 
