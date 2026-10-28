@@ -59,3 +59,43 @@ def safe_host(raw: str) -> str:
         return h
 
     return ""
+
+
+import socket
+from urllib.parse import urlparse
+
+def is_public_host(url: str) -> bool:
+    """
+    Returns False if the URL resolves to a private, loopback, link-local,
+    or non-routable address (SSRF guard for public/cloud instances).
+    """
+    if not url:
+        return False
+    try:
+        parsed = urlparse(url)
+        host = parsed.hostname or url.split("/")[0].split(":")[0]
+    except Exception:
+        return False
+
+    if not host:
+        return False
+
+    try:
+        infos = socket.getaddrinfo(host, None)
+    except socket.gaierror:
+        # Let scanner handle DNS resolution failure naturally
+        return True
+    except Exception:
+        return False
+
+    for info in infos:
+        sockaddr = info[4]
+        ip_str = sockaddr[0]
+        try:
+            ip = ipaddress.ip_address(ip_str)
+            if not ip.is_global or ip.is_private or ip.is_loopback or ip.is_link_local or ip.is_reserved:
+                return False
+        except ValueError:
+            return False
+
+    return True

@@ -30,7 +30,8 @@ import TermsAndConditions from "./TermsAndConditions";
 
 const downloads = [
   { icon: Globe, name: "Cloud Web Dashboard (Active)", detail: "Instant access in your browser • Zero installation • All core tools ready", href: "/app", action: "Launch Web App", isDl: false },
-  { icon: Laptop, name: "Windows (.zip)", detail: "night-hunter-windows.zip • Unzip and run python main.py • No wizard needed", href: "/downloads/night-hunter-windows.zip", action: "Download for Windows", isDl: true },
+  { icon: Laptop, name: "Windows (.zip)", detail: "night-hunter-windows.zip • Unzip and run start_night_hunter.bat • No setup needed", href: "/downloads/night-hunter-windows.zip", action: "Download for Windows", isDl: true },
+  { icon: Download, name: "Windows Standalone (.exe)", detail: "NightHunter.exe • 1-Click direct run • No Python or setup needed", href: "/downloads/NightHunter.exe", action: "Download .exe", isDl: true },
   { icon: Terminal, name: "Linux (.tar.gz)", detail: "night-hunter-linux.tar.gz • Kali / Ubuntu / Debian / Arch • Full Web UI", href: "/downloads/night-hunter-linux.tar.gz", action: "Download for Linux", isDl: true },
   { icon: Smartphone, name: "Termux / Android (.zip)", detail: "night-hunter-termux.zip • Mobile recon on Android via Termux", href: "/downloads/night-hunter-termux.zip", action: "Download for Termux", isDl: true },
   { icon: FileText, name: "Source Code (GitHub)", detail: "Publicly auditable, clean repository • git clone & go", href: "https://github.com/ArnabHalder-CS/Night-Hunter", action: "View Repository", isDl: false },

@@ -1,3 +1,4 @@
+from core.validators import is_public_host
 from pathlib import Path
 import json
 import sys
@@ -149,6 +150,12 @@ def web_security():
 
             target = "https://" + target
 
+        if CLOUD_RUNTIME and not is_public_host(target):
+            return jsonify({
+                "success": False,
+                "error": "Scanning loopback, private or cloud-internal metadata addresses is restricted on the public demo."
+            }), 400
+
         print()
         print("=" * 60)
         print("NIGHT HUNTER API - WEB SECURITY")
@@ -287,19 +294,6 @@ def network_security():
         print(f"Target: {target}")
         print()
 
-        # Detect cloud / sandbox environments where outbound raw TCP
-        # is blocked (Render free tier, GitHub Actions, etc.).
-        if not _can_do_outbound_tcp():
-            print("[!] Outbound TCP blocked - cloud environment detected")
-            return jsonify({
-                "success": False,
-                "cloud_limitation": True,
-                "error": (
-                    "Port scanning requires direct network access. "
-                    "This cloud server cannot open raw TCP sockets to external hosts. "
-                    "Run Night Hunter locally for full port scan functionality."
-                )
-            }), 503
 
         result = test_network_connection(target)
         if not result.get("success"):
@@ -538,6 +532,9 @@ def download_release(filename):
 @app.get("/<path:path>")
 def frontend(path=""):
     """Serve the production React dashboard from the same local server."""
+    if path.startswith("api/"): 
+        return jsonify({"success": False, "error": "Unknown API endpoint."}), 404
+
     requested_file = FRONTEND_DIST / path
 
     if path and requested_file.is_file():

@@ -22,7 +22,7 @@
 
 <p align="center">
 
-  <a href="https://night-hunter-f2w4.onrender.com"><img src="https://img.shields.io/badge/Live_Cloud_App-Online-4ade80?style=for-the-badge&logo=render" alt="Live Cloud Demo" /></a>
+  <a href="https://night-hunter-0br7.onrender.com"><img src="https://img.shields.io/badge/Live_Cloud_App-Online-4ade80?style=for-the-badge&logo=render" alt="Live Cloud Demo" /></a>
 
   <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" alt="License: MIT" /></a>
 
@@ -54,7 +54,7 @@ Night Hunter operates in two complementary modes:
 
 
 
-🌐 **Official Live Web Application:** [night-hunter-f2w4.onrender.com](https://night-hunter-f2w4.onrender.com)  
+🌐 **Official Live Web Application:** [night-hunter-0br7.onrender.com](https://night-hunter-0br7.onrender.com)  
 
 📘 **Complete setup and user guide:** [USER_GUIDE.md](USER_GUIDE.md)
 

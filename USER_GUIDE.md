@@ -17,7 +17,7 @@ Night Hunter is a defensive-security workbench for systems, websites, and networ
 | Use command-line tools on Android | Termux package |
 | Keep the app available from any phone/browser | Cloud dashboard |
 
-The public dashboard is: <https://night-hunter-f2w4.onrender.com>
+The public dashboard is: <https://night-hunter-0br7.onrender.com>
 
 ## 2. Cloud dashboard
 
