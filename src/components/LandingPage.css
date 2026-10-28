@@ -649,3 +649,146 @@
   line-height: 1.5;
   margin: 16px 0;
 }
+
+/* ========================
+   ABOUT SECTION
+======================== */
+.about-section {
+  padding: 120px clamp(24px, 10vw, 155px);
+  background: #0b0912;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.about-header {
+  margin-bottom: 52px;
+}
+
+.about-header h2 {
+  font: 600 clamp(38px, 4.5vw, 68px) / 1 'Playfair Display', serif;
+  letter-spacing: -0.045em;
+  color: #fff;
+  margin: 22px 0 0;
+}
+
+.about-header h2 em {
+  font-weight: 500;
+  color: #dd9dff;
+}
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 72px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-intro p {
+  color: #b2abbe;
+  font-size: 15px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.about-engines {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.engine-block {
+  padding: 42px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.09);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.engine-block:first-child {
+  border-top: none;
+}
+
+.engine-label {
+  font: 500 10px / 1 'DM Mono', monospace;
+  letter-spacing: 0.18em;
+  color: #fa35c8;
+  padding-top: 6px;
+  text-transform: uppercase;
+}
+
+.engine-block h3 {
+  font: 600 20px / 1.2 'Playfair Display', serif;
+  color: #f0ebff;
+  margin: 0 0 16px;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.engine-block p {
+  color: #a9a2bc;
+  font-size: 14px;
+  line-height: 1.85;
+  margin: 0;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.about-footer-note {
+  margin-top: 72px;
+  padding: 32px 36px;
+  border-left: 3px solid rgba(154, 85, 255, 0.6);
+  background: rgba(154, 85, 255, 0.06);
+  border-radius: 0 6px 6px 0;
+}
+
+.about-footer-note p {
+  color: #a79ead;
+  font-size: 13px;
+  line-height: 1.85;
+  margin: 0;
+}
+
+.about-footer-note code {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 1px 6px;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #e0d5ff;
+  font-family: 'DM Mono', monospace;
+}
+
+@media (max-width: 800px) {
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .engine-block {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .engine-block h3 {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 6px;
+  }
+
+  .engine-block p {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  .about-footer-note {
+    padding: 22px 20px;
+  }
+}

@@ -139,6 +139,7 @@ export default function LandingPage() {
         </a>
         <nav>
           <a href="/app" style={{ color: "#fa37c3", fontWeight: 700 }}>Live App</a>
+          <a href="#about">About</a>
           <a href="#features">Platform</a>
           <a href="#benchmarks">Benchmarks</a>
           <a href="#blog">Research Blog</a>
@@ -223,6 +224,74 @@ export default function LandingPage() {
             <div className="mark-caption">NIGHT HUNTER <span>01 / DEFENSIVE OPS</span></div>
           </div>
           <p className="hero-scroll">SCROLL TO EXPLORE <ChevronDown size={15} /></p>
+        </section>
+
+
+        {/* ABOUT SECTION */}
+        <section className="about-section" id="about">
+          <div className="about-inner">
+            <div className="about-header">
+              <p className="landing-eyebrow"><span /> ABOUT NIGHT HUNTER</p>
+              <h2>A Platform Built for<br /><em>Real Defensive Work.</em></h2>
+            </div>
+
+            <div className="about-intro">
+              <p>
+                Night Hunter is a unified, multi-platform cybersecurity platform designed for authorized security auditing, phishing threat analysis, network reconnaissance, and cryptographic verification. It brings together five independent security disciplines under a single dashboard — deployable in your browser instantly, or installed natively on Windows, Linux, and Android without any complex setup.
+              </p>
+              <p>
+                Every engine in Night Hunter performs genuine operations. There are no simulated results, no faked progress indicators, and no placeholder data. When a port scan runs, it opens real TCP sockets. When a domain is analyzed, it performs live DNS resolution, TLS handshakes, and header inspection. The phishing engine does not send the link anywhere — it examines the URL structure, character encoding, and brand proximity entirely offline.
+              </p>
+            </div>
+
+            <div className="about-engines">
+              <div className="engine-block">
+                <div className="engine-label">ENGINE 01</div>
+                <h3>Scam Message Classifier</h3>
+                <p>
+                  The message classifier analyzes SMS, WhatsApp, and UPI fraud texts without connecting to any external service. It works by evaluating a weighted keyword corpus of over 650 scam indicators — covering UPI refund fraud, KYC theft, fake electricity disconnection notices, digital arrest impersonation, job offer scams, and courier parcel traps. Each detected signal carries a severity weight. A single low-weight term raises a minimal score. A combination of urgency language, financial trigger words, and an embedded link raises the threat level to HIGH or CRITICAL. The engine also handles Hinglish phrasing common in Indian scam messages and evaluates URL structure embedded in text. It was benchmarked against a 120-message labeled dataset of real-world samples sourced from academic feeds and verified incident vectors, achieving 100% precision and 90% recall with a 0% false positive rate on that set.
+                </p>
+              </div>
+
+              <div className="engine-block">
+                <div className="engine-label">ENGINE 02</div>
+                <h3>URL and Domain Phishing Analyzer</h3>
+                <p>
+                  The URL analyzer inspects any link or domain passively — without loading the page, without executing scripts, and without alerting the server. The analysis runs in four layers. First, it checks for IDN homoglyphs: characters from Cyrillic, Greek, or other Unicode blocks that are visually identical to Latin letters but encode differently, a technique used to spoof trusted domains. Second, it computes Damerau-Levenshtein edit distance against a corpus of 60 major brands — banks, payment platforms, e-commerce sites, and government portals — to catch typosquatting and combosquatting variants. Third, it cross-references the domain against 2,412 live phishing URLs sourced from OpenPhish and URLhaus. Fourth, it scores top-level domain risk, subdomain depth, and suspicious keyword patterns in the path. For any flagged domain, the analyzer generates a MITRE ATT&CK profile mapping to technique T1566.002 (Spearphishing Link) and produces JSON output suitable for SIEM ingestion.
+                </p>
+              </div>
+
+              <div className="engine-block">
+                <div className="engine-label">ENGINE 03</div>
+                <h3>Web Security and Domain Intelligence</h3>
+                <p>
+                  The web security module performs a structured audit of any publicly accessible web application. It checks TLS version and certificate validity, evaluates HTTP security response headers including Content-Security-Policy, Strict-Transport-Security, X-Frame-Options, and X-Content-Type-Options, audits cookie attributes for Secure and HttpOnly flags, inspects DNS records for SPF and DMARC email authentication, and detects common misconfigurations such as exposed directory listings, verbose error responses, and accessible admin interfaces. On the public cloud deployment, scanning of loopback addresses, private IP ranges, and cloud metadata endpoints is blocked to prevent abuse. Active scanner integrations for Nikto, Nuclei, and OpenVAS are available when running locally.
+                </p>
+              </div>
+
+              <div className="engine-block">
+                <div className="engine-label">ENGINE 04</div>
+                <h3>Network Reconnaissance and Port Scanner</h3>
+                <p>
+                  The network scanner uses asynchronous raw TCP sockets to probe all 65,535 ports on a target host. Open ports trigger service banner grabbing and PTR reverse DNS resolution. When Nmap is installed, the engine hands off to it for OS fingerprinting and detailed service version detection using the T5 timing template for speed. The network perimeter module additionally tests egress firewall configurations, identifies gateway behavior, and computes a defense posture score. All target input is sanitized through a strict validator that blocks option injection strings — arguments like --script=http-vuln or -f are rejected before reaching any system call. The scanner operates in full mode when run locally and returns a clear authorization notice on the public demo.
+                </p>
+              </div>
+
+              <div className="engine-block">
+                <div className="engine-label">ENGINE 05</div>
+                <h3>Cryptography and Password Analysis Suite</h3>
+                <p>
+                  The cryptography module provides ten simultaneous hash digest computations across MD5, SHA-1, SHA-256, SHA-512, and bcrypt, along with an unknown hash format identifier. It includes a password strength analyzer that calculates Shannon entropy, detects keyboard walk patterns, l33tspeak substitutions, and dictionary proximity, and provides an estimated crack time under brute-force conditions. A cryptographically secure random password generator produces output across configurable character sets. Additional tools cover file integrity verification, JWT header and payload decoding without signature verification, and classical cipher encoding and decoding for Base64, Hex, Caesar, Vigenere, and ROT13.
+                </p>
+              </div>
+            </div>
+
+            <div className="about-footer-note">
+              <p>
+                Night Hunter was built with a security-first engineering approach throughout. All subprocess calls use <code>shell=False</code> to prevent shell injection. History records are written atomically using a thread lock and OS-level file replacement to prevent corruption under concurrent requests. Passwords analyzed through the tool are never stored, echoed in logs, or included in activity history. The codebase spans 31,000 lines of code across 69 Python modules and a React frontend, and passed two independent full-code security audits before release.
+              </p>
+            </div>
+          </div>
         </section>
 
         {/* FEATURES SECTION */}
