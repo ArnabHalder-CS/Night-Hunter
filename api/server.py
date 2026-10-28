@@ -27,6 +27,8 @@ from modules.password_security import checker
 from modules.network_security import checker as network_checker
 from modules.network_security.device_scanner import nmap_profile_status, run_nmap_profile
 from modules.phishing.url_analyzer import PhishingAnalyzer
+from modules.phishing.threat_intel import ThreatIntelChecker as _ThreatIntelChecker
+_threat_intel = _ThreatIntelChecker()
 from modules.cryptography import crypto_tools
 from modules.reports.report_exporter import REPORTS_DIRECTORY
 from modules.reports.history import get_activity_history, record_activity
@@ -381,13 +383,42 @@ def phishing_analysis():
         if not target:
             return jsonify({"success": False, "error": "A URL is required."}), 400
 
-        # Keep the browser-facing endpoint passive: it evaluates the supplied URL
-        # itself and does not request potentially malicious content.
+        # 1. Offline brand/typosquatting check (instant, no network needed)
         report = PhishingAnalyzer(target, fetch_content=False).analyze()
+
+        # 2. Real-time Threat Intelligence (VirusTotal, Google Safe Browsing, PhishTank, URLhaus)
+        #    Fails gracefully if APIs are unavailable or keys not configured.
+        try:
+            from urllib.parse import urlsplit as _urlsplit
+            _hostname = _urlsplit(target if "://" in target else "https://" + target).netloc or target
+            ti = _threat_intel.check(target, hostname=_hostname)
+            if isinstance(report, dict):
+                # Merge threat intel findings
+                existing = report.get("findings", [])
+                existing.extend(ti.get("findings", []))
+                report["findings"] = existing
+                # Boost score if threat intel detected something
+                ti_score = ti.get("threat_intel_score", 0)
+                if ti_score > 0:
+                    report["risk_score"] = min(100, max(report.get("risk_score", 0), ti_score))
+                    if ti.get("threat_intel_verdict") == "MALICIOUS":
+                        report["risk_level"] = "CRITICAL"
+                    elif ti.get("threat_intel_verdict") == "SUSPICIOUS" and report.get("risk_level") in ("LOW", "MINIMAL", "BENIGN / VERIFIED"):
+                        report["risk_level"] = "HIGH"
+                report["threat_intelligence"] = {
+                    "verdict": ti.get("threat_intel_verdict", "UNAVAILABLE"),
+                    "flagged_by": ti.get("threat_intel_sources", []),
+                    "api_keys_configured": ti.get("api_keys_configured", {}),
+                    "details": ti.get("details", {})
+                }
+        except Exception:
+            if isinstance(report, dict):
+                report["threat_intelligence"] = {"verdict": "UNAVAILABLE", "flagged_by": [], "api_keys_configured": {}}
+
         risk = report.get("risk_level", report.get("risk", "Analysed")) if isinstance(report, dict) else "Analysed"
         remember_activity(
             "Phishing Analyzer", target, "Complete",
-            f"Completed passive URL inspection. Risk: {risk}.", report,
+            f"URL analysis with threat intelligence complete. Risk: {risk}.", report,
         )
         return jsonify({"success": True, "report": report})
     except Exception as error:
