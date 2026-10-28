@@ -52,7 +52,7 @@ Render's free tier may take a short time to wake after inactivity.
 Install Python 3.10+ and Node.js 20+ first. In PowerShell:
 
 ```powershell
-git clone https://github.com/halderarnab827/Night-Hunter.git
+git clone https://github.com/ArnabHalder-CS/Night-Hunter.git
 cd Night-Hunter
 python -m pip install -r requirement.txt
 npm install

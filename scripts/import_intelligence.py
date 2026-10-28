@@ -418,7 +418,7 @@ def build_scam_keywords_csv():
                 "category": category,
                 "severity": sev,
                 "source_name": "Night Hunter Open-Source Threat Knowledgebase",
-                "source_url": "https://github.com/halderarnab827/Night-Hunter",
+                "source_url": "https://github.com/ArnabHalder-CS/Night-Hunter",
                 "licence": "MIT License",
                 "date_collected": date_now,
                 "indicator_type": "phrase_pattern",

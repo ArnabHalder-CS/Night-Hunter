@@ -5,6 +5,8 @@ __pycache__/
 .DS_Store
 *.bat
 !start_night_hunter.bat
+!build-windows-exe.bat
+!run.bat
 build/
 .build-venv/
 *.spec

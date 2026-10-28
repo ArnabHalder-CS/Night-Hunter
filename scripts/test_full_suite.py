@@ -33,7 +33,7 @@ print("[TEST 3] Phishing Heuristic Engine & Brand Spoofing")
 from modules.phishing.url_analyzer import PhishingAnalyzer
 phish_samples = [
     ("http://paypal-security-update.account-verify.tk/login.php", "Malicious Homoglyph / Spoof"),
-    ("https://github.com/halderarnab827/Night-Hunter", "Legitimate Reputable Domain")
+    ("https://github.com/ArnabHalder-CS/Night-Hunter", "Legitimate Reputable Domain")
 ]
 for url, label in phish_samples:
     analyzer = PhishingAnalyzer(url, fetch_content=False)

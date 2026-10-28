@@ -321,7 +321,7 @@ export default function LandingPage() {
           <div className="benchmarks-grid">
             <article className="benchmark-card highlight">
               <div className="metric-tag">Detection Precision</div>
-              <div className="metric-number">~92%</div>
+              <div className="metric-number">100%</div>
               <p className="metric-detail">
                 High precision on our 120-message benchmark. Results may vary on unseen inputs — treat findings as decision support.
               </p>
@@ -329,7 +329,7 @@ export default function LandingPage() {
 
             <article className="benchmark-card">
               <div className="metric-tag">Model F1-Score</div>
-              <div className="metric-number">94.74%</div>
+              <div className="metric-number">89.9%</div>
               <p className="metric-detail">
                 Balanced harmonic mean across our 120-message benchmark test set. Rule-based triage engine — results can differ on unseen messages.
               </p>
@@ -339,7 +339,7 @@ export default function LandingPage() {
               <div className="metric-tag">False Positive Rate</div>
               <div className="metric-number">0.00%</div>
               <p className="metric-detail">
-                Zero false positives observed on our 120-domain benchmark set of banking, educational, and government portals. Test on your own samples.
+                Zero of 60 legitimate messages flagged in our test set. Test on your own samples.
               </p>
             </article>
 

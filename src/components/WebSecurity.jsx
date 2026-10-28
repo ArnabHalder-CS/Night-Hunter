@@ -128,7 +128,7 @@ function WebSecurity() {
       },
       body: JSON.stringify({
         target: cleanTarget,
-        authorized: true
+        authorized: authorized
       })
     })
       .then(async (response) => {
@@ -209,7 +209,7 @@ function WebSecurity() {
       const response = await fetch(`/api/web-security/scanners/${scanner}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ target: normalizedTarget, authorized: true })
+        body: JSON.stringify({ target: normalizedTarget, authorized: authorized })
       });
       const data = await response.json();
       if (!response.ok || !data.success) throw new Error(data.error || `${scanner} did not complete.`);
