@@ -18,3 +18,5 @@ frontend/
 # Releases
 !releases/
 !releases/*
+
+NIGHT_HUNTER_ALL_CODE.txt
