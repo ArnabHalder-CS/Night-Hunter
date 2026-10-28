@@ -235,6 +235,34 @@ export default function LandingPage() {
               <h2>A Platform Built for<br /><em>Real Defensive Work.</em></h2>
             </div>
 
+
+            <div className="about-stats-bar">
+              <div className="about-stat">
+                <span className="about-stat-number">653+</span>
+                <span className="about-stat-label">Scam keywords powering the message classifier</span>
+              </div>
+              <div className="about-stat">
+                <span className="about-stat-number">60+</span>
+                <span className="about-stat-label">Real brand identities the URL engine defends</span>
+              </div>
+              <div className="about-stat">
+                <span className="about-stat-number">2,412</span>
+                <span className="about-stat-label">Live phishing URLs cross-referenced on every scan</span>
+              </div>
+              <div className="about-stat">
+                <span className="about-stat-number">12,837</span>
+                <span className="about-stat-label">Real-world messages used to train and verify the engine</span>
+              </div>
+              <div className="about-stat">
+                <span className="about-stat-number">14 / 14</span>
+                <span className="about-stat-label">Automated tests passing including advanced benchmark suite</span>
+              </div>
+              <div className="about-stat">
+                <span className="about-stat-number">100%</span>
+                <span className="about-stat-label">Precision — zero false positives on our 120-message test set</span>
+              </div>
+            </div>
+
             <div className="about-intro">
               <p>
                 Night Hunter is a unified, multi-platform cybersecurity platform designed for authorized security auditing, phishing threat analysis, network reconnaissance, and cryptographic verification. It brings together five independent security disciplines under a single dashboard — deployable in your browser instantly, or installed natively on Windows, Linux, and Android without any complex setup.
