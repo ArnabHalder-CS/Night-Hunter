@@ -79,6 +79,12 @@ function WebSecurity() {
   function startScan(event) {
     if (event) event.preventDefault();
 
+    if (!authorized) {
+      setStatus("AUTHORIZATION REQUIRED");
+      setError("Confirm that you own this target or have permission to audit it.");
+      return;
+    }
+
     let cleanTarget = target.trim();
     if (!cleanTarget) {
       setStatus("TARGET REQUIRED");
@@ -193,6 +199,10 @@ function WebSecurity() {
   }
 
   async function runExternalScanner(scanner) {
+    if (!authorized) {
+      setError("Confirm that you own this target or have permission to audit it.");
+      return;
+    }
     const cleanTarget = target.trim();
     if (!cleanTarget) {
       setError("Enter a target URL before selecting a scanner.");
