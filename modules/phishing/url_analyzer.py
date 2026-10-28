@@ -254,24 +254,17 @@ BRAND_NAMES = {
 # ============================================================
 
 OFFICIAL_BRAND_DOMAINS = {
+    # ── Global Tech ──────────────────────────────────────────
     "google": {"google.com", "google.co.in", "google.co.uk", "google.ca", "google.de", "google.fr", "google.com.au", "gmail.com", "youtube.com", "goo.gl", "gstatic.com"},
     "microsoft": {"microsoft.com", "live.com", "office.com", "office365.com", "outlook.com", "msn.com", "azure.com", "bing.com", "windows.com", "skype.com"},
-    "apple": {"apple.com", "icloud.com", "apple-support.com", "itunes.com", "me.com"},
-    "amazon": {"amazon.com", "amazon.co.uk", "amazon.de", "amazon.in", "amazon.ca", "amazon.fr", "primevideo.com", "aws.amazon.com"},
+    "apple": {"apple.com", "icloud.com", "itunes.com", "me.com"},
+    "amazon": {"amazon.com", "amazon.co.uk", "amazon.de", "amazon.in", "amazon.ca", "amazon.fr", "primevideo.com"},
     "paypal": {"paypal.com", "paypal.me"},
     "netflix": {"netflix.com"},
     "meta": {"facebook.com", "instagram.com", "whatsapp.com", "meta.com", "fb.com"},
     "facebook": {"facebook.com", "fb.com"},
     "instagram": {"instagram.com"},
     "whatsapp": {"whatsapp.com", "wa.me"},
-    "chase": {"chase.com", "jpmorganchase.com", "jpmorgan.com"},
-    "bankofamerica": {"bankofamerica.com", "bofa.com"},
-    "wellsfargo": {"wellsfargo.com"},
-    "steam": {"steampowered.com", "steamcommunity.com"},
-    "discord": {"discord.com", "discord.gg", "discordapp.com"},
-    "telegram": {"telegram.org", "t.me"},
-    "binance": {"binance.com", "binance.us"},
-    "coinbase": {"coinbase.com"},
     "github": {"github.com", "github.io", "githubusercontent.com"},
     "dropbox": {"dropbox.com"},
     "adobe": {"adobe.com"},
@@ -279,11 +272,78 @@ OFFICIAL_BRAND_DOMAINS = {
     "linkedin": {"linkedin.com"},
     "twitter": {"twitter.com", "x.com", "t.co"},
     "spotify": {"spotify.com"},
-    "sbi": {"onlinesbi.sbi", "sbi.co.in"},
-    "hdfc": {"hdfcbank.com"},
+    "steam": {"steampowered.com", "steamcommunity.com"},
+    "discord": {"discord.com", "discord.gg", "discordapp.com"},
+    "telegram": {"telegram.org", "t.me"},
+    "zoom": {"zoom.us", "zoom.com"},
+    "salesforce": {"salesforce.com", "force.com"},
+    "slack": {"slack.com"},
+    # ── Crypto ───────────────────────────────────────────────
+    "binance": {"binance.com", "binance.us"},
+    "coinbase": {"coinbase.com"},
+    "kraken": {"kraken.com"},
+    # ── US Banking ───────────────────────────────────────────
+    "chase": {"chase.com", "jpmorganchase.com", "jpmorgan.com"},
+    "bankofamerica": {"bankofamerica.com", "bofa.com"},
+    "wellsfargo": {"wellsfargo.com"},
+    "citibank": {"citibank.com", "citi.com"},
+    # ── Indian E-commerce ────────────────────────────────────
+    "flipkart": {"flipkart.com"},
+    "myntra": {"myntra.com"},
+    "meesho": {"meesho.com"},
+    "snapdeal": {"snapdeal.com"},
+    "nykaa": {"nykaa.com"},
+    "ajio": {"ajio.com"},
+    "tatacliq": {"tatacliq.com"},
+    "reliancedigital": {"reliancedigital.in"},
+    # ── Indian Fintech / Payments ─────────────────────────────
+    "paytm": {"paytm.com", "paytmbank.com"},
+    "phonepe": {"phonepe.com"},
+    "gpay": {"pay.google.com"},
+    "razorpay": {"razorpay.com"},
+    "mobikwik": {"mobikwik.com"},
+    "freecharge": {"freecharge.in"},
+    # ── Indian Banks ─────────────────────────────────────────
+    "sbi": {"onlinesbi.sbi", "sbi.co.in", "onlinesbi.com"},
+    "hdfc": {"hdfcbank.com", "hdfc.com"},
     "icici": {"icicibank.com"},
-    "airtel": {"airtel.in", "airtel.com"},
-    "jio": {"jio.com"}
+    "axis": {"axisbank.com"},
+    "kotak": {"kotkamahindrabank.com", "kotak.com"},
+    "pnb": {"pnbindia.in"},
+    "unionbank": {"unionbankofindia.co.in"},
+    "canara": {"canarabank.com"},
+    # ── Indian Telecom ───────────────────────────────────────
+    "jio": {"jio.com", "jiocinema.com", "jiomoney.com"},
+    "airtel": {"airtel.in", "airtel.com", "airtelpay.in"},
+    "vi": {"myvi.in", "vodafoneidea.com"},
+    "bsnl": {"bsnl.co.in"},
+    # ── Indian Food / Delivery ───────────────────────────────
+    "swiggy": {"swiggy.com"},
+    "zomato": {"zomato.com"},
+    "dunzo": {"dunzo.in"},
+    "blinkit": {"blinkit.com"},
+    # ── Indian Travel ────────────────────────────────────────
+    "irctc": {"irctc.co.in", "irctchelp.in"},
+    "makemytrip": {"makemytrip.com"},
+    "goibibo": {"goibibo.com"},
+    "cleartrip": {"cleartrip.com"},
+    "ixigo": {"ixigo.com"},
+    # ── Indian OTT ───────────────────────────────────────────
+    "hotstar": {"hotstar.com", "disneyplushotstar.com"},
+    "sonyliv": {"sonyliv.com"},
+    "zeespace": {"zee5.com"},
+    # ── Other Indian Brands ───────────────────────────────────
+    "ola": {"olacabs.com", "ola.com"},
+    "uber": {"uber.com"},
+    "rapido": {"rapido.bike"},
+    "byju": {"byjus.com"},
+    "zerodha": {"zerodha.com", "kite.zerodha.com"},
+    "groww": {"groww.in"},
+    "upstox": {"upstox.com"},
+    "policybazaar": {"policybazaar.com"},
+    "lenskart": {"lenskart.com"},
+    "bigbasket": {"bigbasket.com"},
+    "jiomart": {"jiomart.com"},
 }
 
 HIGH_RISK_PHISHING_TLDS = {
@@ -303,20 +363,46 @@ def normalize_leetspeak(text):
     return t
 
 def calculate_levenshtein(s1, s2):
-    if len(s1) < len(s2):
-        return calculate_levenshtein(s2, s1)
-    if len(s2) == 0:
-        return len(s1)
-    previous_row = range(len(s2) + 1)
-    for i, c1 in enumerate(s1):
-        current_row = [i + 1]
-        for j, c2 in enumerate(s2):
-            insertions = previous_row[j + 1] + 1
-            deletions = current_row[j] + 1
-            substitutions = previous_row[j] + (c1 != c2)
-            current_row.append(min(insertions, deletions, substitutions))
-        previous_row = current_row
-    return previous_row[-1]
+    """Damerau-Levenshtein distance (handles transpositions).
+    flipkart -> flipkert  = dist 1 (transposition a<->e)
+    amazon   -> aamazon   = dist 1 (insertion)
+    """
+    s1, s2 = s1.lower(), s2.lower()
+    len1, len2 = len(s1), len(s2)
+    if len1 == 0:
+        return len2
+    if len2 == 0:
+        return len1
+    # Full Damerau-Levenshtein with transposition support
+    INF = len1 + len2 + 1
+    # d[i][j] = edit distance between s1[:i] and s2[:j]
+    d = [[INF] * (len2 + 2) for _ in range(len1 + 2)]
+    d[0][0] = INF
+    for i in range(len1 + 1):
+        d[i + 1][0] = INF
+        d[i + 1][1] = i
+    for j in range(len2 + 1):
+        d[0][j + 1] = INF
+        d[1][j + 1] = j
+    last_row = {}
+    for i in range(1, len1 + 1):
+        c1 = s1[i - 1]
+        last_match_col = 0
+        for j in range(1, len2 + 1):
+            c2 = s2[j - 1]
+            i2 = last_row.get(c2, 0)
+            j2 = last_match_col
+            cost = 0 if c1 == c2 else 1
+            if c1 == c2:
+                last_match_col = j
+            d[i + 1][j + 1] = min(
+                d[i][j] + cost,           # substitution / match
+                d[i + 1][j] + 1,          # insertion
+                d[i][j + 1] + 1,          # deletion
+                d[i2][j2] + (i - i2 - 1) + 1 + (j - j2 - 1)  # transposition
+            )
+        last_row[c1] = i
+    return d[len1 + 1][len2 + 1]
 
 
 
@@ -1496,24 +1582,32 @@ class PhishingAnalyzer:
                 )
                 break
 
-        # 4. Check Fuzzy Typosquatting (Edit distance 1-2)
-        if not detected_brands and not self.ethical_hacking_profile.get("targeted_brand"):
+        # 4. Check Fuzzy Typosquatting (Damerau-Levenshtein edit distance 1-2)
+        # Always runs — even if combosquatting/leetspeak already fired, typosquat is independent evidence
+        if not self.ethical_hacking_profile.get("targeted_brand"):
+            best_dist = 99
+            best_brand = None
             for brand, officials in OFFICIAL_BRAND_DOMAINS.items():
+                if reg_domain in officials:
+                    continue  # official domain — skip
                 dist = calculate_levenshtein(domain_body, brand)
-                if 1 <= dist <= 2 and len(brand) >= 4 and abs(len(domain_body) - len(brand)) <= 2 and reg_domain not in officials:
-                    self.ethical_hacking_profile["targeted_brand"] = brand.upper()
-                    self.ethical_hacking_profile["attack_vector"] = f"Fuzzy domain typosquatting targeting {brand.upper()}"
-                    self.add_finding(
-                        "Fuzzy Domain Typosquatting",
-                        "CRITICAL",
-                        f"Domain typosquatting within {dist} character(s) of {brand.upper()}",
-                        f"The domain label '{domain_body}' closely resembles the trademarked entity '{brand}' with an edit distance of {dist}, typical of look-alike spoofing domains.",
-                        evidence=f"Domain: '{domain_body}', Brand: '{brand}', Levenshtein Distance: {dist}",
-                        recommendation="Verify the target against known corporate asset inventories before authorizing traffic.",
-                        score=60,
-                        confidence="HIGH"
-                    )
-                    break
+                if 1 <= dist <= 2 and len(brand) >= 4 and abs(len(domain_body) - len(brand)) <= 2:
+                    if dist < best_dist:
+                        best_dist = dist
+                        best_brand = brand
+            if best_brand:
+                self.ethical_hacking_profile["targeted_brand"] = best_brand.upper()
+                self.ethical_hacking_profile["attack_vector"] = f"Fuzzy domain typosquatting targeting {best_brand.upper()}"
+                self.add_finding(
+                    "Fuzzy Domain Typosquatting",
+                    "CRITICAL",
+                    f"Domain typosquatting within {best_dist} character(s) of {best_brand.upper()}",
+                    f"The domain label '{domain_body}' closely resembles the trademarked entity '{best_brand}' with an edit distance of {best_dist}, consistent with look-alike spoofing domains used in credential harvesting campaigns.",
+                    evidence=f"Domain: '{domain_body}', Brand: '{best_brand}', Damerau-Levenshtein Distance: {best_dist}",
+                    recommendation=f"Block this domain at the perimeter. Legitimate {best_brand.upper()} services do not operate from this domain.",
+                    score=63,
+                    confidence="HIGH"
+                )
     # ========================================================
     # KEYWORD ANALYSIS
     # ========================================================
