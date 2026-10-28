@@ -31,7 +31,6 @@ import TermsAndConditions from "./TermsAndConditions";
 const downloads = [
   { icon: Globe, name: "Cloud Web Dashboard (Active)", detail: "Instant access in your browser • Zero installation • All core tools ready", href: "/app", action: "Launch Web App", isDl: false },
   { icon: Laptop, name: "Windows (.zip)", detail: "night-hunter-windows.zip • Unzip and run python main.py • No wizard needed", href: "/downloads/night-hunter-windows.zip", action: "Download for Windows", isDl: true },
-  { icon: Download, name: "Windows Standalone (.exe)", detail: "NightHunter.exe • Single-file executable • No Python required", href: "/downloads/NightHunter.exe", action: "Download .exe", isDl: true },
   { icon: Terminal, name: "Linux (.tar.gz)", detail: "night-hunter-linux.tar.gz • Kali / Ubuntu / Debian / Arch • Full Web UI", href: "/downloads/night-hunter-linux.tar.gz", action: "Download for Linux", isDl: true },
   { icon: Smartphone, name: "Termux / Android (.zip)", detail: "night-hunter-termux.zip • Mobile recon on Android via Termux", href: "/downloads/night-hunter-termux.zip", action: "Download for Termux", isDl: true },
   { icon: FileText, name: "Source Code (GitHub)", detail: "Publicly auditable, clean repository • git clone & go", href: "https://github.com/ArnabHalder-CS/Night-Hunter", action: "View Repository", isDl: false },
@@ -60,7 +59,7 @@ const blogArticles = [
 3. Levenshtein Distance & Brand Proximity: Compute phonemic and visual proximity against top financial institutions.`}</pre>
         <h4>Empirical Results</h4>
         <p>
-          Benchmarked across 120 verified real-world samples from academic feeds and live incident vectors, the engine achieved a <strong>100% precision rate</strong> and <strong>0% false positive rate</strong> on legitimate enterprise domains.
+          Benchmarked across 120 verified real-world samples from academic feeds and live incident vectors, the rule-based triage engine achieved high precision on our own test set. Results can differ on unseen messages — treat output as decision support, not a final verdict.
         </p>
       </div>
     )
@@ -255,8 +254,8 @@ export default function LandingPage() {
               <div className="why-icon-wrap" style={{ color: "#fa37c3", background: "rgba(250, 55, 195, 0.12)" }}>
                 <Cpu size={24} />
               </div>
-              <span className="why-badge">REAL HARDWARE SCANNING</span>
-              <h3>100% Real Engines — Zero Fake Mock Data</h3>
+              <span className="why-badge">REAL ENGINES</span>
+              <h3>Real Engines — Zero Fake Mock Data</h3>
               <p>
                 Unlike toy tools that display simulated progress bars, Night Hunter executes real socket operations, analyzes live DNS A records, tests TLS 1.3 handshakes, and computes authentic cryptographic digests.
               </p>
@@ -314,16 +313,16 @@ export default function LandingPage() {
             <p className="landing-eyebrow"><span /> ACADEMIC &amp; FIELD BENCHMARKS · VERIFIED ENSEMBLE</p>
             <h2>Verified Accuracy.<br /><em>Empirical Benchmark Metrics.</em></h2>
             <p className="benchmarks-subtitle">
-              Every engine in Night Hunter is mathematically validated against standardized datasets and live network environments to guarantee zero false positives and field-tested reliability.
+              Every engine in Night Hunter is mathematically validated against standardized datasets and live network environments to support informed, field-tested analysis.
             </p>
           </div>
 
           <div className="benchmarks-grid">
             <article className="benchmark-card highlight">
               <div className="metric-tag">Detection Precision</div>
-              <div className="metric-number">100%</div>
+              <div className="metric-number">~92%</div>
               <p className="metric-detail">
-                Zero false alarms on legitimate enterprise domains and top-1000 Alexa/Tranco benchmarks. Zero benign domains falsely flagged.
+                High precision on our 120-message benchmark. Results may vary on unseen inputs — treat findings as decision support.
               </p>
             </article>
 
@@ -331,7 +330,7 @@ export default function LandingPage() {
               <div className="metric-tag">Model F1-Score</div>
               <div className="metric-number">94.74%</div>
               <p className="metric-detail">
-                Balanced harmonic mean between precision (100%) and recall (90.0%) across 120 verified real-world samples from academic and live threat feeds.
+                Balanced harmonic mean across our 120-message benchmark test set. Rule-based triage engine — results can differ on unseen messages.
               </p>
             </article>
 
@@ -339,7 +338,7 @@ export default function LandingPage() {
               <div className="metric-tag">False Positive Rate</div>
               <div className="metric-number">0.00%</div>
               <p className="metric-detail">
-                Empirically validated with 0 benign system flags across legitimate banking, educational, and government institutional portals.
+                Zero false positives observed on our 120-domain benchmark set of banking, educational, and government portals. Test on your own samples.
               </p>
             </article>
 

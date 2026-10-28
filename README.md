@@ -98,7 +98,7 @@ waitress-serve --port=5000 api.server:app
 
 |---|---|---|
 
-| **🎯 Accuracy** | Simulated progress bars & toy data | **100% Real Hardware Scans** via native sockets & Nmap 7.99 with exact OS fingerprinting |
+| **🎯 Accuracy** | Simulated progress bars & toy data | **Real active scanning** via native sockets & Nmap with OS fingerprinting (runs best locally) |
 
 | **⚡ Workflow** | Juggling 5 terminal windows (Nmap, DevTools, CyberChef) | **Unified Single Pane of Glass** combining Web, LAN, Phishing, Passwords & Crypto |
 
