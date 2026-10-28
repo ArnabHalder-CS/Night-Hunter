@@ -442,32 +442,46 @@ export default function LandingPage() {
           </div>
           <ol>
             <li>
-              <b>CLOUD ACCESS (ZERO INSTALL)</b>
+              <b>LINUX (KALI / UBUNTU / DEBIAN / ARCH)</b>
               <span>
-                <strong>Instant Online Deployment</strong>
-                <small>• <b>Direct Browser Access:</b> You are already on the live web dashboard! Click <a href="/app" style={{ color: "#fa37c3", fontWeight: "bold" }}>Launch Web App</a> to start scanning immediately.</small>
-                <small>• Fully responsive across desktop, tablets, and smartphones.</small>
-                <small style={{ color: "#4ade80", marginTop: "6px", display: "block" }}>✓ No Python setup, no dependencies, no antivirus alerts required.</small>
+                <strong>Linux Package (night-hunter-linux.tar.gz)</strong>
+                <small>&bull; <b>Step 1 (Extract archive):</b> <code>tar -xzf night-hunter-linux.tar.gz</code></small>
+                <small>&bull; <b>Step 2 (Enter folder):</b> <code>cd night-hunter-linux</code></small>
+                <small>&bull; <b>Method A (Instant / No Root):</b> Run <code>./run.sh</code> &mdash; launches the local dashboard immediately.</small>
+                <small>&bull; <b>Method B (Full System Install):</b> Run <code>bash install.sh</code> &mdash; creates global <code>NightHunter</code> terminal command and adds it to your Kali / GNOME Application Menu.</small>
+                <small style={{ color: "#7ff0ca", marginTop: "6px", display: "block" }}>&#10003; Automatically boots engine and opens browser at <code>http://127.0.0.1:5000</code>. Use <code>--cli</code> for headless terminal mode.</small>
               </span>
             </li>
             <li>
-              <b>WINDOWS / MAC / LINUX (PYTHON LOCAL)</b>
+              <b>WINDOWS 10 / 11</b>
               <span>
-                <strong>Run from Clean Source (Recommended for Local Audits)</strong>
-                <small>• <b>Step 1:</b> Clone the repository: <code>git clone https://github.com/ArnabHalder-CS/Night-Hunter.git</code></small>
-                <small>• <b>Step 2:</b> Enter directory: <code>cd Night-Hunter</code></small>
-                <small>• <b>Step 3:</b> Install dependencies: <code>pip install -r requirement.txt</code></small>
-                <small>• <b>Step 4:</b> Start the application: <code>python main.py</code></small>
-                <small style={{ color: "#7ff0ca", marginTop: "6px", display: "block" }}>✓ Automatically boots the engine and opens the graphical Dashboard at <code>http://127.0.0.1:5000</code>.</small>
+                <strong>Windows Portable (.zip) &amp; Standalone (.exe)</strong>
+                <small>&bull; <b>Option A (Zero Warnings &middot; Recommended):</b> Download <code>night-hunter-windows.zip</code>, extract the folder, and double-click <code>start_night_hunter.bat</code>.</small>
+                <small>&bull; <b>Option B (Single File .exe):</b> Download <code>NightHunter.exe</code> and double-click to run.</small>
+                <small style={{ marginTop: '8px', background: 'rgba(255, 170, 0, 0.08)', padding: '10px 14px', borderRadius: '6px', borderLeft: '3px solid #ffd280', color: '#ffd280', display: 'block', lineHeight: '1.6' }}>
+                  <b style={{ color: '#fff' }}>Publisher / SmartScreen note:</b><br />
+                  If Windows SmartScreen warns "Unknown publisher" (standard for unsigned open-source tools), click <b>"More info"</b> &rarr; <b>"Run anyway"</b>.
+                </small>
+                <small style={{ color: "#dd9dff", marginTop: "6px", display: "block" }}>&#10003; Engine launches and opens your local dashboard at <code>http://127.0.0.1:5000</code>.</small>
               </span>
             </li>
             <li>
               <b>ANDROID (TERMUX)</b>
               <span>
-                <strong>Mobile Security Recon via Termux</strong>
-                <small>1. In Termux, install Git &amp; Python: <code>pkg update &amp;&amp; pkg install git python</code></small>
-                <small>2. Clone the repository: <code>git clone https://github.com/ArnabHalder-CS/Night-Hunter.git</code></small>
-                <small>3. Launch Night Hunter: <code>cd Night-Hunter &amp;&amp; python main.py</code></small>
+                <strong>Mobile Security Recon via Termux (.zip)</strong>
+                <small>1. Download <code>night-hunter-termux.zip</code> on your Android device.</small>
+                <small>2. In Termux, navigate to downloads: <code>cd ~/storage/downloads && unzip night-hunter-termux.zip</code></small>
+                <small>3. Run installer: <code>cd night-hunter-termux && bash termux-install.sh</code></small>
+                <small>4. Start anytime by typing: <code>NightHunter</code></small>
+              </span>
+            </li>
+            <li>
+              <b>CLOUD ACCESS (ZERO INSTALL)</b>
+              <span>
+                <strong>Instant Online Deployment</strong>
+                <small>&bull; <b>Direct Browser Access:</b> You are already on the live web dashboard! Click <a href="/app" style={{ color: "#fa37c3", fontWeight: "bold" }}>Launch Web App</a> to start scanning immediately.</small>
+                <small>&bull; Fully responsive across desktop, tablets, and smartphones.</small>
+                <small style={{ color: "#4ade80", marginTop: "6px", display: "block" }}>&#10003; No Python setup, no dependencies, zero installation required.</small>
               </span>
             </li>
           </ol>
