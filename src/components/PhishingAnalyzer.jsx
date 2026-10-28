@@ -11,7 +11,6 @@ import {
   ShieldAlert,
   ShieldCheck,
   Mail,
-  Fingerprint,
   BookOpen,
   ExternalLink,
   ChevronRight,
@@ -31,41 +30,6 @@ function Metric({ label, value, tone }) {
   );
 }
 
-const COMMON_TARGETED_BRANDS = [
-  "youtube", "google", "microsoft", "apple", "amazon", "paypal", "netflix",
-  "flipkart", "paytm", "phonepe", "swiggy", "zomato", "irctc", "myntra",
-  "sbi", "hdfc", "icici", "axis", "kotak", "jio", "airtel",
-  "chase", "bankofamerica", "wellsfargo", "coinbase", "binance",
-  "steam", "discord", "telegram", "facebook", "instagram", "twitter",
-  "docusign", "dropbox", "github", "spotify", "reddit", "tiktok", "uber", "ola"
-];
-
-function damerauLevenshtein(s1, s2) {
-  s1 = (s1 || "").toLowerCase();
-  s2 = (s2 || "").toLowerCase();
-  const len1 = s1.length;
-  const len2 = s2.length;
-  if (!len1) return len2;
-  if (!len2) return len1;
-  const d = Array.from({ length: len1 + 1 }, () => Array(len2 + 1).fill(0));
-  for (let i = 0; i <= len1; i++) d[i][0] = i;
-  for (let j = 0; j <= len2; j++) d[0][j] = j;
-  for (let i = 1; i <= len1; i++) {
-    for (let j = 1; j <= len2; j++) {
-      const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
-      d[i][j] = Math.min(
-        d[i - 1][j] + 1,
-        d[i][j - 1] + 1,
-        d[i - 1][j - 1] + cost
-      );
-      if (i > 1 && j > 1 && s1[i - 1] === s2[j - 2] && s1[i - 2] === s2[j - 1]) {
-        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
-      }
-    }
-  }
-  return d[len1][len2];
-}
-
 export default function PhishingAnalyzer() {
   const [activeTab, setActiveTab] = useState("url"); // "url" | "homoglyph" | "triage" | "playbook"
   
@@ -74,12 +38,7 @@ export default function PhishingAnalyzer() {
   const [report, setReport] = useState(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-
-  // Tab 2: Homoglyph State
-  const [homoglyphInput, setHomoglyphInput] = useState("pаypal.com");
-  const [homoglyphResult, setHomoglyphResult] = useState(null);
-
-  // Tab 3: Email Triage State
+// Tab 3: Email Triage State
   const [emailText, setEmailText] = useState("");
   const [triageReport, setTriageReport] = useState(null);
   const [triageLoading, setTriageLoading] = useState(false);
@@ -111,135 +70,6 @@ export default function PhishingAnalyzer() {
       setError(requestError.message);
     } finally {
       setLoading(false);
-    }
-  }
-
-  function runHomoglyphCheck() {
-    const raw = homoglyphInput.trim();
-    if (!raw) return;
-
-    try {
-      let host = raw;
-      if (host.includes("://")) {
-        host = host.split("://")[1].split("/")[0];
-      } else if (host.includes("/")) {
-        host = host.split("/")[0];
-      }
-      host = host.toLowerCase();
-
-      const parts = host.split(".");
-      const domainBody = parts.length >= 2 ? parts[parts.length - 2] : host;
-      const regDomain = parts.length >= 2 ? parts.slice(-2).join(".") : host;
-
-      const nonAsciiChars = [];
-      for (let i = 0; i < host.length; i++) {
-        const code = host.charCodeAt(i);
-        if (code > 127) {
-          nonAsciiChars.push({
-            char: host[i],
-            codePoint: `U+${code.toString(16).toUpperCase().padStart(4, "0")}`,
-            index: i
-          });
-        }
-      }
-
-      // Check Unicode homoglyphs (Cyrillic lookalikes)
-      const normalizedHost = host
-        .replace(/[\u0430]/g, "a")
-        .replace(/[\u043E]/g, "o")
-        .replace(/[\u0435]/g, "e")
-        .replace(/[\u0440]/g, "p")
-        .replace(/[\u0441]/g, "c")
-        .replace(/[\u0443]/g, "y")
-        .replace(/[\u0456]/g, "i")
-        .replace(/[\u03BF]/g, "o");
-
-      // Official domains whitelist
-      const officialDomains = {
-        youtube: ["youtube.com", "youtu.be"],
-        google: ["google.com", "google.co.in", "google.co.uk", "gmail.com"],
-        flipkart: ["flipkart.com"],
-        amazon: ["amazon.com", "amazon.in"],
-        paypal: ["paypal.com"],
-        paytm: ["paytm.com"],
-        apple: ["apple.com", "icloud.com"],
-        microsoft: ["microsoft.com", "live.com", "office.com"],
-        netflix: ["netflix.com"],
-        facebook: ["facebook.com", "fb.com"],
-        instagram: ["instagram.com"],
-        twitter: ["twitter.com", "x.com"],
-        github: ["github.com"]
-      };
-
-      let isOfficial = false;
-      let officialBrand = "";
-      for (const [b, doms] of Object.entries(officialDomains)) {
-        if (doms.includes(regDomain) || doms.includes(host)) {
-          isOfficial = true;
-          officialBrand = b;
-          break;
-        }
-      }
-
-      // Typosquatting Check (Damerau-Levenshtein distance 1 or 2)
-      let typoTarget = null;
-      let minDistance = 99;
-      if (!isOfficial) {
-        for (const brand of COMMON_TARGETED_BRANDS) {
-          const dist = damerauLevenshtein(domainBody, brand);
-          if (dist >= 1 && dist <= 2 && brand.length >= 4 && Math.abs(domainBody.length - brand.length) <= 2) {
-            if (dist < minDistance) {
-              minDistance = dist;
-              typoTarget = brand;
-            }
-          }
-        }
-      }
-
-      // Combosquatting Check
-      const comboBrands = isOfficial ? [] : COMMON_TARGETED_BRANDS.filter(b => domainBody.includes(b) && domainBody !== b);
-
-      let verdict = "";
-      let isDanger = false;
-      let isWarning = false;
-      let spoofedBrands = [];
-
-      if (isOfficial) {
-        verdict = `VERIFIED: Legitimate official domain for ${officialBrand.toUpperCase()}. Zero spoofing detected.`;
-      } else if (nonAsciiChars.length > 0) {
-        isDanger = true;
-        spoofedBrands = COMMON_TARGETED_BRANDS.filter(b => normalizedHost.includes(b));
-        verdict = `CRITICAL: Mixed-script / Homoglyph lookalike spoof detected! Uses deceptive non-ASCII characters.`;
-      } else if (typoTarget) {
-        isDanger = true;
-        spoofedBrands = [typoTarget];
-        verdict = `CRITICAL: Typosquatting detected! '${domainBody}' closely mimics '${typoTarget.toUpperCase()}' (edit distance ${minDistance}).`;
-      } else if (comboBrands.length > 0) {
-        isWarning = true;
-        spoofedBrands = comboBrands;
-        verdict = `WARNING: Unauthorized brand mention (${comboBrands.map(b => b.toUpperCase()).join(", ")}) detected in domain.`;
-      } else {
-        verdict = "Standard ASCII domain. No Unicode homoglyphs or brand spoofing detected.";
-      }
-
-      setHomoglyphResult({
-        domain: host,
-        hasNonAscii: nonAsciiChars.length > 0,
-        nonAsciiChars,
-        isIdn: nonAsciiChars.length > 0,
-        isDanger,
-        isWarning,
-        typoTarget,
-        typoDistance: minDistance <= 2 ? minDistance : null,
-        spoofedBrands,
-        normalizedAscii: normalizedHost,
-        verdict
-      });
-    } catch (err) {
-      setHomoglyphResult({
-        domain: raw,
-        verdict: `Error inspecting domain: ${err.message}`
-      });
     }
   }
 
@@ -299,7 +129,6 @@ export default function PhishingAnalyzer() {
       <nav className="phishing-subnav" style={{ display: "flex", gap: "10px", marginBottom: "22px" }}>
         {[
           { id: "url", label: "URL Risk Inspector", icon: LinkIcon },
-          { id: "homoglyph", label: "Homoglyph & Brand Lab", icon: Fingerprint },
           { id: "triage", label: "Scam Message Analyzer", icon: Mail },
           { id: "playbook", label: "Mitigation Playbook", icon: BookOpen }
         ].map((tab) => {
@@ -561,148 +390,6 @@ export default function PhishingAnalyzer() {
             </section>
           )}
         </>
-      )}
-
-      {/* TAB 2: Homoglyph & Brand Spoof Lab */}
-      {activeTab === "homoglyph" && (
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
-          <div className="crypto-tool-card" style={{ padding: "24px" }}>
-            <div className="crypto-card-heading">
-              <div>
-                <span>IDN & LOOKALIKE SPOOF LAB</span>
-                <h3>Test Homoglyph & Punycode</h3>
-              </div>
-              <Fingerprint size={20} color="#ff86de" />
-            </div>
-            <p style={{ color: "#8e9ab8", fontSize: "13px", lineHeight: "1.5", margin: "0 0 16px" }}>
-              Attackers substitute Latin letters with identical Cyrillic, Greek, or special Unicode glyphs (e.g., using Cyrillic <code>а</code> in <code>paypal.com</code>). Enter any suspect domain below to reveal hidden character spoofing:
-            </p>
-
-            <label className="crypto-label">
-              SUSPECT DOMAIN
-              <input
-                type="text"
-                value={homoglyphInput}
-                onChange={(e) => setHomoglyphInput(e.target.value)}
-                style={{
-                  width: "100%",
-                  height: "45px",
-                  background: "rgba(5, 8, 20, 0.8)",
-                  border: "1px solid rgba(120, 135, 190, 0.3)",
-                  borderRadius: "8px",
-                  color: "#ff9ee5",
-                  padding: "0 12px",
-                  fontSize: "14px",
-                  boxSizing: "border-box",
-                  marginTop: "6px"
-                }}
-              />
-            </label>
-
-            <button
-              type="button"
-              onClick={runHomoglyphCheck}
-              className="phishing-run-button"
-              style={{ marginTop: "16px", width: "100%" }}
-            >
-              <Fingerprint size={16} /> INSPECT HOMOGLYPHS & BRANDS
-            </button>
-
-            <div style={{ marginTop: "20px", display: "flex", gap: "8px", flexWrap: "wrap" }}>
-              <span style={{ fontSize: "11px", color: "#7482a5", width: "100%" }}>Try samples:</span>
-              {[
-                { label: "Cyrillic PayPal", domain: "p\u0430ypal.com" },
-                { label: "Cyrillic Google", domain: "g\u043E\u043Egle.com" },
-                { label: "Cyrillic Apple", domain: "\u0430pple.com" },
-                { label: "Legitimate Amazon", domain: "amazon.com" }
-              ].map((sample) => (
-                <button
-                  key={sample.label}
-                  type="button"
-                  onClick={() => { setHomoglyphInput(sample.domain); }}
-                  style={{
-                    background: "rgba(255, 82, 202, 0.12)",
-                    border: "1px solid rgba(255, 82, 202, 0.3)",
-                    color: "#ff81df",
-                    borderRadius: "6px",
-                    padding: "4px 10px",
-                    fontSize: "11px",
-                    cursor: "pointer"
-                  }}
-                >
-                  {sample.label}
-                </button>
-              ))}
-            </div>
-          </div>
-
-          <div className="crypto-side-card" style={{ padding: "24px" }}>
-            <span style={{ color: "#8f9abb", fontSize: "10px", fontWeight: "800", letterSpacing: "1px" }}>LAB DIAGNOSIS</span>
-            <h3 style={{ color: "#edf0ff", margin: "4px 0 16px", fontSize: "18px" }}>Spoofing Verdict</h3>
-
-            {homoglyphResult ? (
-              <div style={{ display: "flex", flexDirection: "column", gap: "14px" }}>
-                <div style={{
-                  padding: "12px",
-                  borderRadius: "8px",
-                  background: (homoglyphResult.isDanger || homoglyphResult.hasNonAscii)
-                    ? "rgba(239, 68, 68, 0.15)"
-                    : homoglyphResult.isWarning
-                    ? "rgba(245, 158, 11, 0.15)"
-                    : "rgba(34, 197, 94, 0.15)",
-                  border: (homoglyphResult.isDanger || homoglyphResult.hasNonAscii)
-                    ? "1px solid rgba(239, 68, 68, 0.4)"
-                    : homoglyphResult.isWarning
-                    ? "1px solid rgba(245, 158, 11, 0.4)"
-                    : "1px solid rgba(34, 197, 94, 0.4)",
-                  color: (homoglyphResult.isDanger || homoglyphResult.hasNonAscii)
-                    ? "#fca5a5"
-                    : homoglyphResult.isWarning
-                    ? "#fcd34d"
-                    : "#86efac",
-                  fontSize: "13px",
-                  fontWeight: "600"
-                }}>
-                  {homoglyphResult.verdict}
-                </div>
-
-                <div style={{ fontSize: "12px", color: "#a5b4fc" }}>
-                  <strong>Domain Inspected:</strong> <code style={{ color: "#fff" }}>{homoglyphResult.domain}</code>
-                </div>
-
-                {homoglyphResult.nonAsciiChars.length > 0 && (
-                  <div>
-                    <strong style={{ fontSize: "12px", color: "#ff86de" }}>Non-ASCII Characters Discovered:</strong>
-                    <div style={{ marginTop: "6px", display: "flex", flexDirection: "column", gap: "4px" }}>
-                      {homoglyphResult.nonAsciiChars.map((item, i) => (
-                        <div key={i} style={{ background: "rgba(0,0,0,0.4)", padding: "6px 10px", borderRadius: "6px", fontSize: "12px", color: "#f87171" }}>
-                          Position {item.index + 1}: Character <code>'{item.char}'</code> ({item.codePoint}) &mdash; Confusable with Latin equivalent!
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {homoglyphResult.spoofedBrands.length > 0 && (
-                  <div>
-                    <strong style={{ fontSize: "12px", color: "#38bdf8" }}>Legitimate Brand Target:</strong>
-                    <div style={{ marginTop: "4px", fontSize: "13px", color: "#e2e8f0" }}>
-                      Appears to be targeting: <b style={{ textTransform: "uppercase", color: "#38bdf8" }}>{homoglyphResult.spoofedBrands.join(", ")}</b>
-                    </div>
-                  </div>
-                )}
-
-                <div style={{ fontSize: "12px", color: "#7482a5" }}>
-                  Normalized ASCII fallback: <code>{homoglyphResult.normalizedAscii}</code>
-                </div>
-              </div>
-            ) : (
-              <div style={{ color: "#7482a5", fontSize: "13px", paddingTop: "20px" }}>
-                Click "INSPECT HOMOGLYPHS & BRANDS" to reveal if your target domain uses character substitution.
-              </div>
-            )}
-          </div>
-        </div>
       )}
 
       {/* TAB 3: Scam Message Triage */}
