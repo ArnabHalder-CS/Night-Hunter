@@ -32,10 +32,39 @@ function Metric({ label, value, tone }) {
 }
 
 const COMMON_TARGETED_BRANDS = [
-  "paypal", "google", "microsoft", "apple", "amazon",
-  "netflix", "chase", "bankofamerica", "coinbase", "binance",
-  "steam", "facebook", "instagram", "docusign", "dropbox"
+  "youtube", "google", "microsoft", "apple", "amazon", "paypal", "netflix",
+  "flipkart", "paytm", "phonepe", "swiggy", "zomato", "irctc", "myntra",
+  "sbi", "hdfc", "icici", "axis", "kotak", "jio", "airtel",
+  "chase", "bankofamerica", "wellsfargo", "coinbase", "binance",
+  "steam", "discord", "telegram", "facebook", "instagram", "twitter",
+  "docusign", "dropbox", "github", "spotify", "reddit", "tiktok", "uber", "ola"
 ];
+
+function damerauLevenshtein(s1, s2) {
+  s1 = (s1 || "").toLowerCase();
+  s2 = (s2 || "").toLowerCase();
+  const len1 = s1.length;
+  const len2 = s2.length;
+  if (!len1) return len2;
+  if (!len2) return len1;
+  const d = Array.from({ length: len1 + 1 }, () => Array(len2 + 1).fill(0));
+  for (let i = 0; i <= len1; i++) d[i][0] = i;
+  for (let j = 0; j <= len2; j++) d[0][j] = j;
+  for (let i = 1; i <= len1; i++) {
+    for (let j = 1; j <= len2; j++) {
+      const cost = s1[i - 1] === s2[j - 1] ? 0 : 1;
+      d[i][j] = Math.min(
+        d[i - 1][j] + 1,
+        d[i][j - 1] + 1,
+        d[i - 1][j - 1] + cost
+      );
+      if (i > 1 && j > 1 && s1[i - 1] === s2[j - 2] && s1[i - 2] === s2[j - 1]) {
+        d[i][j] = Math.min(d[i][j], d[i - 2][j - 2] + 1);
+      }
+    }
+  }
+  return d[len1][len2];
+}
 
 export default function PhishingAnalyzer() {
   const [activeTab, setActiveTab] = useState("url"); // "url" | "homoglyph" | "triage" | "playbook"
@@ -89,16 +118,19 @@ export default function PhishingAnalyzer() {
     const raw = homoglyphInput.trim();
     if (!raw) return;
 
-    let punycode = "";
     try {
-      // Clean host from URL if pasted full URL
       let host = raw;
       if (host.includes("://")) {
         host = host.split("://")[1].split("/")[0];
       } else if (host.includes("/")) {
         host = host.split("/")[0];
       }
-      
+      host = host.toLowerCase();
+
+      const parts = host.split(".");
+      const domainBody = parts.length >= 2 ? parts[parts.length - 2] : host;
+      const regDomain = parts.length >= 2 ? parts.slice(-2).join(".") : host;
+
       const nonAsciiChars = [];
       for (let i = 0; i < host.length; i++) {
         const code = host.charCodeAt(i);
@@ -111,11 +143,7 @@ export default function PhishingAnalyzer() {
         }
       }
 
-      // Check brand similarity
-      const lower = host.toLowerCase();
-      const detectedBrands = COMMON_TARGETED_BRANDS.filter(b => lower.includes(b));
-      
-      // Look for homoglyphic brand lookalikes (e.g. Cyrillic 'а', 'о', 'е', 'р')
+      // Check Unicode homoglyphs (Cyrillic lookalikes)
       const normalizedHost = host
         .replace(/[\u0430]/g, "a")
         .replace(/[\u043E]/g, "o")
@@ -124,24 +152,88 @@ export default function PhishingAnalyzer() {
         .replace(/[\u0441]/g, "c")
         .replace(/[\u0443]/g, "y")
         .replace(/[\u0456]/g, "i")
-        .replace(/[\u03BF]/g, "o")
-        .toLowerCase();
+        .replace(/[\u03BF]/g, "o");
 
-      const lookalikeBrands = COMMON_TARGETED_BRANDS.filter(b => normalizedHost.includes(b));
+      // Official domains whitelist
+      const officialDomains = {
+        youtube: ["youtube.com", "youtu.be"],
+        google: ["google.com", "google.co.in", "google.co.uk", "gmail.com"],
+        flipkart: ["flipkart.com"],
+        amazon: ["amazon.com", "amazon.in"],
+        paypal: ["paypal.com"],
+        paytm: ["paytm.com"],
+        apple: ["apple.com", "icloud.com"],
+        microsoft: ["microsoft.com", "live.com", "office.com"],
+        netflix: ["netflix.com"],
+        facebook: ["facebook.com", "fb.com"],
+        instagram: ["instagram.com"],
+        twitter: ["twitter.com", "x.com"],
+        github: ["github.com"]
+      };
+
+      let isOfficial = false;
+      let officialBrand = "";
+      for (const [b, doms] of Object.entries(officialDomains)) {
+        if (doms.includes(regDomain) || doms.includes(host)) {
+          isOfficial = true;
+          officialBrand = b;
+          break;
+        }
+      }
+
+      // Typosquatting Check (Damerau-Levenshtein distance 1 or 2)
+      let typoTarget = null;
+      let minDistance = 99;
+      if (!isOfficial) {
+        for (const brand of COMMON_TARGETED_BRANDS) {
+          const dist = damerauLevenshtein(domainBody, brand);
+          if (dist >= 1 && dist <= 2 && brand.length >= 4 && Math.abs(domainBody.length - brand.length) <= 2) {
+            if (dist < minDistance) {
+              minDistance = dist;
+              typoTarget = brand;
+            }
+          }
+        }
+      }
+
+      // Combosquatting Check
+      const comboBrands = isOfficial ? [] : COMMON_TARGETED_BRANDS.filter(b => domainBody.includes(b) && domainBody !== b);
+
+      let verdict = "";
+      let isDanger = false;
+      let isWarning = false;
+      let spoofedBrands = [];
+
+      if (isOfficial) {
+        verdict = `VERIFIED: Legitimate official domain for ${officialBrand.toUpperCase()}. Zero spoofing detected.`;
+      } else if (nonAsciiChars.length > 0) {
+        isDanger = true;
+        spoofedBrands = COMMON_TARGETED_BRANDS.filter(b => normalizedHost.includes(b));
+        verdict = `CRITICAL: Mixed-script / Homoglyph lookalike spoof detected! Uses deceptive non-ASCII characters.`;
+      } else if (typoTarget) {
+        isDanger = true;
+        spoofedBrands = [typoTarget];
+        verdict = `CRITICAL: Typosquatting detected! '${domainBody}' closely mimics '${typoTarget.toUpperCase()}' (edit distance ${minDistance}).`;
+      } else if (comboBrands.length > 0) {
+        isWarning = true;
+        spoofedBrands = comboBrands;
+        verdict = `WARNING: Unauthorized brand mention (${comboBrands.map(b => b.toUpperCase()).join(", ")}) detected in domain.`;
+      } else {
+        verdict = "Standard ASCII domain. No Unicode homoglyphs or brand spoofing detected.";
+      }
 
       setHomoglyphResult({
         domain: host,
         hasNonAscii: nonAsciiChars.length > 0,
         nonAsciiChars,
         isIdn: nonAsciiChars.length > 0,
-        directBrands: detectedBrands,
-        spoofedBrands: lookalikeBrands,
+        isDanger,
+        isWarning,
+        typoTarget,
+        typoDistance: minDistance <= 2 ? minDistance : null,
+        spoofedBrands,
         normalizedAscii: normalizedHost,
-        verdict: nonAsciiChars.length > 0
-          ? "CRITICAL: Mixed-script / Homoglyph lookalike spoof detected! Highly dangerous."
-          : detectedBrands.length > 0
-          ? `WARNING: Brand mention (${detectedBrands.join(", ")}) detected in domain.`
-          : "Standard ASCII domain. No Unicode homoglyph spoofing detected."
+        verdict
       });
     } catch (err) {
       setHomoglyphResult({
@@ -553,9 +645,21 @@ export default function PhishingAnalyzer() {
                 <div style={{
                   padding: "12px",
                   borderRadius: "8px",
-                  background: homoglyphResult.hasNonAscii ? "rgba(239, 68, 68, 0.15)" : "rgba(34, 197, 94, 0.15)",
-                  border: homoglyphResult.hasNonAscii ? "1px solid rgba(239, 68, 68, 0.4)" : "1px solid rgba(34, 197, 94, 0.4)",
-                  color: homoglyphResult.hasNonAscii ? "#fca5a5" : "#86efac",
+                  background: (homoglyphResult.isDanger || homoglyphResult.hasNonAscii)
+                    ? "rgba(239, 68, 68, 0.15)"
+                    : homoglyphResult.isWarning
+                    ? "rgba(245, 158, 11, 0.15)"
+                    : "rgba(34, 197, 94, 0.15)",
+                  border: (homoglyphResult.isDanger || homoglyphResult.hasNonAscii)
+                    ? "1px solid rgba(239, 68, 68, 0.4)"
+                    : homoglyphResult.isWarning
+                    ? "1px solid rgba(245, 158, 11, 0.4)"
+                    : "1px solid rgba(34, 197, 94, 0.4)",
+                  color: (homoglyphResult.isDanger || homoglyphResult.hasNonAscii)
+                    ? "#fca5a5"
+                    : homoglyphResult.isWarning
+                    ? "#fcd34d"
+                    : "#86efac",
                   fontSize: "13px",
                   fontWeight: "600"
                 }}>

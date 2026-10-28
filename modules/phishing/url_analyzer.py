@@ -255,7 +255,14 @@ BRAND_NAMES = {
 
 OFFICIAL_BRAND_DOMAINS = {
     # ── Global Tech ──────────────────────────────────────────
-    "google": {"google.com", "google.co.in", "google.co.uk", "google.ca", "google.de", "google.fr", "google.com.au", "gmail.com", "youtube.com", "goo.gl", "gstatic.com"},
+    "google": {"google.com", "google.co.in", "google.co.uk", "google.ca", "google.de", "google.fr", "google.com.au", "gmail.com", "goo.gl", "gstatic.com"},
+    "youtube": {"youtube.com", "youtu.be"},
+    "reddit": {"reddit.com"},
+    "tiktok": {"tiktok.com"},
+    "ebay": {"ebay.com"},
+    "yahoo": {"yahoo.com", "yahoo.co.in"},
+    "twitch": {"twitch.tv"},
+    "roblox": {"roblox.com"},
     "microsoft": {"microsoft.com", "live.com", "office.com", "office365.com", "outlook.com", "msn.com", "azure.com", "bing.com", "windows.com", "skype.com"},
     "apple": {"apple.com", "icloud.com", "itunes.com", "me.com"},
     "amazon": {"amazon.com", "amazon.co.uk", "amazon.de", "amazon.in", "amazon.ca", "amazon.fr", "primevideo.com"},

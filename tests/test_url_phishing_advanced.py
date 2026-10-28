@@ -42,6 +42,19 @@ class TestUrlPhishingAdvanced(unittest.TestCase):
             self.assertEqual(rep["risk_level"], "CRITICAL")
             self.assertTrue(len(rep["ethical_hacking_profile"]["mitre_techniques"]) > 0)
 
+    def test_fuzzy_typosquatting_detected(self):
+        """Fuzzy typosquatting (Flipkert, Yotube, Aamazon) must be flagged as CRITICAL."""
+        typos = [
+            ("www.FLipkert.com", "FLIPKART"),
+            ("www.yotube.com", "YOUTUBE"),
+            ("www.Aamazon.com", "AMAZON"),
+        ]
+        for url, expected_brand in typos:
+            rep = PhishingAnalyzer(url, fetch_content=False).analyze()
+            self.assertGreaterEqual(rep["risk_score"], 60, f"Expected >=60 for {url}, got {rep['risk_score']}")
+            self.assertEqual(rep["risk_level"], "CRITICAL", f"Expected CRITICAL for {url}, got {rep['risk_level']}")
+            self.assertEqual(rep["ethical_hacking_profile"]["targeted_brand"], expected_brand)
+
     def test_mitre_and_soc_profile_generated(self):
         """Ethical hacking profile must populate MITRE techniques and SOC playbooks."""
         rep = PhishingAnalyzer("https://micros0ft-login.xyz/account", fetch_content=False).analyze()
