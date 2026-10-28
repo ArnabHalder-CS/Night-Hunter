@@ -32,6 +32,7 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from core.logger import log_info, log_warning, log_error
+from core.validators import safe_host
 from modules.network_security.device_scanner import (
     get_device_recon,
     scan_target_nmap,
@@ -106,30 +107,10 @@ def get_timestamp():
 
 def clean_host(host):
     """
-    Clean a hostname or IP address entered by the user.
-
-    Examples:
-        example.com
-        https://example.com
-        http://example.com/path
+    Clean, sanitize, and strictly validate a hostname or IP address.
+    Prevents option injection (e.g. -f, --script=...) and invalid characters.
     """
-
-    if not host:
-        return ""
-
-    host = str(host).strip()
-
-    if "://" in host:
-        try:
-            host = host.split("://", 1)[1]
-        except Exception:
-            pass
-
-    host = host.split("/", 1)[0]
-    host = host.split("?", 1)[0]
-    host = host.split("#", 1)[0]
-
-    return host.strip()
+    return safe_host(host)
 
 
 def get_service_name(port):

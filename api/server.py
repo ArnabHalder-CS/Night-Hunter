@@ -76,6 +76,26 @@ def analyze_scam_message(text_content):
 
 
 
+import os
+
+CLOUD_RUNTIME = os.environ.get("NIGHT_HUNTER_RUNTIME", "").strip().lower() == "cloud"
+
+@app.before_request
+def enforce_cloud_safety():
+    """Protect public cloud deployment from scanning abuse / account suspension."""
+    if CLOUD_RUNTIME and request.method == "POST":
+        # Disallow active raw network scans and third-party tools on public demo
+        if request.path.startswith("/api/network-security") or request.path.startswith("/api/web-security/scanners"):
+            return jsonify({
+                "success": False,
+                "error": "Active network scanning is restricted on the public cloud demo to prevent infrastructure abuse. Run Night Hunter locally for full scanning capabilities."
+            }), 403
+
+@app.get("/api/health")
+def api_health():
+    """Container health check endpoint for Render / Docker orchestration."""
+    return jsonify({"status": "ok", "service": "Night Hunter", "version": "1.7.0"}), 200
+
 @app.get("/api/status")
 def api_status():
 
@@ -83,14 +103,14 @@ def api_status():
         "success": True,
         "tool": "NIGHT HUNTER",
         "status": "online",
-        "version": "1.6.2"
+        "version": "1.7.0"
     })
 
 @app.get("/api/version")
 def api_version():
     return jsonify({
         "success": True,
-        "version": "1.6.2",
+        "version": "1.7.0",
         "release_url": "https://night-hunter-0br7.onrender.com/#downloads"
     })
 

@@ -18,6 +18,7 @@ import shutil
 import platform
 import subprocess
 import xml.etree.ElementTree as ET
+from core.validators import safe_host
 from datetime import datetime
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
@@ -285,14 +286,8 @@ def lookup_mac_vendor(mac):
 
 
 def clean_target_host(target):
-    """Normalize input target."""
-    if not target:
-        return ""
-    target = str(target).strip()
-    if "://" in target:
-        target = target.split("://", 1)[1]
-    target = target.split("/", 1)[0].split("?", 1)[0].split("#", 1)[0]
-    return target.strip()
+    """Normalize and sanitize input target strictly against option injection."""
+    return safe_host(target)
 
 
 def scan_target_nmap(target, scan_udp=True, detect_os=True, timeout=20):
@@ -301,6 +296,9 @@ def scan_target_nmap(target, scan_udp=True, detect_os=True, timeout=20):
     Extracts device name, OS model, device type, MAC, TCP open ports,
     and UDP open ports (-sU).
     """
+    target = safe_host(target)
+    if not target:
+        return None
     nmap_exe = find_nmap_path()
     if not nmap_exe:
         return None

@@ -380,6 +380,20 @@ def analyze_scam_message_advanced(text_content):
     if has_dangerous_file and (category_hits > 0 or any(w in normalized for w in ["install", "download", "track", "invoice", "update", "bill"])):
         raw_score = max(raw_score, 65)
 
+    # High-severity Coercion & Cybercrime Threats (Digital Arrest, Electricity Disconnection, Legal Summons)
+    is_digital_arrest = any(term in normalized for term in [
+        "digital arrest", "arrest warrant", "police complaint", "cbi officer", "cyber crime police",
+        "customs detention", "court summons", "legal proceedings", "narcotics department", "money laundering case"
+    ])
+    is_electricity_scam = any(term in normalized for term in [
+        "electricity will be disconnected", "power will be disconnected", "power supply will be disconnected",
+        "bijli kat di", "electricity power supply", "electricity officer", "bill was not updated", "power cut today"
+    ])
+    if is_digital_arrest or is_electricity_scam:
+        raw_score = max(raw_score + 25, 72)
+        threat_name = "Digital Arrest / Law Enforcement Impersonation" if is_digital_arrest else "Electricity / Utility Disconnection Threat"
+        reasons.append(f"High-coercion extortion vector detected ({threat_name}); commonly used in targeted financial fraud.")
+
     # 6. SCORE CALIBRATION & RISK LEVEL
     score = min(max(raw_score, 0), 100)
 

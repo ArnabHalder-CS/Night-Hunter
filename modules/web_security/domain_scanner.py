@@ -167,10 +167,11 @@ def analyze_domain(url: str) -> dict:
         report["recon"]["status_text"] = "Connection Failed"
 
     # 3. SSL/TLS Certificate Analysis
-    if target_url.startswith("https://") or port == 443:
+    ssl_port = port if (port and port != 80) else 443
+    if target_url.startswith("https://") or ssl_port == 443 or port == 8443:
         try:
             ctx = ssl.create_default_context()
-            with socket.create_connection((hostname, 443), timeout=3.0) as sock:
+            with socket.create_connection((hostname, ssl_port), timeout=3.0) as sock:
                 with ctx.wrap_socket(sock, server_hostname=hostname) as ssock:
                     cert = ssock.getpeercert()
                     cipher = ssock.cipher()
@@ -187,6 +188,11 @@ def analyze_domain(url: str) -> dict:
                         except Exception:
                             pass
 
+                    is_expiring = days_left is not None and days_left < 15
+                    if is_expiring:
+                        report["report_summary"]["high"] += 1
+                        report["report_summary"]["total"] += 1
+
                     report["tls"] = {
                         "has_tls": True,
                         "tls_version": tls_ver or "TLSv1.3",
@@ -196,8 +202,27 @@ def analyze_domain(url: str) -> dict:
                         "days_remaining": days_left,
                         "valid": True
                     }
+        except (socket.timeout, TimeoutError):
+            log_error(f"SSL handshake timeout for {hostname}:{ssl_port}")
+            report["tls"]["tls_version"] = "Connection Timeout"
+            report["tls"]["valid"] = False
+            report["report_summary"]["low"] += 1
+            report["report_summary"]["total"] += 1
+        except ssl.SSLCertVerificationError as ssl_err:
+            log_error(f"SSL certificate verification failed for {hostname}: {ssl_err}")
+            report["tls"]["tls_version"] = "Invalid / Self-Signed Certificate"
+            report["tls"]["valid"] = False
+            report["report_summary"]["high"] += 1
+            report["report_summary"]["total"] += 1
         except Exception as ssl_err:
             log_error(f"SSL handshake error for {hostname}: {ssl_err}")
-            report["tls"]["tls_version"] = "Invalid / Self-Signed"
+            report["tls"]["tls_version"] = f"SSL Error ({type(ssl_err).__name__})"
+            report["tls"]["valid"] = False
+            report["report_summary"]["medium"] += 1
+            report["report_summary"]["total"] += 1
+    elif not target_url.startswith("https://"):
+        # Plaintext unencrypted HTTP
+        report["report_summary"]["high"] += 1
+        report["report_summary"]["total"] += 1
 
     return report

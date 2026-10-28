@@ -11,17 +11,24 @@ from datetime import datetime
 # PROJECT ROOT
 # ---------------------------------------------------------
 
+import os
+
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
+# When running in frozen PyInstaller (--onefile), write to permanent %LOCALAPPDATA%
+if getattr(sys, "frozen", False):
+    BASE_DIR = Path(os.environ.get("LOCALAPPDATA", Path.home())) / "NightHunter"
+else:
+    BASE_DIR = PROJECT_ROOT
 
 # ---------------------------------------------------------
 # CONFIGURATION
 # ---------------------------------------------------------
 
-REPORTS_DIRECTORY = PROJECT_ROOT / "reports"
+REPORTS_DIRECTORY = BASE_DIR / "reports"
 
 REPORTS_DIRECTORY.mkdir(
     parents=True,
